@@ -1,0 +1,74 @@
+/*==================== GOOGLE FONTS ====================*/
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+
+/*==================== VARIABLES CSS ====================*/
+
+:root {
+  --header-height: 4.8rem;
+
+  /*========== Colors ==========*/
+
+  --title-color: rgb(248, 248, 248);
+  --text-color: rgb(180, 207, 209);
+  --input-color: rgb(3, 45, 51);
+  --body-color: linear-gradient(90deg, rgb(10, 28, 59) 10%, rgb(1 13 31) 50%);
+  --container-color: rgb(1 13 31);
+  --scroll-bar-color: rgb(1 13 31);
+  --scroll-thumb-color: rgb(19, 216, 223);
+  --scroll-thumb-color-hover: rgb(58, 206, 161);
+
+  --first-color: rgb(19, 216, 223);
+  --first-color-alt: rgb(11, 245, 214);
+  --background-color: linear-gradient(
+    120deg,
+    rgb(19, 216, 223),
+    rgb(58, 206, 161) 50%,
+    rgb(11, 245, 214) 70%
+  );
+
+  /*========== Font and typography ==========*/
+  --body-font: "Poppins", sans-serif;
+  --biggest-font-size: 5rem;
+  --big-font-size: 3.2rem;
+  --h1-font-size: 2.4rem;
+  --h2-font-size: 2rem;
+  --h3-font-size: 1.8rem;
+  --normal-font-size: 1.5rem;
+  --small-font-size: 1.4rem;
+  --smaller-font-size: 1.3rem;
+
+  /*========== Font weight ==========*/
+  --font-medium: 500;
+  --font-semi-bold: 600;
+
+  /*========== Margenes Bottom ==========*/
+
+  --mb-0-25: 0.4rem;
+  --mb-0-5: 0.8rem;
+  --mb-0-75: 1.2rem;
+  --mb-1: 1.6rem;
+  --mb-1-5: 2rem;
+  --mb-2: 3.2rem;
+  --mb-2-5: 3.8rem;
+  --mb-3: 4.8rem;
+  --mb-4: 7rem;
+  --mb-5: 9rem;
+
+  /*========== z index ==========*/
+  --z-tooltip: 10;
+  --z-fixed: 100;
+  --z-modal: 1000;
+}
+
+/* Font size for large devices */
+@media screen and (min-width: 968px) {
+  :root {
+    --big-font-size: 4.8rem;
+    --h1-font-size: 3.6rem;
+    --h2-font-size: 2.4rem;
+    --h3-font-size: 2rem;
+    --normal-font-size: 1.6rem;
+    --small-font-size: 1.4rem;
+    --smaller-font-size: 1.3rem;
+  }
+}

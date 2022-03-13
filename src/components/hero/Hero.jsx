@@ -1,3 +1,7 @@
 import React from "react";
 import "./HeroStyle.css";
-import Section from "./Section";
+import Section from "../../styles/Section";
+
+const Hero = () => <Section />;
+
+export default Hero;

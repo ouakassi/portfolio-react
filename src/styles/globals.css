@@ -72,3 +72,75 @@
     --smaller-font-size: 1.3rem;
   }
 }
+/*==================== spinner + Animation ====================*/
+
+.spinner__container {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.95);
+  z-index: 1000;
+  opacity: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.spinner__on {
+  border: 2px solid var(--first-color);
+  border-radius: 50%;
+  border-top: 10px solid var(--first-color);
+  width: 10rem;
+  height: 10rem;
+  -webkit-animation: spin 1.5s linear infinite; /* Safari */
+  animation: spin 1.5s linear infinite;
+}
+.spinner__off {
+  visibility: hidden;
+  display: none;
+}
+
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/*========== SCROLL UP ==========*/
+.scrollup {
+  position: fixed;
+  right: 1.6rem;
+  bottom: -20%;
+  background-color: var(--first-color);
+  opacity: 0.8;
+  padding: 0 0.5rem;
+  border-radius: 0.6rem;
+  z-index: var(--z-tooltip);
+  transition: 0.4s;
+  box-shadow: 0 4px 5px rgba(0, 0, 0, 0.5);
+}
+.scrollup:hover {
+  background-color: var(--first-color-alt);
+}
+.scrollup__icon {
+  font-size: 2.5rem;
+  color: #fff;
+}
+/* Show scroll */
+.show-scroll {
+  bottom: 8rem;
+}

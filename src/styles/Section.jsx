@@ -1,5 +1,5 @@
 import React from "react";
-import "./SectionStyle";
+import "./SectionStyle.css";
 
 const Section = (props) => (
   <section className={props.className + " section"} id={props.id}>

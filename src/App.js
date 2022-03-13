@@ -1,18 +1,27 @@
 import React from "react";
-import Header from "./components/header/Header.jsx";
+import Header from "./components/header/Header";
 import Hero from "./components/hero/Hero";
 import Projects from "./components/projects/Projects";
 import About from "./components/about/About";
 import Footer from "./components/footer/Footer";
+import Blog from "./components/blog/Blog";
 
-function App() {
+import "./styles/Globals.css";
+import "./styles/Layout.css";
+import "./styles/buttons.css";
+import "./styles/Base.css";
+
+const App = () => (
   <>
     <Header />
     <Hero />
-    <Projects />
-    <About />
+    <main className="main">
+      <Projects />
+      <Blog />
+      <About />
+    </main>
     <Footer />
-  </>;
-}
+  </>
+);
 
 export default App;

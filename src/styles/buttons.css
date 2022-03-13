@@ -1,0 +1,71 @@
+.button {
+  display: inline-block;
+  color: var(--title-color);
+  font-weight: var(--font-semi-bold);
+  padding: 1rem;
+  text-transform: uppercase;
+  background-image: linear-gradient(
+    120deg,
+    rgb(29, 181, 236) 5%,
+    rgb(58, 231, 179) 85%
+  );
+  background-repeat: no-repeat;
+  background-size: 100% 0.5rem;
+  background-position: 0px 100%;
+  border-radius: 20px;
+  transition: 0.2s;
+  outline: transparent solid 2px;
+  outline-offset: 2px;
+}
+.button:hover,
+.button:focus {
+  color: #000;
+  transform: scale(1.2);
+  background-size: 100% 100%;
+  background-position: 0px 100%;
+}
+
+.show-more__button {
+  color: #fff;
+  text-transform: uppercase;
+  padding: 1rem;
+  cursor: pointer;
+  border-radius: 5px;
+  box-shadow: inset rgb(68 255 229 / 25%) 0 0 0px 2px,
+    inset rgb(0 255 178 / 10%) 0 0 0px 2px, rgb(0 0 0 / 50%) 1px 4px 5px 2px;
+  transition: 0.2s;
+}
+.show-more__button:hover {
+  transform: scale(1.1);
+  box-shadow: inset rgb(68 255 230) 0px 0px 0px 2px,
+    inset rgb(0 255 179) 0 0 0px 2px;
+}
+
+.button__icon {
+  font-size: 2rem;
+  margin-left: var(--mb-0-5);
+  transition: 0.3s;
+}
+.button--white {
+  background-color: #fff;
+  color: var(--first-color);
+}
+.button--white:hover {
+  background-color: #fff;
+}
+.button--flex {
+  display: inline-flex;
+  align-items: center;
+}
+.button--small {
+  padding: 1.2rem 1.6rem;
+}
+.button--link {
+  padding: 0;
+  background-color: transparent;
+  color: var(--first-color);
+}
+.button--link:hover {
+  background-color: transparent;
+  color: var(--first-color-alt);
+}

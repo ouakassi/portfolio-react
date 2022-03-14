@@ -24,7 +24,7 @@
   margin: 2rem 2rem 5rem;
   height: auto;
   flex-direction: row;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   box-shadow: none;
   /* background: none; */
@@ -85,7 +85,9 @@
 .project__img {
   transform: translateY(-13rem);
 }
-
+.project__data {
+  width: 45rem;
+}
 .project__data h3 {
   margin-bottom: var(--mb-1);
 }
@@ -142,6 +144,7 @@
 }
 .project__link {
   font-size: 2rem;
+  margin-right: 0.5rem;
 }
 .project__button {
   font-size: 2 rem;

@@ -3,8 +3,11 @@ import Header from "./components/header/Header";
 import Hero from "./components/hero/Hero";
 import Projects from "./components/projects/Projects";
 import About from "./components/about/About";
-import Footer from "./components/footer/Footer";
 import Blog from "./components/blog/Blog";
+import Contact from "./components/contact/Contact";
+import Footer from "./components/footer/Footer";
+import SpinnerComponent from "./styles/SpinnerComponent";
+import ScrollComponent from "./styles/ScrollComponenet";
 
 import "./styles/Globals.css";
 import "./styles/Layout.css";
@@ -13,14 +16,17 @@ import "./styles/Base.css";
 
 const App = () => (
   <>
+    <SpinnerComponent />
     <Header />
-    <Hero />
     <main className="main">
-      <Projects />
-      <Blog />
+      <Hero />
+      {/* <Projects />
       <About />
+      <Blog />
+      <Contact /> */}
     </main>
-    <Footer />
+    {/* <Footer /> */}
+    <ScrollComponent />
   </>
 );
 

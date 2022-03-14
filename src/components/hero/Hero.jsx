@@ -1,39 +1,26 @@
 import React from "react";
 import "./HeroStyle.css";
+import SocialLink from "./SocialLink";
 
 const Hero = () => (
   <section className="home section" id="home">
-    <div className="home__container container grid">
-      <div className="home__content grid">
+    <div className="home__container container ">
+      <div className="home__content ">
         <div className="home__social">
-          <a
-            href="https://www.linkedin.com/in/oussama-ouakassi-28372216a/"
-            className="home__social-icon"
-          >
-            <i className="uil uil-linkedin-alt" />
-          </a>
-          <a href="https://github.com/ouakassi" className="home__social-icon">
-            <i className="uil uil-github-alt" />
-          </a>
-          <a
-            href="https://twitter.com/OuakassiOussama"
-            className="home__social-icon"
-          >
-            <i className="uil uil-twitter" />
-          </a>
-        </div>
-        <div className="home__img__container">
-          <img
-            src="./images/my-image.webp"
-            alt="me"
-            className="home__img__container-img"
+          <SocialLink
+            link="https://www.linkedin.com/in/oussama-ouakassi-28372216a/"
+            icon="uil uil-linkedin-alt"
           />
-          <img
-            src="./images/xdots.png.pagespeed.ic.18-iDJTpDo.webp"
-            alt=""
-            className="home__img__container-dots"
+          <SocialLink
+            link="https://github.com/ouakassi"
+            icon="uil uil-github-alt"
+          />
+          <SocialLink
+            link="https://twitter.com/OuakassiOussama"
+            icon="uil uil-twitter"
           />
         </div>
+
         <div className="home__data">
           <h1 className="home__title">
             <span className="home__title-first">Oussama</span>
@@ -51,13 +38,25 @@ const Hero = () => (
             Let's Talk <i className="uil uil-message button__icon" />
           </a>
         </div>
-      </div>
-      <div className="home__scroll">
-        <a href="#projects" className="home__scroll-button button--flex">
-          <i className="uil uil-mouse-alt home__scroll-mouse" />
-          <span className="home__scroll-name">My Projects ?</span>
-          <i className="uil uil-angle-double-down home__scroll-arrow" />
-        </a>
+        <div className="home__img__container">
+          <img
+            src="./images/my-image.webp"
+            alt="me"
+            className="home__img__container-img"
+          />
+          <img
+            src="./images/xdots.png.pagespeed.ic.18-iDJTpDo.webp"
+            alt=""
+            className="home__img__container-dots"
+          />
+        </div>
+        <div className="home__scroll">
+          <a href="#projects" className="home__scroll-button button--flex">
+            <i className="uil uil-mouse-alt home__scroll-mouse" />
+            <span className="home__scroll-name">My Projects ?</span>
+            <i className="uil uil-angle-double-down home__scroll-arrow" />
+          </a>
+        </div>
       </div>
     </div>
   </section>

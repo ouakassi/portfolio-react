@@ -2,6 +2,7 @@ import React from "react";
 import "./ProjectsStyles.css";
 import SectionTitle from "../../styles/SectionTitle";
 import ProjectCard from "./ProjectCard";
+import { projects } from "./../../data/Data.js";
 
 const Projects = () => (
   <section className="projects section" id="projects">
@@ -11,37 +12,20 @@ const Projects = () => (
       sectionSubtitle="my projects"
     />
 
-    <div className="project__container">
-      {/*==================== PROJECTS Content 1 BIG ====================*/}
-      <ProjectCard
-        image="./images/portfolio1.jpg"
-        title="Suna "
-        description={"oussama ouakassi is areadsqqqqqqqqqfdsfdgggggggggggggggddddd".slice(
-          0,
-          20
-        )}
-        github="www.github.com"
-        tags="javascript , git , git , git ,git ,git ,git ,git , git , git , git ,git ,git ,git ,gi , git , git , git "
-        website="www.google.com"
-      />
-      {/*==================== PROJECTS Content 1 ====================*/}
-      <ProjectCard
-        image="./images/portfolio1.jpg"
-        title="project 1 "
-        description="hfdhlskfjksdjfkjdsfjmsdddddddflskdfsd"
-        github="www.github.com"
-        tags="javascript , git"
-        website="www.google.com"
-      />
-
-      <ProjectCard
-        image="./images/portfolio1.jpg"
-        title="project 1 "
-        description="hfdhlskfjksdjfkjdsfjmsddddddddddflskdfsd"
-        github="www.github.com"
-        tags="javascript , git"
-        website="www.google.com"
-      />
+    <div className="project__container container">
+      {projects.map((project, i) => {
+        return (
+          <ProjectCard
+            key={project.id}
+            image={project.image}
+            title={project.title}
+            description={project.description}
+            github={project.github}
+            tags={project.tags}
+            website={project.website}
+          />
+        );
+      })}
     </div>
     <a href="google.com" className="show-more__button">
       Show More <i className="uil uil-direction button__icon" />

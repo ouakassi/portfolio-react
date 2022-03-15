@@ -10,9 +10,10 @@
 
   .project__container {
     display: flex;
-    flex-flow: row wrap;
+    flex-flow: column nowrap;
     padding: 1rem 3rem;
     justify-content: center;
+    align-items: center;
   }
 
   .project__content {
@@ -52,8 +53,8 @@
 
   .project__content:hover,
   .project__content:focus {
-    box-shadow: inset rgb(68 255 230) 0px 0px 0px 5px,
-      inset rgb(0 255 179) 0 0 0px 5px;
+    box-shadow: inset rgb(68 255 230) 0px 0px 0px 1px,
+      inset rgb(0 255 179) 0 0 0px 2px;
   }
 
   .project__content:hover .project__img {
@@ -158,7 +159,14 @@
     flex-direction: row;
   }
 }
-@media screen and (max-width: 1024px) {
+@media screen and (min-width: 1024px) {
+  .project__content {
+    flex-direction: row;
+    width: 80vw;
+    padding: 3rem;
+    align-content: center;
+    justify-content: center;
+  }
 }
 @media screen and (max-width: 1200px) {
 }

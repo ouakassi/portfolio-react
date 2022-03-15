@@ -1,5 +1,5 @@
 .container {
-  max-width: 954px;
+  max-width: 1024px;
   margin: auto var(--mb-1-5);
 }
 .grid {
@@ -100,10 +100,6 @@
 @media screen and (max-width: 1200px) {
   html {
     font-size: 65%;
-  }
-
-  .container {
-    max-width: 1024px;
   }
 }
 

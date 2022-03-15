@@ -1,7 +1,7 @@
 import React from "react";
 import "./ProjectsStyles.css";
 import SectionTitle from "../../styles/SectionTitle";
-import ProjectBigCard from "./ProjectBigCard";
+import ProjectCard from "./ProjectCard";
 
 const Projects = () => (
   <section className="projects section" id="projects">
@@ -13,19 +13,19 @@ const Projects = () => (
 
     <div className="project__container">
       {/*==================== PROJECTS Content 1 BIG ====================*/}
-      <ProjectBigCard
+      <ProjectCard
         image="./images/portfolio1.jpg"
         title="Suna "
         description={"oussama ouakassi is areadsqqqqqqqqqfdsfdgggggggggggggggddddd".slice(
           0,
-          2000
+          20
         )}
         github="www.github.com"
-        tags="javascript , git"
+        tags="javascript , git , git , git ,git ,git ,git ,git , git , git , git ,git ,git ,git ,gi , git , git , git "
         website="www.google.com"
       />
       {/*==================== PROJECTS Content 1 ====================*/}
-      <ProjectBigCard
+      <ProjectCard
         image="./images/portfolio1.jpg"
         title="project 1 "
         description="hfdhlskfjksdjfkjdsfjmsdddddddflskdfsd"
@@ -34,7 +34,7 @@ const Projects = () => (
         website="www.google.com"
       />
 
-      <ProjectBigCard
+      <ProjectCard
         image="./images/portfolio1.jpg"
         title="project 1 "
         description="hfdhlskfjksdjfkjdsfjmsddddddddddflskdfsd"

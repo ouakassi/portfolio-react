@@ -109,16 +109,22 @@
     border-radius: 0 5px 5px 0;
   }
   .project__languages {
-    margin-bottom: var(--mb-1);
+    margin-bottom: var(--mb-2);
+    display: flex;
+    flex-flow: row wrap;
   }
-  .project__languages img {
-    width: 3rem;
+  .project__language {
+    text-transform: uppercase;
+    font-size: 1rem;
     border-radius: 5px;
-    margin-right: 1rem;
+    margin: 1rem 1.5rem;
+    padding: 1rem;
+    color: rgb(0, 255, 85);
+    font-weight: 600;
+    border: 2px rgb(18, 173, 127) solid;
   }
   .project__links {
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 2rem;
@@ -129,7 +135,7 @@
     margin-right: 0.5rem;
   }
   .project__button {
-    font-size: 2 rem;
+    font-size: 1rem;
     box-shadow: 1px 1px 1px 1px;
   }
 }

@@ -2,7 +2,7 @@ import React from "react";
 import "./ProjectsStyles.css";
 import SectionTitle from "../../styles/SectionTitle";
 import ProjectCard from "./ProjectCard";
-import { projects } from "./../../data/Data.js";
+import { projectsData } from "./../../data/Data.js";
 import checkColor from "./checkColor";
 
 const Projects = () => {
@@ -15,7 +15,7 @@ const Projects = () => {
       />
 
       <div className="project__container container">
-        {projects.map(
+        {projectsData.map(
           ({ id, image, title, description, github, tags, website }, i) => {
             return (
               <ProjectCard

@@ -6,7 +6,7 @@ const ProjectBigCard = (props) => (
     <img src={props.image} alt={props.title} className="project__img" />
     <div className="project__data">
       <h1 className="project__title">{props.title}</h1>
-      <p className="project__description">{props.description}</p>
+      <p className="project__description">{props.description}...</p>
       <h3>Powerd By</h3>
       <div className="project__languages">{props.tags}</div>
       <div className="project__links">

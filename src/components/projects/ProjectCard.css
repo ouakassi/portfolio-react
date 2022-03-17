@@ -45,7 +45,7 @@
 
   .project__img {
     width: max(90%, 80%);
-    border-radius: 20px;
+    border-radius: 5px;
     margin: 0 0 var(--mb-1) 0;
     box-shadow: rgba(68, 140, 255, 0.5) 0px 0px 0px 1px,
       rgba(0, 255, 179, 0.5) 0 0px 0px 2px;
@@ -114,6 +114,8 @@
     flex-flow: row wrap;
   }
   .project__language {
+    display: flex;
+    align-items: center;
     text-transform: uppercase;
     font-size: 1.2rem;
     border-radius: 5px;
@@ -122,13 +124,18 @@
     padding: 0.5rem;
     color: rgb(0, 255, 179);
     font-weight: 600;
-    border: 2px rgb(0, 255, 157) solid;
+    background-color: rgba(0, 255, 157, 0.2);
     transition: 0.2s;
     cursor: pointer;
   }
   .project__language:hover,
   .project__language:focus {
     transform: scale(1.1);
+  }
+  .project__language img {
+    width: 2rem;
+    border-radius: 5px;
+    margin-right: 0.5rem;
   }
   .project__links {
     display: flex;

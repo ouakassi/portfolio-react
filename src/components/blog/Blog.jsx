@@ -2,17 +2,7 @@ import React from "react";
 import "./BlogStyle.css";
 import SectionTitle from "../../styles/SectionTitle";
 
-// import SliderScript from "./SliderScript.js";
-
-// SliderScript.slider(
-//   ".articles__container",
-//   ".blog__btn--left",
-//   ".blog__btn--right",
-//   ".blog__dots",
-//   "blog__dots-dot"
-// );
-
-const Blog = () => (
+const Blog = () => {
   <section className="blog" id="blog">
     <SectionTitle
       icon="uil uil-files-landscapes-alt"
@@ -83,7 +73,7 @@ const Blog = () => (
       </div>
       <div className="blog__dots" />
     </div>
-  </section>
-);
+  </section>;
+};
 
 export default Blog;

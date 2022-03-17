@@ -3,6 +3,7 @@ import "./ProjectsStyles.css";
 import SectionTitle from "../../styles/SectionTitle";
 import ProjectCard from "./ProjectCard";
 import { projects } from "./../../data/Data.js";
+import checkColor from "./checkColor";
 
 const Projects = () => {
   return (
@@ -24,11 +25,7 @@ const Projects = () => {
                 description={description}
                 github={github}
                 tags={tags.map((tag, i) => {
-                  return (
-                    <span className="project__language" key={i}>
-                      #{tag}
-                    </span>
-                  );
+                  return checkColor(tag, i);
                 })}
                 website={website}
               />

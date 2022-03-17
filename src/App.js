@@ -18,15 +18,15 @@ const App = () => (
   <>
     <SpinnerComponent />
     <Header />
-    <main className="main">
-      <Hero />
-      <Projects />
-      {/*<About />
-      <Blog />
-      <Contact /> */}
-    </main>
-    {/* <Footer /> */}
-    <ScrollComponent />
+
+    <Hero />
+    <Projects />
+    {/* <About />
+    <Blog />
+    <Contact />
+
+    <Footer />
+    <ScrollComponent /> */}
   </>
 );
 

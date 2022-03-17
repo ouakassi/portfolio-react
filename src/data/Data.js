@@ -4,7 +4,7 @@ export const projects = [
     description:
       "Using React, Node.js, Express & MongoDB you'll learn how to build a Full Stack MERN Application - from start to finish. The App is called Memories and it is a simple social media app that allows users to post interesting events that happened in their lives.",
     image: "./images/portfolio1.jpg",
-    tags: ["Mongo", "Express", "React", "Node"],
+    tags: ["html", "css", "javascript", "react", "node", "express", "mongodb"],
     github: "https://google.com",
     website: "https://google.com",
     id: 0,
@@ -24,7 +24,7 @@ export const projects = [
     description:
       "This is a code repository for the corresponding YouTube video. In this tutorial, we're going to build and deploy a React Video Chat Application using WebRTC.",
     image: "./images/portfolio1.jpg",
-    tags: ["React", "WebRTC"],
+    tags: ["html", "css", "javascript", "React", "MongoDb"],
     github: "https://google.com",
     website: "https://google.com",
     id: 2,

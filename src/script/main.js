@@ -107,7 +107,7 @@ modalCloses.forEach((modalClose) => {
 
 /*==================== PORTFOLIO Slider  ====================*/
 
-const slider = function (
+export const slider = function (
   slidesClass,
   btnLeftClass,
   btnRightClass,

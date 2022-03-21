@@ -14,20 +14,21 @@ import "./styles/Layout.css";
 import "./styles/buttons.css";
 import "./styles/Base.css";
 
-const App = () => (
-  <>
-    <SpinnerComponent />
-    <Header />
-
-    <Hero />
-    <Projects />
-    {/* <About />
-    <Blog />
-    <Contact />
+const App = () => {
+  return (
+    <>
+      <SpinnerComponent />
+      <Header />
+      <Hero />
+      <Projects />
+      <About />
+      <Blog />
+      {/*<Contact />
 
     <Footer />
     <ScrollComponent /> */}
-  </>
-);
+    </>
+  );
+};
 
 export default App;

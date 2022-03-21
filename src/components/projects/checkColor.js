@@ -1,10 +1,11 @@
 import React from "react";
 import LanguageComponent from "./LanguageComponent";
 
-const checkColor = (tag, i) => {
+const checkColor = (tag, i, className) => {
   if (tag.toLocaleLowerCase() === "javascript")
     return (
       <LanguageComponent
+        className={className}
         mainColor="#f0db4f"
         key={i}
         tag={tag}
@@ -14,6 +15,7 @@ const checkColor = (tag, i) => {
   if (tag.toLocaleLowerCase() === "react")
     return (
       <LanguageComponent
+        className={className}
         mainColor="#58c6e5"
         key={i}
         tag={tag}
@@ -23,6 +25,7 @@ const checkColor = (tag, i) => {
   if (tag.toLocaleLowerCase() === "node")
     return (
       <LanguageComponent
+        className={className}
         mainColor="#16b501"
         key={i}
         tag={tag}
@@ -32,6 +35,7 @@ const checkColor = (tag, i) => {
   if (tag.toLocaleLowerCase() === "mongodb")
     return (
       <LanguageComponent
+        className={className}
         mainColor="#6cac48"
         key={i}
         tag={tag}
@@ -41,6 +45,7 @@ const checkColor = (tag, i) => {
   if (tag.toLocaleLowerCase() === "html")
     return (
       <LanguageComponent
+        className={className}
         mainColor="#e44d26"
         key={i}
         tag={tag}
@@ -50,6 +55,7 @@ const checkColor = (tag, i) => {
   if (tag.toLocaleLowerCase() === "css")
     return (
       <LanguageComponent
+        className={className}
         mainColor="#1572b6"
         key={i}
         tag={tag}
@@ -59,6 +65,7 @@ const checkColor = (tag, i) => {
   if (tag.toLocaleLowerCase() === "typescript")
     return (
       <LanguageComponent
+        className={className}
         mainColor="#007acc"
         key={i}
         tag={tag}
@@ -68,13 +75,14 @@ const checkColor = (tag, i) => {
   if (tag.toLocaleLowerCase() === "express")
     return (
       <LanguageComponent
+        className={className}
         mainColor="#ffffff"
         key={i}
         tag={tag}
         image="./images/languages/express.svg"
       />
     );
-  else return <LanguageComponent key={i} tag={tag} />;
+  else return <LanguageComponent className={className} key={i} tag={tag} />;
 };
 
 export default checkColor;

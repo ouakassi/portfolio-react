@@ -4,18 +4,13 @@ const LanguageComponent = (props) => (
   <>
     <span
       style={{
-        color: props.mainColor,
-        backgroundColor: `${props.mainColor}33`,
+        color: props.mainColor || "#00ffb3",
+        backgroundColor: `${props.mainColor}33` || "#00ffb333",
       }}
-      className="project__language"
-      key={props.key}
+      className={props.className}
     >
-      <img
-        key={props.key}
-        src={props.image || "./images/languages/code.svg"}
-        alt={props.tag}
-      />
-      {props.tag}
+      <img src={props.image || "./images/languages/code.svg"} alt={props.tag} />
+      <span>{props.tag}</span>
     </span>
   </>
 );

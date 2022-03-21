@@ -1,42 +1,45 @@
-import React from "react";
+import React, { useState } from "react";
 import "./ProjectsStyles.css";
-import SectionTitle from "../../styles/SectionTitle";
+import SectionTitle from "../../styles/Section";
 import ProjectCard from "./ProjectCard";
 import { projectsData } from "./../../data/Data.js";
 import checkColor from "./checkColor";
 
 const Projects = () => {
+  const [index, setindex] = useState(1);
   return (
-    <section className="projects section" id="projects">
-      <SectionTitle
-        icon="uil uil-folder-open"
-        sectionTitle="Projects"
-        sectionSubtitle="my projects"
-      />
-
+    <SectionTitle
+      className="projects"
+      id="projects"
+      icon="uil uil-folder-open"
+      sectionTitle="Projects"
+      sectionSubtitle="my projects"
+    >
       <div className="project__container container">
         {projectsData.map(
           ({ id, image, title, description, github, tags, website }, i) => {
-            return (
-              <ProjectCard
-                key={id}
-                image={image}
-                title={title}
-                description={description}
-                github={github}
-                tags={tags.map((tag, i) => {
-                  return checkColor(tag, i);
-                })}
-                website={website}
-              />
-            );
+            if (i >= index) return null;
+            else
+              return (
+                <ProjectCard
+                  key={id}
+                  image={image}
+                  title={title}
+                  description={description}
+                  github={github}
+                  tags={tags.map((tag, i) => {
+                    return checkColor(tag, i, "project__language");
+                  })}
+                  website={website}
+                />
+              );
           }
         )}
       </div>
-      <a href="google.com" className="show-more__button">
+      <span onClick={() => setindex(index + 1)} className="show-more__button">
         Show More <i className="uil uil-direction button__icon" />
-      </a>
-    </section>
+      </span>
+    </SectionTitle>
   );
 };
 

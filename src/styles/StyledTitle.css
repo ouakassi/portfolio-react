@@ -1,0 +1,22 @@
+.styled__title {
+  margin-bottom: var(--mb-2);
+  background: var(--background-color);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 600;
+  position: relative;
+  align-self: center;
+  text-transform: capitalize;
+}
+.styled__title::after {
+  position: absolute;
+  content: "";
+  display: block;
+  width: 100%;
+  height: 4px;
+  left: 0;
+  bottom: 0;
+  background-image: var(--background-color);
+  border-radius: 5px;
+}

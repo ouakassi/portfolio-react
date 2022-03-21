@@ -40,3 +40,14 @@ export const projectsData = [
     id: 3,
   },
 ];
+
+export const stackLangs = [
+  "html",
+  "css",
+  "javascript",
+  "react",
+  "node",
+  "express",
+  "mongodb",
+  "typescript",
+];

@@ -1,15 +1,18 @@
 .nav__link {
   display: flex;
-  flex-flow: column nowrap;
+  flex-flow: row nowrap;
   align-items: center;
   font-size: var(--small-font-size);
   color: var(--title-color);
   font-weight: var(--font-medium);
   text-transform: capitalize;
 }
+
 .nav__link:hover {
   color: var(--first-color);
 }
 .nav__icon {
   font-size: 2rem;
+  color: var(--first-color);
+  margin-right: 0.5rem;
 }

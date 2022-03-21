@@ -1,15 +1,15 @@
 import React from "react";
 import "./ContactStyle.css";
-import SectionTitle from "../../styles/SectionTitle";
+import Section from "../../styles/Section";
 
 const Contact = () => (
-  <section className="contact" id="contact">
-    <SectionTitle
-      icon="uil uil-files-landscapes-alt"
-      sectionTitle="contact me"
-      sectionSubtitle="recent articles"
-    />
-
+  <Section
+    className="contact"
+    id="contact"
+    icon="uil uil-files-landscapes-alt"
+    sectionTitle="contact me"
+    sectionSubtitle="recent articles"
+  >
     <div className="contact__container container">
       <div className="contact__info">
         <div className="contact__information">
@@ -26,7 +26,7 @@ const Contact = () => (
         </div>
       </div>
     </div>
-  </section>
+  </Section>
 );
 
 export default Contact;

@@ -1,12 +1,16 @@
 import React from "react";
 import "./ProjectCard.css";
+import StyledParagraph from "./../../styles/StyledParagrapgh";
+import StyledTitle from "./../../styles/StyledTitle";
 
 const ProjectBigCard = (props) => (
   <div className="project__content">
     <img src={props.image} alt={props.title} className="project__img" />
     <div className="project__data">
-      <h1 className="project__title">{props.title}</h1>
-      <p className="project__description">{props.description}...</p>
+      <StyledTitle>{props.title}</StyledTitle>
+      <StyledParagraph className="project__description">
+        {props.description}...
+      </StyledParagraph>
       <h3>Powerd By</h3>
       <div className="project__languages">{props.tags}</div>
       <div className="project__links">

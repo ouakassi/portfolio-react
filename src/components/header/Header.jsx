@@ -10,11 +10,11 @@ const Header = () => (
       </a>
       <div className="nav__menu" id="#nav-menu">
         <ul className="nav__list grid">
-          <NavItem name="home" />
-          <NavItem name="projects" />
-          <NavItem name="about" />
-          <NavItem name="blog" />
-          <NavItem name="contact" />
+          <NavItem name="home" icon="uil uil-estate" />
+          <NavItem name="projects" icon="uil uil-folder-open" />
+          <NavItem name="about" icon="uil uil-user-square" />
+          <NavItem name="blog" icon="uil uil-files-landscapes-alt" />
+          <NavItem name="contact" icon="uil uil-calling" />
         </ul>
         <i className="uil uil-times nav__close" id="#nav-close" />
       </div>

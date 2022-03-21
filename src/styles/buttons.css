@@ -26,6 +26,10 @@
 }
 
 .show-more__button {
+  display: flex;
+  align-items: center;
+  background-color: transparent;
+  border: none;
   color: #fff;
   text-transform: uppercase;
   padding: 1rem;

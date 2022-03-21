@@ -1,70 +1,46 @@
 import React from "react";
 import "./AboutStyle.css";
-import SectionTitle from "../../styles/SectionTitle";
+import Section from "../../styles/Section";
+import { stackLangs } from "./../../data/Data.js";
+import checkColor from "../projects/checkColor";
+import StyledParagraph from "./../../styles/StyledParagrapgh";
 
 const About = () => (
   <>
-    <section className="about section" id="about">
-      <SectionTitle
-        icon="uil uil-files-landscapes-alt"
-        sectionTitle="About me"
-        sectionSubtitle="recent articles"
-      />
-
+    <Section
+      className="about"
+      id="about"
+      icon="uil uil-files-landscapes-alt"
+      sectionTitle="About me"
+      sectionSubtitle="recent articles"
+    >
       <div className="about__container container">
-        <div className="about__stats__container">
-          <div className="about__stats__items">
-            <div className="about__stats__data">
-              <span>3</span>
-              <span>years Experience</span>
-              <i className="uil uil-medal about__stats__icon" />
-            </div>
-          </div>
-          <div className="about__stats__items">
-            <div className="about__stats__data">
-              <span>8+</span>
-              <span>Projects Completed</span>
-              <i className="uil uil-building about__stats__icon" />
-            </div>
-          </div>
-          <div className="about__stats__items">
-            <div className="about__stats__data">
-              <span>24/7</span>
-              <span>Support Online </span>
-              <i className="uil uil-user-arrows about__stats__icon" />
-            </div>
-          </div>
-        </div>
         <div className="about__stack__container">
           <div className="about__stack__languages">
-            <img src="./assets/img/languages/html.svg" alt="HTML" />
-            <img src="./assets/img/languages/css.svg" alt="CSS" />
-            <img src="./assets/img/languages/js.svg" alt="JavaScript" />
-            <img src="./assets/img/languages/node.svg" alt="Node Js" />
-            <img src="./assets/img/languages/react.svg" alt="React Js" />
-            <img src="./assets/img/languages/next.svg" alt="Next Js" />
-            <img src="./assets/img/languages/ts.svg" alt="TypeScript" />
+            {stackLangs.map((lang, i) => {
+              return checkColor(lang, i, "about__stack__languages-lang");
+            })}
           </div>
           <div className="about__stack__paragraphs">
-            <p>
+            <StyledParagraph>
               Over 3 years of professional exposure in JavaScript technology
               such as Node JS , Express.js ,React JS, D3 JS, MongoDB and .
-            </p>
-            <p>
+            </StyledParagraph>
+            <StyledParagraph>
               Web developer, with extensive knowledge and years of experience,
               working in web technologies and Ui / Ux design, delivering quality
               work.
-            </p>
-            <p>
+            </StyledParagraph>
+            <StyledParagraph>
               Expertise in developing web pages using HTML5, CSS3, MVC, SASS,
               LESS, Object Oriented Java script, ES6, JQuery, AJAX, JSON, XML.
               Good understanding of Document Object Model (DOM) and DOM
               Functions.
-            </p>
+            </StyledParagraph>
           </div>
         </div>
       </div>
-    </section>
+    </Section>
 
     <section className="qualification section">
       <div className="qualification__container container">

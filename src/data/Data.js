@@ -51,3 +51,69 @@ export const stackLangs = [
   "mongodb",
   "typescript",
 ];
+
+export const BlogPosts = [
+  {
+    id: 0,
+    title: "Top 10 Javascript functions",
+    description:
+      "Why? Inconsistencies between keyboard shortcuts and keyboard commands used by people using screenreaders and keyboards complicate accessibility.",
+    image: "./images/portfolio2.jpg",
+  },
+  {
+    id: 1,
+    title: "Top 10 Javascript functions",
+    description:
+      "Why? Inconsistencies between keyboard shortcuts and keyboard commands used by people using screenreaders and keyboards complicate accessibility.",
+    image: "./images/portfolio3.jpg",
+  },
+  {
+    id: 2,
+    title: "Top 10 Javascript functions",
+    description:
+      "Why? Inconsistencies between keyboard shortcuts and keyboard commands used by people using screenreaders and keyboards complicate accessibility.",
+    image: "./images/portfolio1.jpg",
+  },
+  {
+    id: 3,
+    title: "Top 10 Javascript functions",
+    description:
+      "Why? Inconsistencies between keyboard shortcuts and keyboard commands used by people using screenreaders and keyboards complicate accessibility.",
+    image: "./images/portfolio1.jpg",
+  },
+  {
+    id: 4,
+    title: "Top 10 Javascript functions",
+    description:
+      "Why? Inconsistencies between keyboard shortcuts and keyboard commands used by people using screenreaders and keyboards complicate accessibility.",
+    image: "./images/portfolio1.jpg",
+  },
+  {
+    id: 5,
+    title: "Top 10 Javascript functions",
+    description:
+      "Why? Inconsistencies between keyboard shortcuts and keyboard commands used by people using screenreaders and keyboards complicate accessibility.",
+    image: "./images/portfolio1.jpg",
+  },
+  {
+    id: 6,
+    title: "Top 10 Javascript functions",
+    description:
+      "Why? Inconsistencies between keyboard shortcuts and keyboard commands used by people using screenreaders and keyboards complicate accessibility.",
+    image: "./images/portfolio1.jpg",
+  },
+  {
+    id: 7,
+    title: "Top 10 Javascript functions",
+    description:
+      "Why? Inconsistencies between keyboard shortcuts and keyboard commands used by people using screenreaders and keyboards complicate accessibility.",
+    image: "./images/portfolio1.jpg",
+  },
+  {
+    id: 8,
+    title: "Top 10 Javascript functions",
+    description:
+      "Why? Inconsistencies between keyboard shortcuts and keyboard commands used by people using screenreaders and keyboards complicate accessibility.",
+    image: "./images/portfolio1.jpg",
+  },
+];

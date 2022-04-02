@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useEffect } from "react";
 
-const SpinnerComponent = () => (
-  <div id="spinner__container">
-    <div id="spinner" />
-  </div>
-);
+const SpinnerComponent = () => {
+  return (
+    <div id="spinner__container">
+      <div id="spinner__on"></div>
+    </div>
+  );
+};
 
 export default SpinnerComponent;

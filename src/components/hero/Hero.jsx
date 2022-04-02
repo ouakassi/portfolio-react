@@ -44,11 +44,7 @@ const Hero = () => (
             alt="me"
             className="home__img__container-img"
           />
-          <img
-            src="./images/xdots.png.pagespeed.ic.18-iDJTpDo.webp"
-            alt=""
-            className="home__img__container-dots"
-          />
+          <div className="home__img__container-dots"></div>
         </div>
         <div className="home__scroll">
           <a href="#projects" className="home__scroll-button button--flex">

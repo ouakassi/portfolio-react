@@ -37,11 +37,11 @@
 @media screen and (max-width: 767px) {
   .nav__menu {
     position: fixed;
-    bottom: 50%;
+    bottom: 0;
     left: 0;
     width: 100%;
     background-image: var(--body-color);
-    padding: 3.2rem 2.4rem 6.4rem;
+    padding: 3rem;
     box-shadow: 0 -1px 4px rgba(0, 0, 0, 0.15);
     border-radius: 2.4rem 2.4rem 0 0;
     transition: 0.3s;
@@ -66,7 +66,7 @@
 }
 .hide-nav {
   /* transform: translateY(calc(-1 * var(--header-height))); */
-  transform: translateY(-80px);
+  transform: translateY(40vh);
 }
 /* show menu */
 .show-menu {

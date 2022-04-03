@@ -5,9 +5,13 @@ import NavItem from "./NavItem";
 const Header = () => {
   const [toggleNav, setToggleNav] = useState(false);
 
+  const handleClick = (state) => {
+    setToggleNav(state);
+  };
+
   return (
     <header className="header" id="header">
-      <nav className="nav container">
+      <nav className="nav">
         <a href="#logo" className="nav__logo">
           OUAKASSI
         </a>
@@ -17,7 +21,11 @@ const Header = () => {
           id="#nav-menu"
         >
           <ul className="nav__list grid">
-            <NavItem name="home" icon="uil uil-estate" />
+            <NavItem
+              handleClick={handleClick}
+              name="home"
+              icon="uil uil-estate"
+            />
             <NavItem name="projects" icon="uil uil-folder-open" />
             <NavItem name="about" icon="uil uil-user-square" />
             <NavItem name="blog" icon="uil uil-files-landscapes-alt" />
@@ -25,18 +33,11 @@ const Header = () => {
           </ul>
           <i
             className="uil uil-times nav__close"
-            onClick={() => {
-              setToggleNav(false);
-            }}
+            onClick={() => handleClick(false)}
           />
         </div>
         <div className="nav__btns">
-          <div
-            className="nav__toggle"
-            onClick={() => {
-              setToggleNav(true);
-            }}
-          >
+          <div className="nav__toggle" onClick={() => handleClick(true)}>
             <i className="uil uil-slack" />
           </div>
         </div>

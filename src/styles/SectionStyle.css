@@ -1,6 +1,9 @@
 /*==================== REUSABLE CSS CLASSES ====================*/
 .section {
-  padding: 5rem 0 3rem;
+  padding: 10rem 0 3rem;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
 }
 
 .section__title {
@@ -17,7 +20,7 @@
 .section__subtitle {
   display: block;
   font-size: var(--small-font-size);
-  margin: var(--mb-0-25) 0 var(--mb-1) 0;
+  margin: var(--mb-0-25) 0 var(--mb-3) 0;
   text-transform: capitalize;
 }
 .section__title,

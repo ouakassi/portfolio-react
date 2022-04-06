@@ -1,9 +1,10 @@
 import React from "react";
+import "./ScrollComponenet.css";
 
 const ScrollComponent = () => (
-  <a href="#" className="scrollup" id="scroll-up">
+  <div href="#" className="scrollup" id="scroll-up">
     <i className="uil uil-arrow-up scrollup__icon" />
-  </a>
+  </div>
 );
 
 export default ScrollComponent;

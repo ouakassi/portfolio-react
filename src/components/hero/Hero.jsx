@@ -1,4 +1,5 @@
 import React from "react";
+
 import "./HeroStyle.css";
 import SocialLink from "./SocialLink";
 

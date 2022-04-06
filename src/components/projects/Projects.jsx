@@ -1,12 +1,16 @@
 import React, { useState } from "react";
+import { Link, Outlet } from "react-router-dom";
+
 import "./ProjectsStyles.css";
+
 import SectionTitle from "../../styles/Section";
 import ProjectCard from "./ProjectCard";
 import { projectsData } from "./../../data/Data.js";
 import checkColor from "./checkColor";
+import { ShowMoreButton } from "../../styles/Buttons/ShowMoreButton";
 
 const Projects = () => {
-  const [index, setindex] = useState(1);
+  const [projectTotal, setProjectTotal] = useState(1);
   return (
     <SectionTitle
       className="projects"
@@ -18,7 +22,7 @@ const Projects = () => {
       <div className="project__container container">
         {projectsData.map(
           ({ id, image, title, description, github, tags, website }, i) => {
-            if (i >= index) return null;
+            if (i >= projectTotal) return null;
             else
               return (
                 <ProjectCard
@@ -36,9 +40,15 @@ const Projects = () => {
           }
         )}
       </div>
-      <span onClick={() => setindex(index + 1)} className="show-more__button">
-        Show More <i className="uil uil-direction button__icon" />
-      </span>
+      <Link to="/projects">
+        <ShowMoreButton
+          onClick={() =>
+            setProjectTotal((prevProjetTotal) => prevProjetTotal + 1)
+          }
+          icon="uil uil-direction"
+        />
+      </Link>
+      <Outlet />
     </SectionTitle>
   );
 };

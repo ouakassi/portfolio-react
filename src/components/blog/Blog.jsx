@@ -1,4 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+
 import "./BlogStyle.css";
 import Section from "../../styles/Section";
 import BlogCard from "./BlogCard";
@@ -7,6 +9,8 @@ import { ShowMoreButton } from "../../styles/Buttons/ShowMoreButton";
 
 const Blog = () => {
   const [postNumber, setPostNumber] = useState(4);
+  const [blogPost, setBlogPost] = useState([]);
+
   return (
     <Section
       className="blog"
@@ -15,9 +19,9 @@ const Blog = () => {
       sectionTitle="Blog"
       sectionSubtitle="recent articles"
     >
-      <article className="articles__container">
-        {BlogPosts.map(({ id, title, description, image }) => {
-          console.log(postNumber);
+      <article className="articles__container container">
+        {BlogPosts.map(({ id, title, description, image }, index) => {
+          if (index >= 2) return null;
           return (
             <BlogCard
               key={id}
@@ -28,7 +32,9 @@ const Blog = () => {
           );
         })}
       </article>
-      <ShowMoreButton />
+      <Link to="/blog">
+        <ShowMoreButton title="more blogs" icon="uil uil-arrow-up-right" />
+      </Link>
     </Section>
   );
 };

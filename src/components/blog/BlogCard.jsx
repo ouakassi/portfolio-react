@@ -11,7 +11,7 @@ const BlogCard = (props) => {
         <StyledTitle>{props.title}</StyledTitle>
         <p>{props.description}</p>
       </div>
-      <ShowMoreButton />
+      <ShowMoreButton title="read more" icon="uil-corner-down-right-alt" />
     </article>
   );
 };

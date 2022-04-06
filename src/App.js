@@ -1,11 +1,10 @@
 import React from "react";
-import Header from "./components/header/Header";
-import Hero from "./components/hero/Hero";
-import Projects from "./components/projects/Projects";
-import About from "./components/about/About";
-import Blog from "./components/blog/Blog";
-import Contact from "./components/contact/Contact";
-import Footer from "./components/footer/Footer";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+
+import Home from "./pages/Home";
+import Projects from "./pages/Projects";
+import Blog from "./pages/Blog";
+
 import SpinnerComponent from "./styles/SpinnerComponent";
 import ScrollComponent from "./styles/ScrollComponenet";
 
@@ -13,20 +12,24 @@ import "./styles/Globals.css";
 import "./styles/Layout.css";
 import "./styles/buttons.css";
 import "./styles/Base.css";
+import Header from "./components/header/Header";
+import Footer from "./components/footer/Footer";
 
 const App = () => {
   return (
     <>
       <SpinnerComponent />
-      <Header />
-      <Hero />
-      <Projects />
-      <About />
-      <Blog />
-      {/*<Contact />
+      <BrowserRouter>
+        <Header />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/projects" element={<Projects />} />
+          <Route path="/blog" element={<Blog />} />
+        </Routes>
+        <Footer />
+      </BrowserRouter>
 
-    <Footer />
-    <ScrollComponent /> */}
+      <ScrollComponent />
     </>
   );
 };

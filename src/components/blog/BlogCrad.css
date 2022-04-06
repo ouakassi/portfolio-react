@@ -1,77 +1,91 @@
-@media screen and (min-width: 300px) {
+.article {
+  position: relative;
+  display: flex;
+  flex-flow: column nowrap;
+  max-width: 25rem;
+  width: 45rem;
+  height: 45rem;
+  max-height: 50rem;
+  margin: 4rem 1rem;
+  border-radius: 10px;
+  background-image: linear-gradient(329deg, rgb(1 13 31) 0%, rgb(1 13 31) 30%);
+  box-shadow: rgb(11 245 214 / 55%) 0px 3px 0px 0px;
+  transition: 0.2s;
+}
+.article:hover,
+.article:focus {
+  box-shadow: rgb(11 245 214) 0px 5px 0px 0px, rgb(68 255 230) 0px -5px 0px 0px;
+}
+.article img {
+  margin-bottom: var(--mb-1);
+  border-radius: 10px 10px 0 0;
+}
+.article__data {
+  display: flex;
+  flex-flow: column nowrap;
+  padding: 1.5rem;
+  justify-content: center;
+}
+
+.article__data p {
+  display: block;
+  margin-bottom: var(--mb-0-5);
+  font-size: var(--small-font-size);
+  word-break: break-all;
+  height: 3.9em;
+  line-height: 1.3em;
+  overflow: hidden;
+}
+
+.article .show-more__button {
+  display: none;
+  width: fit-content;
+  height: fit-content;
+  position: absolute;
+  margin: auto;
+  bottom: 20%;
+  left: 0;
+  right: 0;
+}
+.article:hover .show-more__button {
+  display: block;
+}
+.article:hover h3 {
+  font-size: var(--h2-font-size);
+  position: absolute;
+  bottom: 60%;
+  align-self: center;
+  transition: 0.2s;
+  padding: 1rem;
+}
+.article:hover img,
+.article:hover p {
+  opacity: 0;
+}
+@media screen and (min-width: 375px) {
+  /* .article:hover h3 {
+    font-size: var(--normal-font-size);
+  } */
+}
+
+@media screen and (min-width: 568px) {
   .article {
-    position: relative;
-    display: flex;
-    flex-flow: column nowrap;
+    max-width: 34rem;
+  }
+  .article {
+    margin: 4rem 2rem;
+  }
+}
+@media screen and (min-width: 769px) {
+}
+@media screen and (min-width: 1024px) {
+  .article {
     max-width: 50rem;
-    min-height: 40rem;
-    margin: 4rem 1rem;
-    border-radius: 10px;
-    background-image: linear-gradient(
-      329deg,
-      rgb(1 13 31) 0%,
-      rgb(1 13 31) 30%
-    );
-    box-shadow: rgb(11 245 214 / 55%) 5px 5px 0px 0px;
-    transition: 0.2s;
-  }
-  .article:hover,
-  .article:focus {
-    box-shadow: rgb(11 245 214) 7px 7px 0px 0px;
-  }
-  .article img {
-    margin-bottom: var(--mb-1);
-    border-radius: 10px 10px 0 0;
-  }
-  .article__data {
-    display: flex;
-    flex-flow: column nowrap;
-    padding: 1.5rem;
-    min-height: 16rem;
-    justify-content: center;
-  }
-
-  .article__data p {
-    display: block;
-    margin-bottom: var(--mb-0-5);
-    font-size: var(--small-font-size);
-    word-break: break-all;
-    height: 3.9em;
-    line-height: 1.3em;
-    overflow: hidden;
-  }
-
-  .article .show-more__button {
-    display: none;
-    width: fit-content;
-    height: fit-content;
-    position: absolute;
-    margin: auto;
-    bottom: 0;
-    top: 0;
-    left: 0;
-    right: 0;
-  }
-  .article:hover .show-more__button {
-    display: block;
+    height: 50rem;
   }
   .article:hover h3 {
-    font-size: 1.4rem;
-    position: absolute;
-    top: 20%;
-    align-self: center;
-    transition: 0.2s;
-  }
-  .article:hover img,
-  .article:hover p {
-    opacity: 0;
+    font-size: var(--h2-font-size);
   }
 }
-@media screen and (max-width: 568px) {
-}
-@media screen and (max-width: 769px) {
-}
-@media screen and (max-width: 1024px) {
-}
-@media screen and (max-width: 1200px) {
+@media screen and (min-width: 1200px) {
 }

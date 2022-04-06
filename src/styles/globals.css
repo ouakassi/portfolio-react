@@ -28,7 +28,7 @@
 
   /*========== Font and typography ==========*/
   --body-font: "Poppins", sans-serif;
-  --biggest-font-size: 5rem;
+  --biggest-font-size: 4.5rem;
   --big-font-size: 3.2rem;
   --h1-font-size: 2.4rem;
   --h2-font-size: 2rem;
@@ -63,6 +63,7 @@
 /* Font size for large devices */
 @media screen and (min-width: 968px) {
   :root {
+    --biggest-font-size: 5.8rem;
     --big-font-size: 4.8rem;
     --h1-font-size: 3.6rem;
     --h2-font-size: 2.4rem;

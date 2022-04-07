@@ -25,35 +25,75 @@ const Header = () => {
           id="#nav-menu"
         >
           <ul className="nav__list grid">
-            <NavItem
-              name="home"
-              icon="uil uil-estate"
-              handleClick={handleClick}
-            />
+            <li className="nav__item">
+              <NavLink
+                style={({ isActive }) =>
+                  isActive ? { color: "var(--first-color)" } : { color: null }
+                }
+                onClick={() => handleClick(false)}
+                to="/"
+                className="nav__link "
+              >
+                <i className="uil uil-estate nav__icon" />
+                <span>home</span>
+              </NavLink>
+            </li>
 
-            <NavItem
-              name="projects"
-              icon="uil uil-folder-open"
-              handleClick={handleClick}
-            />
+            <li className="nav__item">
+              <NavLink
+                style={({ isActive }) =>
+                  isActive ? { color: "var(--first-color)" } : { color: null }
+                }
+                onClick={() => handleClick(false)}
+                to="/projects"
+                className="nav__link "
+              >
+                <i className="uil uil-folder-open nav__icon" />
+                <span>projects</span>
+              </NavLink>
+            </li>
 
-            <NavItem
-              name="about"
-              icon="uil uil-user-square"
-              handleClick={handleClick}
-            />
+            <li className="nav__item">
+              <NavLink
+                style={({ isActive }) =>
+                  isActive ? { color: "var(--first-color)" } : { color: null }
+                }
+                onClick={() => handleClick(false)}
+                to="/about"
+                className="nav__link"
+              >
+                <i className="uil uil-user-square nav__icon" />
+                <span>about</span>
+              </NavLink>
+            </li>
 
-            <NavItem
-              name="blog"
-              icon="uil uil-files-landscapes-alt"
-              handleClick={handleClick}
-            />
+            <li className="nav__item">
+              <NavLink
+                style={({ isActive }) =>
+                  isActive ? { color: "var(--first-color)" } : { color: null }
+                }
+                onClick={() => handleClick(false)}
+                to="/blog"
+                className="nav__link "
+              >
+                <i className="uil uil-files-landscapes-alt nav__icon" />
+                <span>blog</span>
+              </NavLink>
+            </li>
 
-            <NavItem
-              name="contact"
-              icon="uil uil-calling"
-              handleClick={handleClick}
-            />
+            <li className="nav__item">
+              <NavLink
+                style={({ isActive }) =>
+                  isActive ? { color: "var(--first-color)" } : { color: null }
+                }
+                onClick={() => handleClick(false)}
+                to="/contact"
+                className="nav__link "
+              >
+                <i className="uil uil-calling nav__icon" />
+                <span>contact</span>
+              </NavLink>
+            </li>
           </ul>
           <i
             className="uil uil-times nav__close"

@@ -8,9 +8,6 @@ const NavItem = ({ name, icon, handleClick }) => {
   return (
     <li className="nav__item">
       <NavLink
-        style={({ isActive }) =>
-          isActive ? console.log("active") : console.log("No")
-        }
         onClick={() => handleClick(false)}
         to={`/${name === "home" ? "" : name} `}
         className="nav__link "

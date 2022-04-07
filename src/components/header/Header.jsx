@@ -11,7 +11,7 @@ const Header = () => {
     setToggleNav(state);
   };
 
-  console.log(handleClick);
+  const activeClassName = "active-link";
 
   return (
     <header className="header" id="header">
@@ -27,12 +27,11 @@ const Header = () => {
           <ul className="nav__list grid">
             <li className="nav__item">
               <NavLink
-                style={({ isActive }) =>
-                  isActive ? { color: "var(--first-color)" } : { color: null }
-                }
                 onClick={() => handleClick(false)}
                 to="/"
-                className="nav__link "
+                className={({ isActive }) =>
+                  isActive ? `nav__link ${activeClassName}` : "nav__link"
+                }
               >
                 <i className="uil uil-estate nav__icon" />
                 <span>home</span>
@@ -41,12 +40,11 @@ const Header = () => {
 
             <li className="nav__item">
               <NavLink
-                style={({ isActive }) =>
-                  isActive ? { color: "var(--first-color)" } : { color: null }
-                }
                 onClick={() => handleClick(false)}
                 to="/projects"
-                className="nav__link "
+                className={({ isActive }) =>
+                  isActive ? `nav__link ${activeClassName}` : "nav__link"
+                }
               >
                 <i className="uil uil-folder-open nav__icon" />
                 <span>projects</span>
@@ -55,12 +53,11 @@ const Header = () => {
 
             <li className="nav__item">
               <NavLink
-                style={({ isActive }) =>
-                  isActive ? { color: "var(--first-color)" } : { color: null }
-                }
                 onClick={() => handleClick(false)}
                 to="/about"
-                className="nav__link"
+                className={({ isActive }) =>
+                  isActive ? `nav__link ${activeClassName}` : "nav__link"
+                }
               >
                 <i className="uil uil-user-square nav__icon" />
                 <span>about</span>
@@ -69,12 +66,11 @@ const Header = () => {
 
             <li className="nav__item">
               <NavLink
-                style={({ isActive }) =>
-                  isActive ? { color: "var(--first-color)" } : { color: null }
+                className={({ isActive }) =>
+                  isActive ? `nav__link ${activeClassName}` : "nav__link"
                 }
                 onClick={() => handleClick(false)}
                 to="/blog"
-                className="nav__link "
               >
                 <i className="uil uil-files-landscapes-alt nav__icon" />
                 <span>blog</span>
@@ -83,12 +79,11 @@ const Header = () => {
 
             <li className="nav__item">
               <NavLink
-                style={({ isActive }) =>
-                  isActive ? { color: "var(--first-color)" } : { color: null }
+                className={({ isActive }) =>
+                  isActive ? `nav__link ${activeClassName}` : "nav__link"
                 }
                 onClick={() => handleClick(false)}
                 to="/contact"
-                className="nav__link "
               >
                 <i className="uil uil-calling nav__icon" />
                 <span>contact</span>

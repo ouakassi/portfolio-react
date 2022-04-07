@@ -1,18 +1,23 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
+
 import "./NavItem.css";
 
 const NavItem = ({ name, icon, handleClick }) => {
   console.log(handleClick);
   return (
     <li className="nav__item">
-      <a
+      <NavLink
+        style={({ isActive }) =>
+          isActive ? console.log("active") : console.log("No")
+        }
         onClick={() => handleClick(false)}
-        href={`/#${name}`}
-        className="nav__link"
+        to={`/${name === "home" ? "" : name} `}
+        className="nav__link "
       >
         <i className={`${icon} nav__icon`} />
-        {name}
-      </a>
+        <span className="active-linkf">{name}</span>
+      </NavLink>
     </li>
   );
 };

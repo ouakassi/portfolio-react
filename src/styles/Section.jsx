@@ -1,5 +1,5 @@
 import React from "react";
-import "./SectionStyle.css";
+import "./Section.css";
 
 const SectionTitle = (props) => (
   <section id={props.id} className={`${props.className} section`}>

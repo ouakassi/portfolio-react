@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 import "./HeaderStyle.css";
 import NavItem from "./NavItem";
@@ -16,45 +16,38 @@ const Header = () => {
   return (
     <header className="header" id="header">
       <nav className="nav">
-        <a href="#logo" className="nav__logo">
+        <NavLink to="/" className="nav__logo">
           OUAKASSI
-        </a>
+        </NavLink>
         <div
           // show the navbar
           className={`nav__menu ${toggleNav ? "show-menu " : "hide-nav"}`}
           id="#nav-menu"
         >
           <ul className="nav__list grid">
-            <Link to="/">
-              {" "}
-              <NavItem
-                name="home"
-                icon="uil uil-estate"
-                handleClick={handleClick}
-              />
-            </Link>
-            <Link to="/projects">
-              {" "}
-              <NavItem
-                name="projects"
-                icon="uil uil-folder-open"
-                handleClick={handleClick}
-              />
-            </Link>
+            <NavItem
+              name="home"
+              icon="uil uil-estate"
+              handleClick={handleClick}
+            />
+
+            <NavItem
+              name="projects"
+              icon="uil uil-folder-open"
+              handleClick={handleClick}
+            />
 
             <NavItem
               name="about"
               icon="uil uil-user-square"
               handleClick={handleClick}
             />
-            <Link to="/blog">
-              {" "}
-              <NavItem
-                name="blog"
-                icon="uil uil-files-landscapes-alt"
-                handleClick={handleClick}
-              />
-            </Link>
+
+            <NavItem
+              name="blog"
+              icon="uil uil-files-landscapes-alt"
+              handleClick={handleClick}
+            />
 
             <NavItem
               name="contact"

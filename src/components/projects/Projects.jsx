@@ -46,6 +46,7 @@ const Projects = () => {
             setProjectTotal((prevProjetTotal) => prevProjetTotal + 1)
           }
           icon="uil uil-direction"
+          title="All projects"
         />
       </Link>
       <Outlet />

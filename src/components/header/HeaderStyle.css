@@ -81,10 +81,6 @@
   transition: 0.2s;
 }
 
-.rotate {
-  transform: rotate(340deg);
-}
-
 /* Change background header */
 .scroll-header {
   box-shadow: 0 -1px 4px rgba(0, 0, 0, 0.15);

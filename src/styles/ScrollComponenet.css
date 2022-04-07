@@ -1,15 +1,15 @@
 /*========== SCROLL UP ==========*/
 .scrollup {
   position: fixed;
-  right: 1.6rem;
-  bottom: -20%;
+  right: 5%;
+  bottom: 10%;
   background-color: var(--first-color);
-  opacity: 0.8;
+  cursor: pointer;
   padding: 0 0.5rem;
-  border-radius: 0.6rem;
+  border-radius: 10px;
   z-index: var(--z-tooltip);
-  transition: 0.4s;
-  box-shadow: 0 4px 5px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 4px 5px rgb(0 0 0 / 50%);
+  transition: 2s;
 }
 .scrollup:hover {
   background-color: var(--first-color-alt);

@@ -33,7 +33,7 @@ const Blog = () => {
         })}
       </article>
       <Link to="/blog">
-        <ShowMoreButton title="more blogs" icon="uil uil-arrow-up-right" />
+        <ShowMoreButton title="all articles" icon="uil uil-arrow-up-right" />
       </Link>
     </Section>
   );

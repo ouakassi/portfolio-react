@@ -1,5 +1,4 @@
 .button {
-  display: inline-block;
   color: var(--title-color);
   font-weight: var(--font-semi-bold);
   padding: 1rem;
@@ -10,19 +9,17 @@
     rgb(58, 231, 179) 85%
   );
   background-repeat: no-repeat;
-  background-size: 100% 0.5rem;
+  background-size: 100% 3px;
   background-position: 0px 100%;
-  border-radius: 20px;
+  border-radius: 5px;
   transition: 0.2s;
   outline: transparent solid 2px;
   outline-offset: 2px;
 }
 .button:hover,
 .button:focus {
-  color: #000;
-  transform: scale(1.2);
-  background-size: 100% 100%;
-  background-position: 0px 100%;
+  transform: scale(1.1);
+  background-size: 100% 20%;
 }
 
 .button__icon {

@@ -8,7 +8,7 @@ const Contact = () => (
     id="contact"
     icon="uil uil-files-landscapes-alt"
     sectionTitle="contact me"
-    sectionSubtitle="recent articles"
+    sectionSubtitle="get in touch!"
   >
     <div className="contact__container container">
       <div className="contact__info">

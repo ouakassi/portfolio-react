@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 
 import "./HeaderStyle.css";
-import NavItem from "./NavItem";
 
 const Header = () => {
   const [toggleNav, setToggleNav] = useState(false);

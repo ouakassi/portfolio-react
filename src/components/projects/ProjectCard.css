@@ -22,7 +22,6 @@
   flex-wrap: nowrap;
   flex-direction: column;
   width: max(85%, 85vw);
-  height: 100%;
   padding: 2rem;
   margin: 6rem 0;
   background-image: linear-gradient(
@@ -31,40 +30,28 @@
     rgb(4 4 4 / 20%) 30%,
     rgb(1 17 33) 90%
   );
-  border-radius: 30px;
-  box-shadow: inset rgb(68 255 229 / 25%) 0 0 0px 2px,
-    inset rgb(0 255 178 / 10%) 0 0 0px 2px, rgb(0 0 0 / 50%) 1px 4px 5px 2px;
+  border-radius: 10px;
   transition: 0.2s;
 }
-.project__data {
-  width: calc(100% - 10%);
-  display: flex;
-  flex-direction: column;
-}
-
-.project__img {
-  width: max(90%, 80%);
-  border-radius: 5px;
-  margin: 0 0 var(--mb-1) 0;
-  box-shadow: rgba(68, 140, 255, 0.5) 0px 0px 0px 1px,
-    rgba(0, 255, 179, 0.5) 0 0px 0px 2px;
-}
-
 .project__content:hover,
 .project__content:focus {
   box-shadow: inset rgb(68 255 230) 0px 0px 0px 1px,
     inset rgb(0 255 179) 0 0 0px 2px;
 }
 
-.project__content:hover .project__img {
-  box-shadow: rgb(68 141 255) 0px 0px 0px 1px, rgb(0 255 178) 0 0px 0px 2px,
-    rgb(3 249 182 / 30%) 0 0 16px 0px;
-  transition: 0.2s;
+.project__data {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
 }
-/* .project__data,
-  .project__img {
-    transform: translateY(-14rem);
-  } */
+
+.project__img {
+  max-width: fit-content;
+  width: 100%;
+}
+.project__img img {
+  border-radius: 5px;
+}
 
 .project__data h3 {
   margin-bottom: var(--mb-1);
@@ -115,38 +102,12 @@
   box-shadow: 1px 1px 1px 1px;
 }
 
-@media screen and (min-width: 769px) {
-  .project__container {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .project__content {
-    flex-direction: row;
-    width: max(80%, 90vw);
-    padding: 3rem;
-    align-content: center;
-    justify-content: center;
-  }
-
-  .project__img {
-    width: 50%;
-    margin: 0 4rem 0 0;
-  }
-
-  .project__links {
-    display: flex;
-    flex-direction: row;
-  }
-}
 @media screen and (min-width: 1024px) {
   .project__content {
     flex-direction: row;
-    width: 80vw;
-    padding: 3rem;
-    align-content: center;
-    justify-content: center;
   }
-}
-@media screen and (max-width: 1200px) {
+
+  .project__img {
+    margin: 0 2rem 0 0;
+  }
 }

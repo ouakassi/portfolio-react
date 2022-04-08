@@ -6,7 +6,7 @@ import Home from "./pages/Home";
 import Projects from "./pages/Projects";
 import About from "./pages/About";
 import Blog from "./pages/Blog";
-import Contact from "./pages/Contact";
+import Contact from "./components/contact/Contact";
 import Footer from "./components/footer/Footer";
 
 import SpinnerComponent from "./styles/SpinnerComponent";

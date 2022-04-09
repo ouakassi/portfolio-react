@@ -2,6 +2,7 @@ import React from "react";
 import "./ProjectCard.css";
 import StyledParagraph from "./../../styles/StyledParagrapgh";
 import StyledLinedTitle from "./../../styles/StyledLinedTitle";
+import ButtonPrimary from "../../styles/Buttons/ButtonPrimary";
 
 const ProjectBigCard = (props) => (
   <div className="project__content">
@@ -15,14 +16,16 @@ const ProjectBigCard = (props) => (
       </StyledParagraph>
       <div className="project__languages">{props.tags}</div>
       <div className="project__links">
-        <a href={props.github} className="button">
-          <i className="uil uil-github project__link" />
-          Github
-        </a>
-        <a href={props.website} className="button">
-          <i className="uil uil-globe project__link" />
-          Website
-        </a>
+        <ButtonPrimary
+          title="Github"
+          icon="uil uil-github"
+          link="https://www.google.com"
+        />
+        <ButtonPrimary
+          title="Website"
+          icon="uil uil-globe"
+          link="https://www.google.com"
+        />
       </div>
     </div>
   </div>

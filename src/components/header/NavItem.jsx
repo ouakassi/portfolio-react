@@ -13,7 +13,7 @@ const NavItem = ({ name, icon, handleClick }) => {
         className="nav__link "
       >
         <i className={`${icon} nav__icon`} />
-        <span className="active-linkf">{name}</span>
+        <span>{name}</span>
       </NavLink>
     </li>
   );

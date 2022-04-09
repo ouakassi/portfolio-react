@@ -15,7 +15,6 @@ const ScrollComponent = () => {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  console.log(windowHeight);
   if (windowHeight >= 400)
     return (
       <div onClick={handlClick} className="scrollup">

@@ -1,4 +1,6 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import ButtonPrimary from "../../styles/Buttons/ButtonPrimary";
 
 import "./HeroStyle.css";
 import SocialLink from "./SocialLink";
@@ -35,9 +37,9 @@ const Hero = () => (
             companies to launch production web applications to their customers.
             I love programming , creating, launching, learning, and Gaming.
           </p>
-          <a href="#contact" className="button button--flex">
-            Let's Talk <i className="uil uil-message button__icon" />
-          </a>
+          <Link to={"/contact"}>
+            <ButtonPrimary title="Let's Talk" icon="uil uil-message" />
+          </Link>
         </div>
         <div className="home__img__container">
           <img

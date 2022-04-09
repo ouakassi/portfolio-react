@@ -1,23 +1,43 @@
-import React, { useState } from "react";
-import { NavLink } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { NavLink, Link } from "react-router-dom";
 
 import "./HeaderStyle.css";
 
 const Header = () => {
   const [toggleNav, setToggleNav] = useState(false);
+  // const [windowHeight, setwindowHeight] = useState(0);
 
   const handleClick = (state) => {
     setToggleNav(state);
   };
 
+  // useEffect(() => {
+  //   const onScroll = () => setwindowHeight(window.pageYOffset);
+
+  //   // clean up code
+  //   window.removeEventListener("scroll", onScroll);
+  //   window.addEventListener("scroll", onScroll, { passive: true });
+  //   return () => window.removeEventListener("scroll", onScroll);
+  // }, []);
+
+  // setwindowHeight((prevWindowHessight) => console.log(prevWdsdindowHeight));
+
   const activeClassName = "active-link";
 
   return (
-    <header className="header" id="header">
+    <header
+      className="header"
+      id="header"
+      // style={
+      //   windowHeight > 50
+      //     ? { boxShadow: "rgb(1 13 31) 0px 0px 15px 0px" }
+      //     : console.log("no")
+      // }
+    >
       <nav className="nav">
-        <NavLink to="/" className="nav__logo">
+        <Link to="/" className="nav__logo">
           OUAKASSI
-        </NavLink>
+        </Link>
         <div
           // show the navbar
           className={`nav__menu ${toggleNav ? "show-menu " : "hide-nav"}`}
@@ -28,9 +48,7 @@ const Header = () => {
               <NavLink
                 onClick={() => handleClick(false)}
                 to="/"
-                className={({ isActive }) =>
-                  isActive ? `nav__link ${activeClassName}` : "nav__link"
-                }
+                className="nav__link"
               >
                 <i className="uil uil-estate nav__icon" />
                 <span>home</span>
@@ -41,9 +59,7 @@ const Header = () => {
               <NavLink
                 onClick={() => handleClick(false)}
                 to="/projects"
-                className={({ isActive }) =>
-                  isActive ? `nav__link ${activeClassName}` : "nav__link"
-                }
+                className="nav__link"
               >
                 <i className="uil uil-folder-open nav__icon" />
                 <span>projects</span>
@@ -54,9 +70,7 @@ const Header = () => {
               <NavLink
                 onClick={() => handleClick(false)}
                 to="/about"
-                className={({ isActive }) =>
-                  isActive ? `nav__link ${activeClassName}` : "nav__link"
-                }
+                className="nav__link"
               >
                 <i className="uil uil-user-square nav__icon" />
                 <span>about</span>
@@ -65,9 +79,7 @@ const Header = () => {
 
             <li className="nav__item">
               <NavLink
-                className={({ isActive }) =>
-                  isActive ? `nav__link ${activeClassName}` : "nav__link"
-                }
+                className="nav__link"
                 onClick={() => handleClick(false)}
                 to="/blog"
               >
@@ -78,9 +90,7 @@ const Header = () => {
 
             <li className="nav__item">
               <NavLink
-                className={({ isActive }) =>
-                  isActive ? `nav__link ${activeClassName}` : "nav__link"
-                }
+                className="nav__link"
                 onClick={() => handleClick(false)}
                 to="/contact"
               >

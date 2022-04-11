@@ -11,4 +11,4 @@ The portfolio is in progress .. will be available soon
 
 ## Some images...
 
-![Alt text](./public//images/portfolio-screenshot "Home Page")
+![Alt text](./public//images/portfolio-screenshot.jpg "Home Page")

@@ -5,6 +5,10 @@ who am i ?
 what i do ?
 working to add some other features like blogs , helpful resources for other developers .
 
-## Available Scripts
+## Still in progress...
 
 The portfolio is in progress .. will be available soon
+
+## Some images...
+
+![Alt text](./public//images/portfolio-screenshot "Home Page")

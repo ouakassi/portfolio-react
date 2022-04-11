@@ -18,6 +18,7 @@ import "./styles/buttons.css";
 import "./styles/Base.css";
 
 import ScrollToTop from "./hooks/useScrollToTop";
+import NoMatch from "./pages/NoMatch";
 
 const App = () => {
   return (
@@ -25,13 +26,14 @@ const App = () => {
       <SpinnerComponent />
       <BrowserRouter>
         <Header />
-        <ScrollToTop />;
+        {/* <ScrollToTop /> */}
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/projects" element={<Projects />} />
           <Route path="/about" element={<About />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="*" element={<NoMatch />} />
         </Routes>
         <Footer />
       </BrowserRouter>

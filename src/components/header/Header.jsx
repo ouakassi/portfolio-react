@@ -11,29 +11,8 @@ const Header = () => {
     setToggleNav(state);
   };
 
-  // useEffect(() => {
-  //   const onScroll = () => setwindowHeight(window.pageYOffset);
-
-  //   // clean up code
-  //   window.removeEventListener("scroll", onScroll);
-  //   window.addEventListener("scroll", onScroll, { passive: true });
-  //   return () => window.removeEventListener("scroll", onScroll);
-  // }, []);
-
-  // setwindowHeight((prevWindowHessight) => console.log(prevWdsdindowHeight));
-
-  const activeClassName = "active-link";
-
   return (
-    <header
-      className="header"
-      id="header"
-      // style={
-      //   windowHeight > 50
-      //     ? { boxShadow: "rgb(1 13 31) 0px 0px 15px 0px" }
-      //     : console.log("no")
-      // }
-    >
+    <header className="header" id="header">
       <nav className="nav">
         <Link to="/" className="nav__logo">
           OUAKASSI
@@ -68,17 +47,6 @@ const Header = () => {
 
             <li className="nav__item">
               <NavLink
-                onClick={() => handleClick(false)}
-                to="/about"
-                className="nav__link"
-              >
-                <i className="uil uil-user-square nav__icon" />
-                <span>about</span>
-              </NavLink>
-            </li>
-
-            <li className="nav__item">
-              <NavLink
                 className="nav__link"
                 onClick={() => handleClick(false)}
                 to="/blog"
@@ -90,12 +58,12 @@ const Header = () => {
 
             <li className="nav__item">
               <NavLink
-                className="nav__link"
                 onClick={() => handleClick(false)}
-                to="/contact"
+                to="/about"
+                className="nav__link"
               >
-                <i className="uil uil-calling nav__icon" />
-                <span>contact</span>
+                <i className="uil uil-user-square nav__icon" />
+                <span>about</span>
               </NavLink>
             </li>
           </ul>
@@ -106,7 +74,7 @@ const Header = () => {
         </div>
         <div className="nav__btns">
           <div className="nav__toggle" onClick={() => handleClick(true)}>
-            <i className="uil uil-slack" />
+            <i className="uil-align-alt" />
           </div>
         </div>
       </nav>

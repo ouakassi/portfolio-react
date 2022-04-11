@@ -26,6 +26,12 @@
     rgb(11, 245, 214) 70%
   );
 
+  --background-color-2: linear-gradient(
+    120deg,
+    rgb(3 249 174 / 30%),
+    rgb(3 255 178) 50%,
+    rgb(3 244 171 / 30%) 90%
+  );
   /*========== Font and typography ==========*/
   --body-font: "Poppins", sans-serif;
   --biggest-font-size: 4.5rem;

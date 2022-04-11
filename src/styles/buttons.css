@@ -1,9 +1,15 @@
 .button__icon {
-  font-size: 2rem;
+  font-size: 2.5rem;
   margin-left: var(--mb-0-5);
 }
 
 .button--flex {
   display: inline-flex;
   align-items: center;
+}
+
+@media screen and (max-width: 769px) {
+  .button__icon {
+    font-size: 2rem;
+  }
 }

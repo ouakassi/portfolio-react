@@ -6,7 +6,7 @@ const Contact = () => (
   <Section
     className="contact"
     id="contact"
-    icon="uil uil-files-landscapes-alt"
+    icon="uil uil-calling"
     sectionTitle="contact me"
     sectionSubtitle="get in touch!"
   >

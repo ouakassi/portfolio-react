@@ -5,7 +5,7 @@ import "./ProjectsStyles.css";
 
 import SectionTitle from "../../styles/Section";
 import ProjectCard from "./ProjectCard";
-import { projectsData } from "./../../data/Data.js";
+import { projectsData } from "../../data/db.js";
 import checkColor from "./checkColor";
 import { ShowMoreButton } from "../../styles/Buttons/ShowMoreButton";
 

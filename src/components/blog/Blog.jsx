@@ -4,12 +4,15 @@ import { Link } from "react-router-dom";
 import "./BlogStyle.css";
 import Section from "../../styles/Section";
 import BlogCard from "./BlogCard";
-import { BlogPosts } from "../../data/Data";
 import { ShowMoreButton } from "../../styles/Buttons/ShowMoreButton";
+import { useFetch } from "../../hooks/073 useFetch";
 
 const Blog = () => {
+  const url = "http://localhost:3000/articles";
+
+  const { data: articles, isPending, error } = useFetch(url);
+
   const [postNumber, setPostNumber] = useState(4);
-  const [blogPost, setBlogPost] = useState([]);
 
   return (
     <Section
@@ -20,17 +23,20 @@ const Blog = () => {
       sectionSubtitle="recent articles"
     >
       <article className="articles__container container">
-        {BlogPosts.map(({ id, title, description, image }, index) => {
-          if (index >= 2) return null;
-          return (
-            <BlogCard
-              key={id}
-              title={title}
-              description={description}
-              image={image}
-            />
-          );
-        })}
+        {isPending && <div>Loading .....</div>}
+        {error && <div>{error} .....</div>}
+        {articles &&
+          articles.map(({ id, title, description, image }, index) => {
+            if (index >= 2) return null;
+            return (
+              <BlogCard
+                key={id}
+                title={title}
+                description={description}
+                image={image}
+              />
+            );
+          })}
       </article>
       <Link to="/blog">
         <ShowMoreButton title="all articles" icon="uil uil-arrow-up-right" />

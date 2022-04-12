@@ -2,10 +2,12 @@ import React from "react";
 
 import Section from "../styles/Section";
 import BlogCard from "../components/blog/BlogCard";
-
-import { BlogPosts } from "../data/Data";
+import { useFetch } from "../hooks/073 useFetch";
 
 export default function Blog() {
+  const url = "http://localhost:3000/articles";
+
+  const { data: articles, isPending, error } = useFetch(url);
   return (
     <Section
       className="blog"
@@ -15,16 +17,20 @@ export default function Blog() {
       sectionSubtitle="recent articles"
     >
       <article className="articles__container container">
-        {BlogPosts.map(({ id, title, description, image }, index) => {
-          return (
-            <BlogCard
-              key={id}
-              title={title}
-              description={description}
-              image={image}
-            />
-          );
-        })}
+        {isPending && <div>Loading .....</div>}
+        {error && <div>{error} .....</div>}
+        {articles &&
+          articles.map(({ id, title, description, image }, index) => {
+            return (
+              <BlogCard
+                key={id}
+                title={title}
+                description={description}
+                image={image}
+                id={id}
+              />
+            );
+          })}
       </article>
     </Section>
   );

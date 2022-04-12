@@ -1,6 +1,6 @@
 import React from "react";
 
-import { projectsData } from "../data/Data";
+import { projectsData } from "../data/db";
 import ProjectCard from "../components/projects/ProjectCard";
 import checkColor from "../components/projects/checkColor.js";
 import SectionTitle from "../styles/Section";

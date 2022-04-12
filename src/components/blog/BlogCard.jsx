@@ -2,6 +2,7 @@ import React from "react";
 import "./BlogCrad.css";
 import { ShowMoreButton } from "../../styles/Buttons/ShowMoreButton";
 import StyledTitle from "../../styles/StyledTitle";
+import { Link } from "react-router-dom";
 
 const BlogCard = (props) => {
   return (
@@ -11,7 +12,9 @@ const BlogCard = (props) => {
         <StyledTitle>{props.title}</StyledTitle>
         <p>{props.description}</p>
       </div>
-      <ShowMoreButton title="read more" icon="uil-corner-down-right-alt" />
+      <Link to={`/blog/${props.id}`}>
+        <ShowMoreButton title="read more" icon="uil-corner-down-right-alt" />
+      </Link>
     </article>
   );
 };

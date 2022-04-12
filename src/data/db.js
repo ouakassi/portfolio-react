@@ -52,7 +52,7 @@ export const stackLangs = [
   "typescript",
 ];
 
-export const BlogPosts = [
+export const articles = [
   {
     id: 0,
     title: "Top 10 Javascript functions",
@@ -64,14 +64,14 @@ export const BlogPosts = [
     id: 1,
     title: "Top 10 Javascript functions",
     description:
-      "Why? Inconsistencies between keyboard shortcuts and keyboard commands used by people using screenreaders and keyboards complicate accessibility.",
+      "that? Inconsistencies between keyboard shortcuts and keyboard commands used by people using screenreaders and keyboards complicate accessibility.",
     image: "./images/portfolio3.jpg",
   },
   {
     id: 2,
     title: "Top 10 Javascript functions",
     description:
-      "Why? Inconsistencies between keyboard shortcuts and keyboard commands used by people using screenreaders and keyboards complicate accessibility.",
+      "see? Inconsistencies between keyboard shortcuts and keyboard commands used by people using screenreaders and keyboards complicate accessibility.",
     image: "./images/portfolio1.jpg",
   },
   {

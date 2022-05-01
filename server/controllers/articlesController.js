@@ -51,7 +51,7 @@ const deleteArticle = asyncHandler(async (req, res) => {
   }
 
   const deletedArticle = await Article.findByIdAndDelete(articleId);
-  res.status(202).json(deletedArticle);
+  res.status(202).json({ id: deletedArticle.id });
 });
 
 module.exports = {

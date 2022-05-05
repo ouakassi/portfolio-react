@@ -7,7 +7,7 @@ export default function Article() {
   let { id } = useParams();
   let navigate = useNavigate();
 
-  const url = `http://localhost:3000/articles/${id}`;
+  const url = `http://localhost:5000/api/articles/${id}`;
 
   const { data: article, isPending, error } = useFetch(url);
 

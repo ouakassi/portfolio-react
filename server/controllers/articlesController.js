@@ -8,6 +8,19 @@ const getArticles = asyncHandler(async (req, res) => {
   res.status(200).json(article);
 });
 
+// Get one article
+// Get /api/articles/:id
+// Public
+const getArticle = asyncHandler(async (req, res) => {
+  const articleId = req.params.id;
+  const article = await Article.findById(articleId);
+  if (!article) {
+    res.status(400);
+    throw new Error("article not found");
+  }
+  res.status(200).json(article);
+});
+
 // set article
 // Post /api/articles
 // Private
@@ -21,7 +34,7 @@ const setArticle = asyncHandler(async (req, res) => {
 });
 
 // update article
-// Put /api/articles:id
+// Put /api/articles/:id
 // Private
 const updateArticle = asyncHandler(async (req, res) => {
   const articleId = req.params.id;
@@ -39,7 +52,7 @@ const updateArticle = asyncHandler(async (req, res) => {
 });
 
 // delete article
-// Delete /api/articles:id
+// Delete /api/articles/:id
 // Private
 const deleteArticle = asyncHandler(async (req, res) => {
   const articleId = req.params.id;
@@ -51,11 +64,12 @@ const deleteArticle = asyncHandler(async (req, res) => {
   }
 
   const deletedArticle = await Article.findByIdAndDelete(articleId);
-  res.status(202).json({ id: deletedArticle.id });
+  res.status(204).json({ id: deletedArticle.id });
 });
 
 module.exports = {
   getArticles,
+  getArticle,
   setArticle,
   updateArticle,
   deleteArticle,

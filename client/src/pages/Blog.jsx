@@ -4,13 +4,10 @@ import Section from "../styles/Section";
 import BlogCard from "../components/blog/BlogCard";
 import { useFetch } from "../hooks/073 useFetch";
 
-const Blog = (props) => {
-  const url = "http://localhost:3000/articles";
+const Blog = () => {
+  const url = "http://localhost:5000/api/articles/";
 
   const { data: articles, isPending, error } = useFetch(url);
-  const { data: posts } = useFetch("http://localhost:3000/oussama");
-
-  console.log(posts);
 
   return (
     <Section
@@ -24,13 +21,13 @@ const Blog = (props) => {
         {isPending && <div>Loading .....</div>}
         {error && <div>{error} .....</div>}
         {articles &&
-          articles.map(({ id, title, description, image }, index) => {
+          articles.map(({ _id: id, title, description, imgurl }, index) => {
             return (
               <BlogCard
                 key={id}
                 title={title}
                 description={description}
-                image={image}
+                image={imgurl}
                 id={id}
               />
             );

@@ -3,6 +3,7 @@ const router = express.Router();
 
 const {
   getArticles,
+  getArticle,
   setArticle,
   updateArticle,
   deleteArticle,
@@ -10,6 +11,6 @@ const {
 
 router.route("/").get(getArticles).post(setArticle);
 
-router.route("/:id").put(updateArticle).delete(deleteArticle);
+router.route("/:id").get(getArticle).put(updateArticle).delete(deleteArticle);
 
 module.exports = router;

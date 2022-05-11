@@ -1,15 +1,17 @@
 import React, { useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import { useFetch } from "../hooks/073 useFetch";
+import { useFetch } from "../hooks/useFetch";
 import "./Article.css";
 
 export default function Article() {
-  let { id } = useParams();
+  let { slug } = useParams();
   let navigate = useNavigate();
 
-  const url = `http://localhost:5000/api/articles/${id}`;
+  const url = `http://localhost:5000/api/articles/${slug}`;
 
   const { data: article, isPending, error } = useFetch(url);
+
+  console.log(article);
 
   useEffect(() => {
     if (error)
@@ -24,8 +26,12 @@ export default function Article() {
       {error && <div>{error} .....</div>}
       {article && (
         <div>
-          <div>{article.id}</div>
-          <div>{article.description}</div>{" "}
+          <div>{article._id}</div>
+          <div>{article.title}</div>
+          <img src={article.imgurl} alt="" />
+          <div>{article.description}</div>
+          <div>{article.slug}</div>
+          <div>{article.date.split("T")[0]} </div>
         </div>
       )}
     </div>

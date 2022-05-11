@@ -10,9 +10,10 @@ const BlogCard = (props) => {
       <img src={props.image} alt={props.title} />
       <div className="article__data">
         <StyledTitle>{props.title}</StyledTitle>
+        <StyledTitle>{props.date}</StyledTitle>
         <p>{props.description}</p>
       </div>
-      <Link to={`/blog/${props.id}`}>
+      <Link to={`/blog/${props.slug}`}>
         <ShowMoreButton title="read more" icon="uil-corner-down-right-alt" />
       </Link>
     </article>

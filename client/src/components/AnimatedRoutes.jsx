@@ -19,7 +19,7 @@ export default function AnimatedRoutes() {
         <Route path="/projects" element={<Projects />} />
         <Route path="/about" element={<About />} />
         <Route path="/blog" element={<Blog />} />
-        <Route path="/blog/:id" element={<Article />} />
+        <Route path="/blog/:slug" element={<Article />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="*" element={<NoMatch />} />
       </Routes>{" "}

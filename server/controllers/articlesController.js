@@ -12,8 +12,9 @@ const getArticles = asyncHandler(async (req, res) => {
 // Get /api/articles/:id
 // Public
 const getArticle = asyncHandler(async (req, res) => {
-  const articleId = req.params.id;
-  const article = await Article.findById(articleId);
+  const articleSlug = req.params.slug;
+  const article = await Article.findOne({ slug: articleSlug });
+  console.log(articleSlug);
   if (!article) {
     res.status(400);
     throw new Error("article not found");

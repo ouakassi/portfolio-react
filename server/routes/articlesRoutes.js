@@ -10,7 +10,7 @@ const {
 } = require("../controllers/articlesController");
 
 router.route("/").get(getArticles).post(setArticle);
-
-router.route("/:id").get(getArticle).put(updateArticle).delete(deleteArticle);
+router.route("/:slug").get(getArticle);
+router.route("/:id").put(updateArticle).delete(deleteArticle);
 
 module.exports = router;

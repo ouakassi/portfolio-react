@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 import "./BlogStyle.css";
 import Section from "../../styles/Section";
 import BlogCard from "./BlogCard";
 import { ShowMoreButton } from "../../styles/Buttons/ShowMoreButton";
-import { useFetch } from "../../hooks/073 useFetch";
+import { useFetch } from "../../hooks/useFetch";
 
 const Blog = () => {
   const url = "http://localhost:3000/articles";

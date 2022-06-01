@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useRef } from "react";
 import "./ProjectCard.css";
-import StyledParagraph from "./../../styles/StyledParagrapgh";
-import StyledLinedTitle from "./../../styles/StyledLinedTitle";
-import ButtonPrimary from "../../styles/Buttons/ButtonPrimary";
+import StyledParagraph from "./../../components/StyledParagrapgh";
+import StyledLinedTitle from "./../../components/StyledLinedTitle";
+import ButtonPrimary from "../Buttons/ButtonPrimary";
 
 import { motion } from "framer-motion";
 

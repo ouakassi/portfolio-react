@@ -1,5 +1,5 @@
 import React from "react";
-import ButtonPrimary from "../../styles/Buttons/ButtonPrimary";
+import ButtonPrimary from "../Buttons/ButtonPrimary";
 import "./HeroStyle.css";
 import SocialLink from "./SocialLink";
 

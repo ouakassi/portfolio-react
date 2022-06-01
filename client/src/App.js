@@ -9,8 +9,8 @@ import "./styles/Base.css";
 import Header from "./components/header/Header";
 import Footer from "./components/footer/Footer";
 
-import SpinnerComponent from "./styles/SpinnerComponent";
-import ScrollComponent from "./styles/ScrollComponenet";
+import SpinnerComponent from "./components/SpinnerComponent";
+import ScrollComponent from "./components/ScrollComponenet";
 
 import ScrollToTop from "./hooks/useScrollToTop";
 import AnimatedRoutes from "./components/AnimatedRoutes";

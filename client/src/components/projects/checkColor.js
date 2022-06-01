@@ -1,6 +1,17 @@
 import React from "react";
 import LanguageComponent from "./LanguageComponent";
 
+const tags = [
+  "javascript",
+  "react",
+  "node",
+  "mongodb",
+  "html",
+  "css",
+  "typescript",
+  "express",
+];
+
 const checkColor = (tag, i, className) => {
   if (tag.toLocaleLowerCase() === "javascript")
     return (

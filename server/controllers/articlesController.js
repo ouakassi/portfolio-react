@@ -1,10 +1,20 @@
 const Article = require("../models/articleModel");
 const asyncHandler = require("express-async-handler");
+
 // Get articles
 // Get /api/articles
 // Public
 const getArticles = asyncHandler(async (req, res) => {
-  const article = await Article.find({});
+  const query = req.query;
+  let article = {};
+
+  if (!query) {
+    article = await Article.find(query);
+  } else {
+    article = await Article.find(query);
+  }
+  console.log(article);
+  console.log(query);
   res.status(200).json(article);
 });
 

@@ -1,11 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
+import { useFetch } from "../hooks/useFetch";
 
-import { projectsData } from "../data/db";
 import ProjectCard from "../components/projects/ProjectCard";
 import checkColor from "../components/projects/checkColor.js";
-import SectionTitle from "../styles/Section";
+import SectionTitle from "../components/Section";
 
-export default function Projects() {
+const Projects = () => {
+  const [url, setUrl] = useState("/projects/");
+
+  const { data: projects, isPending, error } = useFetch(url);
+
   return (
     <SectionTitle
       className="projects"
@@ -15,24 +19,32 @@ export default function Projects() {
       sectionSubtitle="my projects"
     >
       <div className="project__container container">
-        {projectsData.map(
-          ({ id, image, title, description, github, tags, website }, i) => {
-            return (
-              <ProjectCard
-                key={id}
-                image={image}
-                title={title}
-                description={description}
-                github={github}
-                tags={tags.map((tag, i) => {
-                  return checkColor(tag, i, "project__language");
-                })}
-                website={website}
-              />
-            );
-          }
-        )}
+        {isPending && <div>Loading .....</div>}
+        {error && <div>{error} .....</div>}
+        {projects &&
+          projects.map(
+            (
+              { _id: id, imgurl, title, description, github, tags, website },
+              i
+            ) => {
+              return (
+                <ProjectCard
+                  key={id}
+                  image={imgurl}
+                  title={title}
+                  description={description}
+                  github={github}
+                  tags={tags.map((tag, i) => {
+                    return checkColor(tag, i, "project__language");
+                  })}
+                  website={website}
+                />
+              );
+            }
+          )}
       </div>
     </SectionTitle>
   );
-}
+};
+
+export default Projects;

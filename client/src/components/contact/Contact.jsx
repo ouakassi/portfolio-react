@@ -1,6 +1,6 @@
 import React from "react";
 import "./ContactStyle.css";
-import Section from "../../styles/Section";
+import Section from "../../components/Section";
 
 const Contact = () => (
   <Section

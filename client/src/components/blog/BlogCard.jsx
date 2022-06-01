@@ -1,22 +1,32 @@
 import React from "react";
 import "./BlogCrad.css";
-import { ShowMoreButton } from "../../styles/Buttons/ShowMoreButton";
-import StyledTitle from "../../styles/StyledTitle";
+import { ShowMoreButton } from "../../components/Buttons/ShowMoreButton";
+import StyledTitle from "../../components/StyledTitle";
 import { Link } from "react-router-dom";
 
 const BlogCard = (props) => {
   return (
-    <article className="article">
-      <img src={props.image} alt={props.title} />
-      <div className="article__data">
-        <StyledTitle>{props.title}</StyledTitle>
-        <StyledTitle>{props.date}</StyledTitle>
-        <p>{props.description}</p>
-      </div>
-      <Link to={`/blog/${props.slug}`}>
+    <Link to={`/blog/${props.slug}`}>
+      <article className="article" key={props.id}>
+        <img className="article__image" src={props.image} alt={props.title} />
+        <div className="article__data">
+          <StyledTitle>{props.title}</StyledTitle>
+          <div className="article__data-header">
+            <img
+              className="article__data-image"
+              src="./images/my-image.jpg"
+              alt=""
+            />
+            <span className="article__data-date">
+              {props.date && props.date.split("T")[0]}
+            </span>
+          </div>
+          <div className="article__tags">{props.tags}</div>
+        </div>
+
         <ShowMoreButton title="read more" icon="uil-corner-down-right-alt" />
-      </Link>
-    </article>
+      </article>
+    </Link>
   );
 };
 

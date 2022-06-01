@@ -2,13 +2,13 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 import "./BlogStyle.css";
-import Section from "../../styles/Section";
+import Section from "../../components/Section";
 import BlogCard from "./BlogCard";
-import { ShowMoreButton } from "../../styles/Buttons/ShowMoreButton";
+import { ShowMoreButton } from "../Buttons/ShowMoreButton";
 import { useFetch } from "../../hooks/useFetch";
 
 const Blog = () => {
-  const url = "http://localhost:3000/articles";
+  const [url, setUrl] = useState("/articles/");
 
   const { data: articles, isPending, error } = useFetch(url);
 

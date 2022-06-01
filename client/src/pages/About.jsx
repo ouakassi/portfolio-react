@@ -1,11 +1,21 @@
 import React from "react";
 import "../components/about/AboutStyle.css";
-import Section from "../styles/Section";
-import { stackLangs } from "../data/db.js";
+import Section from "../components/Section";
 import checkColor from "../components/projects/checkColor";
-import StyledParagraph from "../styles/StyledParagrapgh";
+import StyledParagraph from "../components/StyledParagrapgh";
 
 export default function About() {
+  const stackLangs = [
+    "html",
+    "css",
+    "javascript",
+    "react",
+    "node",
+    "express",
+    "mongodb",
+    "typescript",
+  ];
+
   return (
     <Section
       className="about"

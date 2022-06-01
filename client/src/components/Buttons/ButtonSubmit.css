@@ -1,0 +1,30 @@
+.button-submit {
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  color: var(--title-color);
+  font-weight: var(--font-semi-bold);
+  padding: 1rem;
+  text-transform: uppercase;
+  background-image: linear-gradient(
+    120deg,
+    rgb(29, 181, 236) 5%,
+    rgb(58, 231, 179) 85%
+  );
+  background-repeat: no-repeat;
+  background-size: 100% 3px;
+  background-position: 0px 100%;
+  border-radius: 5px;
+  transition: 0.2s;
+  outline: transparent solid 2px;
+  outline-offset: 2px;
+  cursor: pointer;
+  width: clamp(15rem, 20%, 15rem);
+}
+.button-submit:hover,
+.button-submit:focus {
+  transform: scale(1.1);
+  background-size: 100% 20%;
+}

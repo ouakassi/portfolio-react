@@ -1,6 +1,6 @@
 import React from "react";
 import "./AboutStyle.css";
-import Section from "../../styles/Section";
+import Section from "../../components/Section";
 import { stackLangs } from "./../../data/Data.js";
 import checkColor from "../projects/checkColor";
 import StyledParagraph from "./../../styles/StyledParagrapgh";

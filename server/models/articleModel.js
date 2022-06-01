@@ -30,7 +30,8 @@ const articleSchema = mongoose.Schema(
   { timestamps: true }
 );
 
-id = 0;
+// add slug
+
 articleSchema.pre("validate", async function (next) {
   const sameArticlesTitle = await Article.find({ title: this.title });
   console.log(sameArticlesTitle);
@@ -40,6 +41,9 @@ articleSchema.pre("validate", async function (next) {
       strict: true,
     });
   }
+
+  // check if there is a duplicate slug
+
   if (
     sameArticlesTitle.length > 0 &&
     this.title === sameArticlesTitle[0].title

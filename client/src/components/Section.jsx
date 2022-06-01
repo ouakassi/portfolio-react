@@ -2,7 +2,7 @@ import React from "react";
 import "./Section.css";
 import { motion } from "framer-motion";
 
-const SectionTitle = (props) => (
+const Section = (props) => (
   <motion.section
     initial={{ opacity: 0, width: "80%" }}
     animate={{ opacity: 1, x: 0, width: "100%" }}
@@ -20,4 +20,4 @@ const SectionTitle = (props) => (
   </motion.section>
 );
 
-export default SectionTitle;
+export default Section;

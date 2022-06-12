@@ -3,21 +3,21 @@ import { Link, Outlet } from "react-router-dom";
 
 import "./ProjectsStyles.css";
 
-import SectionTitle from "../../components/Section";
+import Section from "../../components/Section";
 import ProjectCard from "./ProjectCard";
 import checkColor from "./checkColor";
 import { ShowMoreButton } from "../Buttons/ShowMoreButton";
 import { useFetch } from "../../hooks/useFetch";
 
 const Projects = () => {
-  const [projectTotal, setProjectTotal] = useState(1);
+  const [projectTotal, setProjectTotal] = useState(3);
 
   const [url, setUrl] = useState("/projects/");
 
   const { data: projects, isPending, error } = useFetch(url);
 
   return (
-    <SectionTitle
+    <Section
       className="projects"
       id="projects"
       icon="uil uil-folder-open"
@@ -29,13 +29,16 @@ const Projects = () => {
         {error && <div>{error} .....</div>}
         {projects &&
           projects.map(
-            ({ id, image, title, description, github, tags, website }, i) => {
+            (
+              { _id: id, imgurl, title, description, github, tags, website },
+              i
+            ) => {
               if (i >= projectTotal) return null;
               else
                 return (
                   <ProjectCard
                     key={id}
-                    image={image}
+                    image={imgurl}
                     title={title}
                     description={description}
                     github={github}
@@ -58,7 +61,7 @@ const Projects = () => {
         />
       </Link>
       <Outlet />
-    </SectionTitle>
+    </Section>
   );
 };
 

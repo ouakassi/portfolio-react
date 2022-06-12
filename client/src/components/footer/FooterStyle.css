@@ -23,7 +23,7 @@
   font-size: var(--smaller-font-size);
   text-align: center;
   color: var(--title-color);
-  margin-top: var(--mb-2);
+  margin-top: 2rem;
 }
 
 .footer__link,

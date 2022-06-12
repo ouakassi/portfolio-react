@@ -1,4 +1,3 @@
-import React from "react";
 import "./Section.css";
 import { motion } from "framer-motion";
 
@@ -9,7 +8,7 @@ const Section = (props) => (
     exit={{ opacity: 0, y: 50, width: "80%" }}
     transition={{ duration: 0.2 }}
     id={props.id}
-    className={`${props.className} section`}
+    className={`${props.className || ""} section`}
   >
     <h2 className="section__title">
       <i className={props.icon + " section__icon"} />

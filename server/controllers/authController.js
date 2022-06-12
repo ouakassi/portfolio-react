@@ -12,11 +12,14 @@ const registerAdmin = asyncHandler(async (req, res) => {
   }
   const salt = await bcrypt.genSalt(10);
   const hashedPassword = await bcrypt.hash(req.body.password, salt);
-  const admin = await Admin.create({
+  const foundAdmin = await Admin.create({
     email: req.body.email,
     password: hashedPassword,
   });
-  res.status(201).json(admin);
+  const token = foundAdmin.createJWT();
+
+  const { password, ...others } = foundAdmin._doc;
+  res.status(201).json({ others, token });
 });
 
 // Login
@@ -27,25 +30,27 @@ const loginAdmin = asyncHandler(async (req, res) => {
     res.status(400);
     throw new Error("wrong credentials ! ");
   }
-  const admin = await Admin.findOne({
+  const foundAdmin = await Admin.findOne({
     email: req.body.email,
   });
 
-  if (!admin) {
-    res.status(404);
+  if (!foundAdmin) {
+    res.status(401); // Unauthorized
     throw new Error("user not found!");
   }
 
   const validatedPassword = await bcrypt.compare(
     req.body.password,
-    admin.password
+    foundAdmin.password
   );
   if (!validatedPassword) {
     res.status(400);
     throw new Error("wrong password");
   }
-  const { password, ...others } = admin._doc;
-  res.status(200).json(others);
+  const accessToken = foundAdmin.createJWT();
+
+  const { password, ...others } = foundAdmin._doc;
+  res.status(200).json({ others, accessToken });
 });
 
 module.exports = {

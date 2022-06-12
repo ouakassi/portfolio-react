@@ -1,11 +1,10 @@
-import React from "react";
 import "./ShowMoreButton.css";
 
 export const ShowMoreButton = (props) => {
   return (
-    <span className="show-more__button">
+    <span className="show-more__button" onClick={props.method}>
       {props.title ? props.title : "Show More"}
-      <i className={`${props.icon} button__icon`}></i>
+      {props.icon && <i className={`${props.icon} button__icon`}></i>}
     </span>
   );
 };

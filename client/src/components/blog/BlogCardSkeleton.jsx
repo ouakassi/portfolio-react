@@ -1,4 +1,3 @@
-import React from "react";
 import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 import "./BlogCardSkeleton.css";
@@ -7,7 +6,7 @@ export default function BlogCardSkeleton({ cards }) {
   return Array(cards)
     .fill(0)
     .map((_, i) => (
-      <SkeletonTheme key={i} baseColor="#202020" highlightColor="#444">
+      <SkeletonTheme key={i} baseColor="#0a1c3b" highlightColor="#253757">
         <div className="card-skeleton">
           <div className="image-container">
             <Skeleton height={"100%"} />

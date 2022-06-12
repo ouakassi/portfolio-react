@@ -19,7 +19,7 @@
   filter: brightness(1.2);
 }
 .article__image {
-  margin-bottom: var(--mb-1);
+  margin-bottom: 1rem;
   border-radius: 10px 10px 0 0;
   height: 50%;
 }
@@ -33,7 +33,7 @@
 
 .article__data p {
   display: block;
-  margin-bottom: var(--mb-0-5);
+  margin-bottom: 0.5rem;
   font-size: var(--small-font-size);
   word-break: break-all;
   height: 3.9em;

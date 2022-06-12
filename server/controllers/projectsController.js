@@ -5,7 +5,6 @@ const asyncHandler = require("express-async-handler");
 // Public
 const getProjects = asyncHandler(async (req, res) => {
   const projects = await Project.find({});
-  console.log(projects);
   res.status(200).json(projects);
 });
 

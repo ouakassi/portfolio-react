@@ -1,4 +1,3 @@
-import React from "react";
 import "./BlogCrad.css";
 import { ShowMoreButton } from "../../components/Buttons/ShowMoreButton";
 import StyledTitle from "../../components/StyledTitle";
@@ -18,7 +17,7 @@ const BlogCard = (props) => {
               alt=""
             />
             <span className="article__data-date">
-              {props.date && props.date.split("T")[0]}
+              {props.publishedDate && props.publishedDate.split("T")[0]}
             </span>
           </div>
           <div className="article__tags">{props.tags}</div>

@@ -1,4 +1,3 @@
-import React from "react";
 import ButtonPrimary from "../Buttons/ButtonPrimary";
 import "./HeroStyle.css";
 import SocialLink from "./SocialLink";
@@ -53,7 +52,7 @@ const Hero = () => {
           </div>
           <div className="home__img__container">
             <img
-              src="./images/my-image.webp"
+              src="./images/my-image.jpg"
               alt="me"
               className="home__img__container-img"
             />

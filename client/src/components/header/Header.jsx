@@ -66,6 +66,16 @@ const Header = () => {
                 <span>about</span>
               </NavLink>
             </li>
+            <li className="nav__item">
+              <NavLink
+                onClick={() => handleClick(false)}
+                to="/login"
+                className="nav__link"
+              >
+                <i class="uil uil-user nav__icon"></i>
+                <span>login</span>
+              </NavLink>
+            </li>
           </ul>
           <i
             className="uil uil-times nav__close"

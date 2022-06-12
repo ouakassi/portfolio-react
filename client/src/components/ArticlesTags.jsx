@@ -1,20 +1,24 @@
 import "./ArticlesTags.css";
-
-import React from "react";
+import { ShowMoreButton } from "./Buttons/ShowMoreButton";
 
 export default function ArticlesTags({ tagName, searchArticle }) {
   return (
-    <div className="filter-container">
+    <div className="filter__container">
+      <ShowMoreButton
+        method={() => {
+          searchArticle("");
+        }}
+        title={"#ALL"}
+      />
       {tagName.map((tag, i) => {
         return (
-          <button
+          <ShowMoreButton
             key={i}
-            onClick={() => {
+            method={() => {
               searchArticle("tags=" + tag);
             }}
-          >
-            {tag}
-          </button>
+            title={"#" + tag}
+          />
         );
       })}
     </div>

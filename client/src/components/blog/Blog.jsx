@@ -26,14 +26,14 @@ const Blog = () => {
         {isPending && <div>Loading .....</div>}
         {error && <div>{error} .....</div>}
         {articles &&
-          articles.map(({ id, title, description, image }, index) => {
+          articles.map(({ _id: id, title, description, imgurl }, index) => {
             if (index >= articleNumber) return null;
             return (
               <BlogCard
                 key={id}
                 title={title}
                 description={description}
-                image={image}
+                image={imgurl}
               />
             );
           })}

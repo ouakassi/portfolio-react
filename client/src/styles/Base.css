@@ -12,7 +12,7 @@ body {
   margin: 0 0 var(--header-height) 0;
   font-family: var(--body-font);
   font-size: var(--normal-font-size);
-  background: rgb(1 13 31);
+  background: rgb(1, 13, 31);
   background-image: var(--body-color);
   color: var(--text-color);
 }

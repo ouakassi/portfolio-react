@@ -13,8 +13,6 @@ const getArticles = asyncHandler(async (req, res) => {
   } else {
     article = await Article.find(query);
   }
-  console.log(article);
-  console.log(query);
   res.status(200).json(article);
 });
 

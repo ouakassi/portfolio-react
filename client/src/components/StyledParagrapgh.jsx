@@ -1,4 +1,3 @@
-import React from "react";
 import "./StyledParagrapgh.css";
 
 const StyledParagraph = (props) => (

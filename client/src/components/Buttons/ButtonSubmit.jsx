@@ -1,4 +1,3 @@
-import React from "react";
 import "./ButtonSubmit.css";
 
 export default function ButtonSubmit(props) {

@@ -18,7 +18,7 @@ const articleSchema = mongoose.Schema(
       type: String,
       required: true,
     },
-    date: {
+    publishedDate: {
       type: Date,
       default: Date.now(),
     },
@@ -34,7 +34,6 @@ const articleSchema = mongoose.Schema(
 
 articleSchema.pre("validate", async function (next) {
   const sameArticlesTitle = await Article.find({ title: this.title });
-  console.log(sameArticlesTitle);
   if (sameArticlesTitle.length === 0) {
     this.slug = await slugify(this.title, {
       lower: true,

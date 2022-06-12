@@ -9,7 +9,6 @@ const ScrollToTop = (props) => {
       left: 0,
       behavior: "instant",
     });
-    console.log(location.pathname);
   }, [location]);
 
   return <>{props.children}</>;

@@ -1,4 +1,3 @@
-import React from "react";
 import "./StyledTitle.css";
 
 const StyledTitle = (props) => (

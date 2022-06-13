@@ -1,12 +1,12 @@
 import "./ArticlesTags.css";
 import { ShowMoreButton } from "./Buttons/ShowMoreButton";
 
-export default function ArticlesTags({ tagName, searchArticle }) {
+export default function ArticlesTags({ tagName, queryArticles }) {
   return (
     <div className="filter__container">
       <ShowMoreButton
         method={() => {
-          searchArticle("");
+          queryArticles("");
         }}
         title={"#ALL"}
       />
@@ -15,9 +15,9 @@ export default function ArticlesTags({ tagName, searchArticle }) {
           <ShowMoreButton
             key={i}
             method={() => {
-              searchArticle("tags=" + tag);
+              queryArticles(`tags=${tag}`);
             }}
-            title={"#" + tag}
+            title={`#${tag}`}
           />
         );
       })}

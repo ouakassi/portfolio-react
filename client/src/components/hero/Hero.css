@@ -26,13 +26,7 @@
 .home__data {
   grid-area: home__data;
 }
-.home__social-icon {
-  font-size: 2rem;
-  color: var(--first-color);
-}
-.home__social-icon:hover {
-  color: var(--first-color-alt);
-}
+
 .home__img__container {
   position: relative;
   grid-area: home__img__container;

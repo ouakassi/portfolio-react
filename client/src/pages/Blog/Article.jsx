@@ -28,10 +28,11 @@ export default function Article() {
         <div>
           <div>{article._id}</div>
           <div>{article.title}</div>
-          <img src={article.imgurl} alt="" />
+          <img src={article.imgUrl} alt="" />
           <div>{article.description}</div>
           <div>{article.slug}</div>
-          <div>{article.date.split("T")[0]} </div>
+          <div>{article.readTime}</div>
+          <div>{article.publishedDate.split("T")[0]} </div>
         </div>
       )}
     </div>

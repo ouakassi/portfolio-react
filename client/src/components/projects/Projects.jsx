@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link, Outlet } from "react-router-dom";
 
-import "./ProjectsStyles.css";
+import "./Projects.css";
 
 import Section from "../../components/Section";
 import ProjectCard from "./ProjectCard";
@@ -52,13 +52,7 @@ const Projects = () => {
           )}
       </div>
       <Link to="/projects">
-        <ShowMoreButton
-          onClick={() =>
-            setProjectTotal((prevProjetTotal) => prevProjetTotal + 1)
-          }
-          icon="uil uil-direction"
-          title="All projects"
-        />
+        <ShowMoreButton icon="uil uil-direction" title="All projects" />
       </Link>
       <Outlet />
     </Section>

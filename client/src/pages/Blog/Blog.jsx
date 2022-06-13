@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 
+import "./Blog.css";
 import Section from "../../components/Section";
 import BlogCard from "../../components/blog/BlogCard";
 import { useFetch } from "../../hooks/useFetch";
@@ -9,17 +10,13 @@ import BlogCardSkeleton from "../../components/blog/BlogCardSkeleton";
 
 const Blog = () => {
   const [url, setUrl] = useState("/articles/");
-  const [newTags, setNewTags] = useState([]);
-
-  console.log(newTags);
+  const [filterTags, setFilterTags] = useState([]);
 
   const { data: articles, isPending, error } = useFetch(url);
 
-  const searchArticle = async (query) => {
+  const queryArticles = async (query) => {
     setUrl(`/articles/?${query}`);
   };
-
-  console.log(newTags);
 
   return (
     <Section
@@ -29,14 +26,16 @@ const Blog = () => {
       sectionTitle="Blog"
       sectionSubtitle="recent articles"
     >
-      <ArticlesTags tagName={newTags.sort()} searchArticle={searchArticle} />
+      <ArticlesTags tagName={filterTags.sort()} queryArticles={queryArticles} />
       {articles &&
-        articles.map((project) => {
+        articles.forEach((project) => {
           project &&
-            project.tags.map((tag) => {
-              if (!newTags.includes(tag)) setNewTags([...newTags, tag]);
+            project.tags.forEach((tag) => {
+              if (!filterTags.includes(tag))
+                setFilterTags([...filterTags, tag]);
             });
         })}
+
       <article className="articles__container container">
         {isPending && <BlogCardSkeleton cards={6} />}
         {error && <div>{error} .....</div>}
@@ -46,22 +45,25 @@ const Blog = () => {
               _id: id,
               title,
               description,
-              imgurl,
+              imgUrl,
               publishedDate,
               slug,
               tags,
+              readTime,
             }) => {
               return (
                 <BlogCard
                   key={id}
                   title={title}
+                  description={description.substring(0, 90) + "..."}
                   publishedDate={publishedDate}
                   tags={tags.map((tag, i) => {
                     return checkColor(tag, i, "project__language");
                   })}
-                  image={imgurl}
+                  image={imgUrl}
                   id={id}
                   slug={slug}
+                  readTime={`${readTime} min read`}
                 />
               );
             }

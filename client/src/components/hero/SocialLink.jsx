@@ -1,5 +1,7 @@
+import "./SocialLink.css";
+
 const SocialLink = (props) => (
-  <a href={props.link} className="home__social-icon">
+  <a href={props.link} className="social-icon">
     <i className={props.icon} />
   </a>
 );

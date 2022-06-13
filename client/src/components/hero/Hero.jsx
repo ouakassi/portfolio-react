@@ -1,5 +1,5 @@
 import ButtonPrimary from "../Buttons/ButtonPrimary";
-import "./HeroStyle.css";
+import "./Hero.css";
 import SocialLink from "./SocialLink";
 
 const Hero = () => {

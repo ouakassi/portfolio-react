@@ -10,17 +10,14 @@ const BlogCard = (props) => {
         <img className="article__image" src={props.image} alt={props.title} />
         <div className="article__data">
           <StyledTitle>{props.title}</StyledTitle>
-          <div className="article__data-header">
-            <img
-              className="article__data-image"
-              src="./images/my-image.jpg"
-              alt=""
-            />
+          <p>{props.description}</p>
+          <div className="article__tags">{props.tags}</div>
+          <div className="article__data-dates">
             <span className="article__data-date">
               {props.publishedDate && props.publishedDate.split("T")[0]}
             </span>
+            <span>{props.readTime}</span>
           </div>
-          <div className="article__tags">{props.tags}</div>
         </div>
 
         <ShowMoreButton title="read more" icon="uil-corner-down-right-alt" />

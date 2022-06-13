@@ -14,13 +14,17 @@ const articleSchema = mongoose.Schema(
       type: String,
       required: true,
     },
-    imgurl: {
+    imgUrl: {
       type: String,
       required: true,
     },
     publishedDate: {
       type: Date,
       default: Date.now(),
+    },
+    readTime: {
+      type: Number,
+      required: true,
     },
     tags: {
       type: [String],

@@ -1,4 +1,4 @@
-import "./ContactStyle.css";
+import "./Contact.css";
 import Section from "../../components/Section";
 
 const Contact = () => (

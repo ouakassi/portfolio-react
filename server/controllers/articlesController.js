@@ -34,7 +34,7 @@ const getArticle = asyncHandler(async (req, res) => {
 // Post /api/articles
 // Private
 const setArticle = asyncHandler(async (req, res) => {
-  if (!req.body.title || !req.body.description || !req.body.imgurl) {
+  if (!req.body.title || !req.body.description || !req.body.imgUrl) {
     res.status(400);
     throw new Error("please fill them all");
   }

@@ -1,17 +1,29 @@
-import React, { useEffect } from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import { useEffect, useLayoutEffect } from "react";
+import { useParams, useNavigate, useLocation } from "react-router-dom";
 import { useFetch } from "../../hooks/useFetch";
 import "./Article.css";
 
 export default function Article() {
   let { slug } = useParams();
   let navigate = useNavigate();
+  let location = useLocation();
 
   const url = `/articles/${slug}`;
 
   const { data: article, isPending, error } = useFetch(url);
 
-  console.log(article);
+  console.log(slug);
+  console.log(location.pathname);
+
+  useLayoutEffect(() => {
+    if (location.pathname === "/blog/" + slug) {
+      document.querySelector(".header").classList.add("blog-header");
+      document.querySelector("body").classList.add("blog-body");
+    } else {
+      document.querySelector(".header").classList.remove("blog-header");
+      document.querySelector("body").classList.remove("blog-body");
+    }
+  });
 
   useEffect(() => {
     if (error)

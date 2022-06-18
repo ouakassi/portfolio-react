@@ -7,6 +7,7 @@ import Section from "../../components/Section";
 import ButtonSubmit from "../../components/Buttons/ButtonSubmit";
 
 import axios from "../../api/axios";
+import Input from "../../components/forms/Input";
 const LOGIN_URL = "/auth/login";
 
 export default function Login() {
@@ -32,7 +33,7 @@ export default function Login() {
 
   useEffect(() => {
     success && navigate("/dashboard");
-  }, [success]);
+  }, [success, navigate]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -66,7 +67,7 @@ export default function Login() {
       } else if (error.response?.status === 400) {
         setErrMsg("Wrong Email or Password");
       } else if (error.response?.status === 401) {
-        setErrMsg("Unauthorized");
+        setErrMsg("Not Found or Unauthorized");
       } else {
         setErrMsg("Login Failed");
       }
@@ -83,38 +84,35 @@ export default function Login() {
       sectionSubtitle="login to dashboard"
     >
       <div className="login__ui">
-        <p
-          ref={errRef}
-          className={errMsg ? "errmsg" : "offscreen"}
-          aria-live="assertive"
-        >
-          {errMsg}
-        </p>
         <form onSubmit={handleSubmit} className="login__form">
-          <div className="input__container">
-            <label htmlFor="email">email</label>
-            <input
-              type="email"
-              id="email"
-              className="emailInput"
-              ref={emailRef}
-              onChange={(e) => setEmail(e.target.value)}
-              value={email}
-              required
-            />
-            <i class="login__icon uil uil-at"></i>
-          </div>
-          <div className="input__container">
-            <label htmlFor="password">password</label>
-            <input
-              type="password"
-              id="password"
-              className="passwordInput"
-              onChange={(e) => setPassword(e.target.value)}
-              value={password}
-            />
-            <i class="login__icon uil uil-key-skeleton-alt"></i>
-          </div>
+          <Input
+            label="email"
+            name="email"
+            type="email"
+            className="emailInput"
+            toRef={emailRef}
+            onChange={(e) => setEmail(e.target.value)}
+            value={email}
+            icon="login__icon uil uil-at"
+          />
+
+          <Input
+            label="password"
+            name="password"
+            type="password"
+            className="passwordInput"
+            onChange={(e) => setPassword(e.target.value)}
+            value={password}
+            icon="login__icon uil uil-key-skeleton-alt"
+          />
+          <p
+            style={{ color: "red", transition: "0.2s" }}
+            ref={errRef}
+            className={errMsg ? "errmsg" : "offscreen"}
+            aria-live="assertive"
+          >
+            {errMsg}
+          </p>
           <ButtonSubmit
             className="button"
             title="Login"

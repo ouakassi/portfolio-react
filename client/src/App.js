@@ -12,6 +12,7 @@ import ScrollComponent from "./components/ScrollComponenet";
 
 import ScrollToTop from "./hooks/useScrollToTop";
 import Routes from "./pages/Routes";
+import ContactIcon from "./components/contact/ContactIcon";
 
 const App = () => {
   return (
@@ -21,6 +22,7 @@ const App = () => {
         <Header />
         <Routes />
         <Footer />
+        <ContactIcon />
       </BrowserRouter>
       <ScrollComponent />
     </>

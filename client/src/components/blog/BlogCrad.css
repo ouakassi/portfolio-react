@@ -6,7 +6,7 @@
   min-height: 55rem;
   margin: 4rem 1rem;
   border-radius: 10px 10px 5px 5px;
-  background-image: linear-gradient(1deg, rgb(4 20 49) 0%, rgb(4 22 50) 30%);
+  background-image: var(--background-color-1);
 
   box-shadow: rgb(11 245 214 / 55%) 0px 3px 0px 0px,
     rgba(0, 0, 0, 0.5) 0px 1px 5px 0px;
@@ -15,7 +15,7 @@
   user-select: none;
 }
 .article:hover,
-.article:focus {
+.article:active {
   box-shadow: rgb(11 245 214) 0px 5px 0px 0px;
   filter: brightness(1.2);
 }

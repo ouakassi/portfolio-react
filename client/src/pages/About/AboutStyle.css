@@ -33,7 +33,7 @@
   display: block;
   width: 2px;
   height: 50%;
-  background-image: var(--background-color);
+  background-image: var(--text-gradient-color);
   border-radius: 5px;
 }
 .about__stats__items:nth-child(2)::before {

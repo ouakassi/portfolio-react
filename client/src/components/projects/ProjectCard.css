@@ -21,12 +21,8 @@
   align-items: center;
   padding: 2rem;
   margin: 6rem 0;
-  background-image: linear-gradient(
-    321deg,
-    rgb(1 19 41) 10%,
-    rgb(4 4 4 / 20%) 30%,
-    rgb(1 17 33) 90%
-  );
+  background-image: var(--background-color-1);
+  box-shadow: var(--box-shadow-1);
   border-radius: 10px;
   transition: 0.2s;
 }

@@ -4,7 +4,7 @@
   padding: 1rem;
   margin: 3rem 0;
   border-radius: 10px;
-  background-color: rgb(10, 28, 59);
+  background-color: var(--container-color);
   position: relative;
 }
 .input__container label {

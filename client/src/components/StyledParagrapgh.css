@@ -9,6 +9,6 @@
   height: 100%;
   left: -1.5rem;
   bottom: 0;
-  background: var(--background-color);
+  background: var(--text-gradient-color);
   border-radius: 0 5px 5px 0;
 }

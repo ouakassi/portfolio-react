@@ -1,5 +1,5 @@
 textarea {
-  background-color: rgb(10, 28, 59);
+  background-color: var(--container-color);
   border: none;
   border-radius: 10px;
   color: white;

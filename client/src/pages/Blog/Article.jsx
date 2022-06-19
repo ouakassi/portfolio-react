@@ -1,7 +1,9 @@
+import "./Article.css";
 import { useEffect, useLayoutEffect } from "react";
 import { useParams, useNavigate, useLocation } from "react-router-dom";
 import { useFetch } from "../../hooks/useFetch";
-import "./Article.css";
+
+import Section from "../../components/Section";
 
 export default function Article() {
   let { slug } = useParams();
@@ -12,18 +14,21 @@ export default function Article() {
 
   const { data: article, isPending, error } = useFetch(url);
 
-  console.log(slug);
-  console.log(location.pathname);
+  // change ARTICLE page theme
 
   useLayoutEffect(() => {
     if (location.pathname === "/blog/" + slug) {
       document.querySelector(".header").classList.add("blog-header");
       document.querySelector("body").classList.add("blog-body");
+      document.querySelector(".floated-contact").style.display = "none";
     } else {
       document.querySelector(".header").classList.remove("blog-header");
       document.querySelector("body").classList.remove("blog-body");
+      // document.querySelector(".floated-contact").style.display = "none";
     }
   });
+
+  // redirect if there is an error
 
   useEffect(() => {
     if (error)
@@ -36,17 +41,26 @@ export default function Article() {
     <div className="article-ds">
       {isPending && <div>Loading .....</div>}
       {error && <div>{error} .....</div>}
+
+      <div>Home Tutorials CSS</div>
       {article && (
-        <div>
-          <div>{article._id}</div>
-          <div>{article.title}</div>
-          <img src={article.imgUrl} alt="" />
+        <Section
+          className="blog"
+          id="blog"
+          sectionTitle={article.title}
+          sectionSubtitle={article.publishedDate.split("T")[0]}
+        >
           <div>{article.description}</div>
-          <div>{article.slug}</div>
-          <div>{article.readTime}</div>
-          <div>{article.publishedDate.split("T")[0]} </div>
-        </div>
+        </Section>
       )}
+
+      <div>
+        {/* <div>{article._id}</div>
+        <div>{article.title}</div>
+        <img src={article.imgUrl} alt="" />
+
+        <div>{article.readTime}min</div> */}
+      </div>
     </div>
   );
 }

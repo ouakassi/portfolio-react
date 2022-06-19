@@ -59,7 +59,7 @@
   color: var(--first-color);
   transform: scale(1.1);
   transition: 0.2s;
-  background: var(--background-color);
+  background: var(--text-gradient-color);
   background-repeat: no-repeat;
   background-size: 100% 2px;
   background-position: 0% 100%;

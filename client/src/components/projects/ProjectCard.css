@@ -32,6 +32,14 @@
     inset rgb(0 255 179) 0 0 0px 2px;
 }
 
+.project__content:hover .project__img img,
+.project__content:focus .project__img img {
+  /* opacity: 0; */
+  /* filter: blur(5px); */
+
+  transform: scale(1.02);
+}
+
 .project__data {
   display: flex;
   flex-direction: column;
@@ -45,6 +53,7 @@
 }
 .project__img img {
   border-radius: 5px;
+  transition: 0.2s;
 }
 
 .project__data h3 {

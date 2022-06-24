@@ -11,6 +11,7 @@
   box-shadow: inset rgb(68 255 229 / 25%) 0 0 0px 2px,
     inset rgb(0 255 178 / 10%) 0 0 0px 2px, rgb(0 0 0 / 50%) 1px 4px 5px 2px;
   transition: 0.2s;
+  user-select: none;
 }
 .show-more__button:hover {
   transform: scale(1.1);

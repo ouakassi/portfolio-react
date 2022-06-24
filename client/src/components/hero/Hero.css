@@ -41,6 +41,7 @@
   height: 30rem;
   border-radius: 10px;
   box-shadow: rgba(68 141 255) 4px -3px 0px, rgb(0 255 178) -4px 3px 0px;
+  transition: 1s;
 }
 
 .home__img__container-img {
@@ -54,10 +55,17 @@
   box-shadow: rgb(68 141 255) -5px 5px 0px, rgb(0 255 178) -10px 10px 0px,
     rgb(3 249 182 / 30%) -13px 15px 20px 1px;
 
-  transition: 0.2s;
+  transition: 1s;
 }
 .home__img__container-img:hover {
   box-shadow: rgb(68 141 255) -7px 7px 0px, rgb(0 255 178) -12px 12px 0px;
+}
+
+.home__img__container:hover img {
+  top: 40%;
+}
+.home__img__container:hover .home__img__container-dots {
+  bottom: 20%;
 }
 
 .home__title {

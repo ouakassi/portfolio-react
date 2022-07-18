@@ -1,10 +1,12 @@
+article {
+  margin: 4rem 1rem;
+}
 .article {
   position: relative;
   display: flex;
   flex-flow: column nowrap;
   width: clamp(10rem, 90vw, 40rem);
   min-height: 55rem;
-  margin: 4rem 1rem;
   border-radius: 10px 10px 5px 5px;
   background-image: var(--background-color-1);
 
@@ -98,7 +100,7 @@
 }
 
 @media screen and (min-width: 568px) {
-  .article {
+  article {
     margin: 4rem 2rem;
   }
 }

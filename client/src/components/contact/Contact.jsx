@@ -32,7 +32,7 @@ const Contact = () => (
           label="email"
           name="email"
           type="email"
-          class="emailInput"
+          className="emailInput"
           icon="login__icon uil uil-at"
         />
 

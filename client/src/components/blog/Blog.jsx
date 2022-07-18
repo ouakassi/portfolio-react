@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 
 import "./BlogStyle.css";
@@ -26,14 +26,14 @@ const Blog = () => {
         {isPending && <div>Loading .....</div>}
         {error && <div>{error} .....</div>}
         {articles &&
-          articles.map(({ _id: id, title, description, imgurl }, index) => {
+          articles.map(({ _id: id, title, description, imgUrl }, index) => {
             if (index >= articleNumber) return null;
             return (
               <BlogCard
                 key={id}
                 title={title}
                 description={description}
-                image={imgurl}
+                image={imgUrl}
               />
             );
           })}

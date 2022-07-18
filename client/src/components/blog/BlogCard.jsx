@@ -2,27 +2,44 @@ import "./BlogCrad.css";
 import { ShowMoreButton } from "../../components/Buttons/ShowMoreButton";
 import StyledTitle from "../../components/StyledTitle";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 
-const BlogCard = (props) => {
+const BlogCard = ({
+  slug,
+  id,
+  image,
+  title,
+  description,
+  tags,
+  publishedDate,
+  readTime,
+}) => {
   return (
-    <Link to={`/blog/${props.slug}`}>
-      <article className="article" key={props.id}>
-        <img className="article__image" src={props.image} alt={props.title} />
-        <div className="article__data">
-          <StyledTitle>{props.title}</StyledTitle>
-          <p>{props.description}</p>
-          <div className="article__tags">{props.tags}</div>
-          <div className="article__data-dates">
-            <span className="article__data-date">
-              {props.publishedDate && props.publishedDate.split("T")[0]}
-            </span>
-            <span>{props.readTime}</span>
+    <motion.article
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ delay: 0.2 }}
+      viewport={{ once: true, amount: 0.2 }}
+    >
+      <Link to={`/blog/${slug}`}>
+        <div className="article" key={id}>
+          <img className="article__image" src={image} alt={title} />
+          <div className="article__data">
+            <StyledTitle>{title}</StyledTitle>
+            <p>{description}</p>
+            <div className="article__tags">{tags}</div>
+            <div className="article__data-dates">
+              <span className="article__data-date">
+                {publishedDate && publishedDate.split("T")[0]}
+              </span>
+              <span>{readTime}</span>
+            </div>
           </div>
-        </div>
 
-        <ShowMoreButton title="read more" icon="uil-corner-down-right-alt" />
-      </article>
-    </Link>
+          <ShowMoreButton title="read more" icon="uil-corner-down-right-alt" />
+        </div>
+      </Link>
+    </motion.article>
   );
 };
 

@@ -10,6 +10,7 @@ export default function ArticlesTags({ tagName, queryArticles }) {
   const ACTIVE_COLOR = {
     boxShadow: "var(--first-color) 0px 0px 0px 2px",
     color: "var(--first-color)",
+    backgroundColor: "var(--first-color-light)",
     fontWeight: "600",
     transform: "scale(1.1)",
   };

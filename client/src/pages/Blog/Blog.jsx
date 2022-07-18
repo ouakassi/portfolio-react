@@ -24,7 +24,7 @@ const Blog = () => {
       id="blog"
       icon="uil uil-files-landscapes-alt"
       sectionTitle="Blog"
-      sectionSubtitle="recent articles"
+      sectionSubtitle="all articles"
     >
       <ArticlesTags tagName={filterTags.sort()} queryArticles={queryArticles} />
       {articles &&

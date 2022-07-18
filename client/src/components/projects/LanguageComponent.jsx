@@ -1,15 +1,28 @@
-const LanguageComponent = (props) => (
+import { motion } from "framer-motion";
+const LanguageComponent = ({ mainColor, className, image, tag }) => (
   <>
-    <span
-      style={{
-        color: props.mainColor || "#00ffb3",
-        backgroundColor: `${props.mainColor}33` || "#00ffb333",
+    <motion.span
+      initial={{ opacity: 0, y: 10 }}
+      whileInView={{
+        opacity: 1,
+        y: 0,
+        transition: {
+          type: "spring",
+          bounce: 0.4,
+          duration: 0.2,
+        },
       }}
-      className={props.className}
+      whileHover={{ scale: 1.1 }}
+      viewport={{ once: true, amount: 0.8 }}
+      style={{
+        color: mainColor || "#00ffb3",
+        backgroundColor: `${mainColor}33` || "#00ffb333",
+      }}
+      className={className}
     >
-      <img src={props.image || "./images/languages/code.svg"} alt={props.tag} />
-      <span>{props.tag}</span>
-    </span>
+      <img src={image || "./images/languages/code.svg"} alt={tag} />
+      <span>{tag}</span>
+    </motion.span>
   </>
 );
 

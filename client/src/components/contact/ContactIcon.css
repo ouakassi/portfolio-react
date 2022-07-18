@@ -18,3 +18,9 @@
   bottom: 18%;
   font-size: 4rem;
 }
+
+@media screen and (max-width: 767px) {
+  .floated-contact {
+    font-size: 3rem;
+  }
+}

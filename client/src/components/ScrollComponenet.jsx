@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import "./ScrollComponenet.css";
+import { motion } from "framer-motion";
 
 const ScrollComponent = () => {
   const [windowHeight, setwindowHeight] = useState(0);
@@ -17,9 +18,15 @@ const ScrollComponent = () => {
 
   if (windowHeight >= 400)
     return (
-      <div onClick={handlClick} className="scrollup">
+      <motion.div
+        initial={{ opacity: 0, y: -50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ transition: 0.5 }}
+        onClick={handlClick}
+        className="scrollup"
+      >
         <i className="uil uil-arrow-up scrollup__icon" />
-      </div>
+      </motion.div>
     );
 };
 

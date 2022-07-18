@@ -1,6 +1,6 @@
 Blog : 
 
-redesign the blog card and add date / user icon with image / title / tags
+redesign the blog card and add date / user icon with image / title / tags  
 add search by title :  input 
 add search by tags : tags 
 

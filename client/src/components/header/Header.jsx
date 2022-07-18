@@ -1,21 +1,40 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { NavLink, Link } from "react-router-dom";
+import { motion } from "framer-motion";
 
 import "./Header.css";
 
 const Header = () => {
   const [toggleNav, setToggleNav] = useState(false);
-  // const [windowHeight, setwindowHeight] = useState(0);
+
+  const [windowHeight, setwindowHeight] = useState(0);
+
+  const handlClick2 = () => window.scrollTo(0, 0);
 
   const handleClick = (state) => {
     setToggleNav(state);
   };
 
+  useEffect(() => {
+    const onScroll = () => setwindowHeight(window.pageYOffset);
+
+    // clean up code
+    window.removeEventListener("scroll", onScroll);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
   return (
-    <header className="header" id="header">
+    <motion.header
+      initial={{ y: -30, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ delay: 0.2, duration: 0.5 }}
+      className={`header ${windowHeight >= 100 ? "headerShadow" : ""}`}
+      id="header"
+    >
       <nav className="nav">
-        <Link to="/" className="nav__logo">
-          OUAKASSI
+        <Link to="/">
+          <span className="nav__logo"> OUAKASSI</span>
         </Link>
         <div
           // show the navbar
@@ -72,7 +91,7 @@ const Header = () => {
                 to="/login"
                 className="nav__link"
               >
-                <i class="uil uil-user nav__icon"></i>
+                <i className="uil uil-user nav__icon"></i>
                 <span>login</span>
               </NavLink>
             </li>
@@ -84,11 +103,11 @@ const Header = () => {
         </div>
         <div className="nav__btns">
           <div className="nav__toggle" onClick={() => handleClick(true)}>
-            <i className="uil-align-alt" />
+            <i class="uil uil-apps"></i>
           </div>
         </div>
       </nav>
-    </header>
+    </motion.header>
   );
 };
 

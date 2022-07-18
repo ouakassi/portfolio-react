@@ -9,7 +9,6 @@
   border-radius: 10px;
   z-index: var(--z-tooltip);
   box-shadow: 0 4px 5px rgb(0 0 0 / 50%);
-  transition: 2s;
 }
 .scrollup:hover {
   background-color: var(--first-color-alt);
@@ -21,4 +20,10 @@
 /* Show scroll */
 .show-scroll {
   bottom: 8rem;
+}
+
+@media screen and (max-width: 767px) {
+  .scrollup__icon {
+    font-size: 2rem;
+  }
 }

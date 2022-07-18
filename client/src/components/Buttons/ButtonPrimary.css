@@ -9,16 +9,9 @@
     rgb(58, 231, 179) 85%
   );
   background-repeat: no-repeat;
-  background-size: 100% 3px;
   background-position: 0px 100%;
   border-radius: 5px;
-  transition: 0.2s;
   outline: transparent solid 2px;
   outline-offset: 2px;
   cursor: pointer;
-}
-.button-primary:hover,
-.button-primary:focus {
-  transform: scale(1.1);
-  background-size: 100% 20%;
 }

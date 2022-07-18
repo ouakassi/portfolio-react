@@ -11,13 +11,14 @@
   text-transform: uppercase;
   margin-right: 2rem;
   position: absolute;
-  color: white;
+  color: var(--title-color);
 }
 .input__container label {
   top: -15px;
 }
 .login__icon {
   margin-left: 2rem;
+  transition: 0.4s;
 }
 .input__container input {
   height: inherit;
@@ -26,7 +27,7 @@
   background-color: transparent;
   border: none;
   outline: none;
-  color: white;
+  color: var(--title-color);
   font-size: 1.8rem;
 }
 input:-webkit-autofill,
@@ -40,7 +41,6 @@ input:-webkit-autofill:active {
 .input__container:focus {
   color: var(--first-color);
   transform: scale(1.5);
-  transition: 0.2s;
 }
 .input__container input:focus .button {
   margin-top: 5rem;

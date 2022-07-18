@@ -1,10 +1,10 @@
 import "./ButtonSubmit.css";
 
-export default function ButtonSubmit(props) {
+export default function ButtonSubmit({ className, title, icon }) {
   return (
-    <button className={`button-submit ${props.className}`} type="submit">
-      {props.title}
-      <i className={`${props.icon} button__icon`}></i>
+    <button className={`button-submit ${className}`} type="submit">
+      {title}
+      <i className={`${icon} button__icon`}></i>
     </button>
   );
 }

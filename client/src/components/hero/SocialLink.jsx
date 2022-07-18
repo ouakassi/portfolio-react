@@ -1,8 +1,8 @@
 import "./SocialLink.css";
 
-const SocialLink = (props) => (
-  <a href={props.link} className="social-icon">
-    <i className={props.icon} />
+const SocialLink = ({ link, icon }) => (
+  <a href={link} className="social-icon">
+    <i className={icon} />
   </a>
 );
 

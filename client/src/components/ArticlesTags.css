@@ -14,7 +14,7 @@
 .icon {
   display: flex;
   align-items: center;
-  color: var(--first-color);
+  color: var(--first-color-alt);
   font-size: 4rem;
   transition: 0.2s;
   cursor: pointer;

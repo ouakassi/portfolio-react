@@ -13,18 +13,17 @@ const ProjectCard = ({ image, title, description, tags }) => {
       transition={{ type: "spring", mass: 0.5 }}
       whileHover={{ scale: 1.02 }}
       whileFocus={{ scale: 1.02 }}
-      viewport={{ once: true }}
+      viewport={{ once: true, amount: 0.4 }}
       className="project__content"
     >
-      <div className="project__img">
-        <motion.img
-          initial={{ scale: 0.5, opacity: 0 }}
-          whileInView={{ scale: 1, opacity: 1 }}
-          viewport={{ once: true }}
-          src={image}
-          alt={title}
-        />
-      </div>
+      <motion.div
+        initial={{ scale: 0.5, opacity: 0 }}
+        whileInView={{ scale: 1, opacity: 1, transition: 1 }}
+        viewport={{ once: true, amount: 1 }}
+        className="project__img"
+      >
+        <img src={image} alt={title} />
+      </motion.div>
       <motion.div className="project__data">
         <StyledLinedTitle>{title}</StyledLinedTitle>
         <StyledParagraph className="project__description">

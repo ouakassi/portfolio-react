@@ -2,6 +2,7 @@
   background-image: url("../../../public/images/colored-patterns.svg");
   background-position: right top;
   background-repeat: no-repeat;
+  padding: 2rem 0;
 }
 
 .home__content {

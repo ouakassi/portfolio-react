@@ -90,6 +90,7 @@
 .nav__list {
   grid-template-columns: repeat(3, 1fr);
   gap: 3.2rem;
+  justify-items: center;
 }
 
 .nav__close {
@@ -136,8 +137,6 @@
   }
   .nav__list {
     grid-template-columns: repeat(5, max-content);
-    justify-content: center;
-    align-items: center;
   }
   .nav__menu {
     margin-left: auto;

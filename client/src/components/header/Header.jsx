@@ -44,7 +44,7 @@ const Header = () => {
       initial={{ y: -30, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ delay: 0.2, duration: 0.5 }}
-      className={`header ${windowHeight >= 20 ? "headerShadow" : ""}`}
+      className={`header ${windowHeight >= 40 ? "headerShadow" : ""}`}
       id="header"
     >
       <nav className="nav">

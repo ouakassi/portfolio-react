@@ -8,10 +8,10 @@
 }
 
 .headerShadow {
-  background: rgba(0, 20, 63, 0.7);
+  backdrop-filter: blur(20px);
+  background: var(--background-color-light);
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px,
     rgba(0, 0, 0, 0.35) 0px -5px 15px;
-  backdrop-filter: blur(20px);
 }
 
 .nav__btns {
@@ -37,10 +37,6 @@
   font-weight: var(--font-medium);
   text-transform: capitalize;
   padding: 0.5rem 0;
-}
-
-.nav__item {
-  /* padding: 1rem 0; */
 }
 
 .nav__link:hover {

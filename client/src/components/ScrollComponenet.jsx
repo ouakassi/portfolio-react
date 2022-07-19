@@ -1,20 +1,12 @@
 import { useState, useEffect } from "react";
 import "./ScrollComponenet.css";
 import { motion } from "framer-motion";
+import useWindowHeight from "../hooks/useWindowHeight";
 
 const ScrollComponent = () => {
-  const [windowHeight, setwindowHeight] = useState(0);
+  const windowHeight = useWindowHeight();
 
   const handlClick = () => window.scrollTo(0, 0);
-
-  useEffect(() => {
-    const onScroll = () => setwindowHeight(window.pageYOffset);
-
-    // clean up code
-    window.removeEventListener("scroll", onScroll);
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
 
   if (windowHeight >= 400)
     return (

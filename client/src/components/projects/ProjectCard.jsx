@@ -8,13 +8,12 @@ import { motion } from "framer-motion";
 const ProjectCard = ({ image, title, description, tags }) => {
   return (
     <motion.div
-      initial={{ y: 200, opacity: 0 }}
+      initial={{ y: 150, opacity: 0 }}
       whileInView={{ y: 0, opacity: 1 }}
       transition={{ type: "spring", mass: 0.5 }}
       whileHover={{ scale: 1.02 }}
-      whileFocus={{ scale: 1.02 }}
       viewport={{ once: true, amount: 0.4 }}
-      className="project__content"
+      className="project__box"
     >
       <motion.div
         initial={{ scale: 0.5, opacity: 0 }}

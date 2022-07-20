@@ -16,6 +16,8 @@ export default function Article() {
 
   // change ARTICLE page theme
 
+  console.log(article);
+
   useLayoutEffect(() => {
     if (location.pathname === "/blog/" + slug) {
       document.querySelector(".header").classList.add("blog-header");
@@ -42,25 +44,18 @@ export default function Article() {
       {isPending && <div>Loading .....</div>}
       {error && <div>{error} .....</div>}
 
-      <div>Home Tutorials CSS</div>
       {article && (
         <Section
           className="blog"
           id="blog"
           sectionTitle={article.title}
-          sectionSubtitle={article.publishedDate.split("T")[0]}
+          sectionSubtitle={`${article.publishedDate.split("T")[0]} ${
+            article.readTime
+          } min `}
         >
           <div>{article.description}</div>
         </Section>
       )}
-
-      <div>
-        {/* <div>{article._id}</div>
-        <div>{article.title}</div>
-        <img src={article.imgUrl} alt="" />
-
-        <div>{article.readTime}min</div> */}
-      </div>
     </div>
   );
 }

@@ -1,14 +1,14 @@
-import { useState, useEffect } from "react";
-import "./ScrollComponenet.css";
+import "./ScrollUpComponent.css";
+
 import { motion } from "framer-motion";
 import useWindowHeight from "../hooks/useWindowHeight";
 
-const ScrollComponent = () => {
+const ScrollUpComponent = () => {
   const windowHeight = useWindowHeight();
 
   const handlClick = () => window.scrollTo(0, 0);
 
-  if (windowHeight >= 400)
+  if (windowHeight >= 500)
     return (
       <motion.div
         initial={{ opacity: 0, y: -50 }}
@@ -22,4 +22,4 @@ const ScrollComponent = () => {
     );
 };
 
-export default ScrollComponent;
+export default ScrollUpComponent;

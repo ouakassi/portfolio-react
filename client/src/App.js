@@ -8,7 +8,7 @@ import "./styles/Base.css";
 import Header from "./components/header/Header";
 import Footer from "./components/footer/Footer";
 
-import ScrollComponent from "./components/ScrollComponenet";
+import ScrollUpComponent from "./components/ScrollUpComponent";
 
 import ScrollToTop from "./hooks/useScrollToTop";
 import Routes from "./pages/Routes";
@@ -24,7 +24,7 @@ const App = () => {
         <Footer />
         <ContactIcon />
       </BrowserRouter>
-      <ScrollComponent />
+      <ScrollUpComponent />
     </>
   );
 };

@@ -4,8 +4,8 @@ import SocialLink from "./SocialLink";
 import { motion } from "framer-motion";
 
 const Hero = () => {
-  const name = ["O", "U", "S", "S", "A", "M", "A"];
-  const lastName = ["O", "U", "A", "K", "A", "S", "S", "I"];
+  const name = Array.from("OUSSAMA");
+  const lastName = Array.from("OUAKASSI");
 
   return (
     <section className="home section" id="home">
@@ -33,12 +33,13 @@ const Hero = () => {
           </motion.div>
 
           <div className="home__data">
-            <h1 className="home__title">
+            <di className="home__title">
               <span className="home__title-first">
                 {name.map((letter, i) => {
                   return (
                     <motion.span
-                      initial={{ top: -20, opacity: 0.9 }}
+                      key={i}
+                      initial={{ top: -20, opacity: 0.9 * i }}
                       animate={{ top: 0, opacity: 1 }}
                       whileHover={{ scale: 1.1 }}
                       transition={{ delay: 0.1 * i }}
@@ -49,10 +50,10 @@ const Hero = () => {
                 })}
               </span>
               <span className="home__title-last">
-                {" "}
                 {lastName.map((letter, i) => {
                   return (
                     <motion.span
+                      key={i}
                       initial={{ x: -20, opacity: 0 }}
                       animate={{ x: 0, opacity: 1 }}
                       transition={{ delay: 0.1 * i }}
@@ -62,7 +63,7 @@ const Hero = () => {
                   );
                 })}
               </span>
-            </h1>
+            </di>
             <h2 className="home__subtitle">WEB Developer</h2>
             <p className="home__description">
               An avid MERN stack developer, building websites that you would

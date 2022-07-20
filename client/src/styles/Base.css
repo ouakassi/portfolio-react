@@ -34,3 +34,17 @@ img {
   max-width: 100%;
   height: auto;
 }
+
+*:focus-visible {
+  outline: 2px dashed var(--first-color);
+  outline-offset: 3px;
+}
+
+*:focus:not(:focus-visible) {
+  outline: none;
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+}

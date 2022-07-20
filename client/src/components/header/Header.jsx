@@ -49,7 +49,10 @@ const Header = () => {
     >
       <nav className="nav">
         <Link to="/">
-          <span className="nav__logo"> OUAKASSI</span>
+          <div className="nav__logo">
+            {" "}
+            <img src="./images/logo.svg" alt="" />
+          </div>
         </Link>
         <div
           // show the navbar
@@ -57,9 +60,9 @@ const Header = () => {
           id="#nav-menu"
         >
           <ul className="nav__list grid">
-            {NAVITEMS.map(({ name, icon }) => {
+            {NAVITEMS.map(({ name, icon }, i) => {
               return (
-                <li className="nav__item">
+                <li className="nav__item" key={i}>
                   <NavLink
                     onClick={() => handleClick(false)}
                     to={`/${name}`}
@@ -79,7 +82,7 @@ const Header = () => {
         </div>
         <div className="nav__btns">
           <div className="nav__toggle" onClick={() => handleClick(true)}>
-            <i class="uil uil-apps"></i>
+            <i className="uil uil-apps"></i>
           </div>
         </div>
       </nav>

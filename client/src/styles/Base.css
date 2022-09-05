@@ -9,10 +9,10 @@ html {
 }
 
 body {
-  margin: 0 0 var(--header-height) 0;
+  margin: 0;
   font-family: var(--body-font);
   font-size: var(--normal-font-size);
-  background: rgb(1, 13, 31);
+  background: var(--second-color);
   background-image: var(--body-color);
   color: var(--text-color);
 }
@@ -20,7 +20,9 @@ body {
 h1,
 h2,
 h3,
-h4 {
+h4,
+h5,
+h6 {
   color: var(--title-color);
   font-weight: var(--font-semi-bold);
 }
@@ -29,10 +31,15 @@ ul {
 }
 a {
   text-decoration: none;
+  color: var(--first-color-alt);
 }
 img {
   max-width: 100%;
   height: auto;
+}
+
+b {
+  color: var(--first-color-alt);
 }
 
 *:focus-visible {
@@ -47,4 +54,10 @@ img {
 input:focus,
 textarea:focus {
   outline: none;
+}
+
+@media screen and (max-width: 767px) {
+  body {
+    margin: 0 0 var(--header-height) 0;
+  }
 }

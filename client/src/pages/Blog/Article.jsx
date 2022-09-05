@@ -16,8 +16,6 @@ export default function Article() {
 
   // change ARTICLE page theme
 
-  console.log(article);
-
   useLayoutEffect(() => {
     if (location.pathname === "/blog/" + slug) {
       document.querySelector(".header").classList.add("blog-header");

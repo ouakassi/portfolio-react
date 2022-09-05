@@ -16,7 +16,10 @@
   --first-color-alt: rgb(0, 255, 200);
   --first-color-alt-light: rgba(0, 255, 200, 0.2);
 
-  --title-color: rgb(248, 248, 248);
+  --second-color: rgb(3, 0, 57);
+  --second-color-light: rgba(3, 0, 57, 0.5);
+
+  --title-color: rgb(255, 255, 255);
   --text-color: rgb(180, 207, 209);
 
   --text-gradient-color: linear-gradient(
@@ -34,12 +37,14 @@
   --scroll-thumb-color: rgb(19, 216, 223);
   --scroll-thumb-color-hover: rgb(11, 245, 214);
 
-  --body-color: linear-gradient(90deg, rgb(0, 14, 44) 10%, rgb(4, 22, 59) 79%);
+  --body-color: linear-gradient(90deg, rgb(2 31 94) 10%, rgb(1 5 57) 79%);
+
+  /* --body-color: linear-gradient(90deg, rgb(0, 14, 44) 10%, rgb(4, 22, 59) 79%); */
 
   --background-color-1: linear-gradient(
     35deg,
-    rgb(0, 20, 63),
-    rgb(0, 10, 31) 100%,
+    rgb(12 0 100),
+    rgb(5 0 31) 100%,
     rgb(1, 25, 78)
   );
 
@@ -52,6 +57,8 @@
   /*========== Box Shadows  ==========*/
 
   --box-shadow-1: rgb(0 0 0 / 70%) 0px 5px 10px 0px;
+  --box-shadow-2: rgb(0 0 0 / 40%) 0px 2px 4px,
+    rgb(0 0 0 / 30%) 0px 7px 13px -3px, rgb(0 0 0 / 20%) 0px -3px 0px inset;
 
   /*========== Font and typography ==========*/
   --body-font: "Poppins", sans-serif;

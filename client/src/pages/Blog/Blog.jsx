@@ -7,6 +7,7 @@ import { useFetch } from "../../hooks/useFetch";
 import checkColor from "../../components/projects/checkColor";
 import ArticlesTags from "../../components/ArticlesTags";
 import BlogCardSkeleton from "../../components/blog/BlogCardSkeleton";
+import { ShowMoreButton } from "../../components/Buttons/ShowMoreButton";
 
 const Blog = () => {
   const [url, setUrl] = useState("/articles/");
@@ -37,7 +38,7 @@ const Blog = () => {
         })}
 
       <article className="articles__container container">
-        {isPending && <BlogCardSkeleton cards={6} />}
+        {isPending && <BlogCardSkeleton cards={8} />}
         {error && <div>{error} .....</div>}
         {articles &&
           articles.map(
@@ -53,16 +54,15 @@ const Blog = () => {
             }) => {
               return (
                 <BlogCard
-                  key={id}
                   title={title}
-                  description={description.substring(0, 90) + "..."}
+                  description={description.substring(0, 140) + "..."}
                   publishedDate={publishedDate}
                   tags={tags.map((tag, i) => {
-                    return checkColor(tag, i, "project__language");
+                    return <ShowMoreButton />;
                   })}
                   image={imgUrl}
                   id={id}
-                  slug={slug}
+                  link={"/blog/" + slug}
                   readTime={`${readTime} min read`}
                 />
               );

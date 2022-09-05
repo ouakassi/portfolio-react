@@ -2,17 +2,14 @@
   display: flex;
   align-items: center;
   background-color: transparent;
-  border: none;
-  color: #fff;
+  color: var(--title-color);
   text-transform: uppercase;
   padding: 1.5rem;
   cursor: pointer;
   border-radius: 5px;
-  box-shadow: inset rgb(68 255 229 / 25%) 0 0 0px 2px,
-    inset rgb(0 255 178 / 10%) 0 0 0px 2px, rgb(0 0 0 / 50%) 1px 4px 5px 2px;
   user-select: none;
+  box-shadow: var(--first-color) 0px 0px 0px 2px;
 }
 .show-more__button:hover {
-  box-shadow: inset rgb(68 255 230) 0px 0px 0px 2px,
-    inset rgb(0 255 179) 0 0 0px 2px;
+  box-shadow: var(--first-color-alt) 0px 0px 0px 3px;
 }

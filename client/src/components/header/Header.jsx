@@ -5,7 +5,7 @@ import useWindowHeight from "../../hooks/useWindowHeight";
 
 import "./Header.css";
 
-const NAVITEMS = [
+const NAV_ITEMS = [
   {
     name: "",
     icon: "uil uil-estate",
@@ -28,6 +28,8 @@ const NAVITEMS = [
   },
 ];
 
+const LOGO_NAME = Array.from("uakassi");
+
 const Header = () => {
   const [toggleNav, setToggleNav] = useState(false);
 
@@ -36,8 +38,6 @@ const Header = () => {
   const handleClick = (state) => {
     setToggleNav(state);
   };
-
-  console.log(windowHeight);
 
   return (
     <motion.header
@@ -49,10 +49,23 @@ const Header = () => {
     >
       <nav className="nav">
         <Link to="/">
-          <div className="nav__logo">
-            {" "}
+          <motion.div
+            whileHover={{ scale: 1.05 }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            className="nav__logo"
+          >
             <img src="./images/logo.svg" alt="" />
-          </div>
+            <motion.span
+              initial={{ opacity: 0, y: 100 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 1 }}
+            >
+              {LOGO_NAME.map((letter) => {
+                return letter;
+              })}
+            </motion.span>
+          </motion.div>
         </Link>
         <div
           // show the navbar
@@ -60,7 +73,7 @@ const Header = () => {
           id="#nav-menu"
         >
           <ul className="nav__list grid">
-            {NAVITEMS.map(({ name, icon }, i) => {
+            {NAV_ITEMS.map(({ name, icon }, i) => {
               return (
                 <li className="nav__item" key={i}>
                   <NavLink

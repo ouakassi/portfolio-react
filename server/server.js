@@ -26,8 +26,10 @@ app.use(express.urlencoded({ extended: false }));
 // Handle options credentials check - before CORS!
 // and fetch cookies credentials requirement
 app.use(credentials);
-
 app.use(cors(corsOptions));
+
+// for deployment
+app.use(express.static(path.resolve(__dirname + "./client/build")));
 
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
@@ -40,8 +42,6 @@ const storage = multer.diskStorage({
   },
 });
 
-app.use(express.static(__dirname + "/public"));
-
 const upload = multer({ storage: storage });
 app.post("/api/upload", upload.single("file"), (req, res) => {
   res.status(200).json("File has been uploaded");
@@ -50,6 +50,10 @@ app.post("/api/upload", upload.single("file"), (req, res) => {
 app.use("/api/articles", require("./routes/articlesRoutes"));
 app.use("/api/projects", require("./routes/projectsRoutes"));
 app.use("/api/auth", require("./routes/authRoutes"));
+
+app.get("*", (req, res) => {
+  res.sendFile(path.resolve(__dirname, "./client/build", "index.html"));
+});
 
 app.use(errorHandler);
 

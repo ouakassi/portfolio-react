@@ -13,7 +13,7 @@ const Section = ({
     initial={{ opacity: 0.2, y: -200 }}
     animate={{ opacity: 1, y: 0 }}
     whileInView={true}
-    transition={{ duration: 0.4 }}
+    // transition={{ duration: 0.4 }}
     id={id}
     className={`${className} section`}
   >

@@ -18,13 +18,13 @@ const App = () => {
   return (
     <>
       <BrowserRouter>
-        <ScrollToTop />
         <Header />
+        <ScrollToTop />
         <Routes />
         <Footer />
         <ContactIcon />
+        <ScrollUpComponent />
       </BrowserRouter>
-      <ScrollUpComponent />
     </>
   );
 };

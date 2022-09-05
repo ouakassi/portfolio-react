@@ -30,7 +30,16 @@ const Projects = () => {
         {projects &&
           projects.map(
             (
-              { _id: id, imgurl, title, description, github, tags, website },
+              {
+                _id: id,
+                slug,
+                imgurl,
+                title,
+                description,
+                github,
+                tags,
+                website,
+              },
               i
             ) => {
               if (i >= projectTotal) return null;
@@ -46,6 +55,7 @@ const Projects = () => {
                       return checkColor(tag, i, "project__language");
                     })}
                     website={website}
+                    link={url + slug}
                   />
                 );
             }

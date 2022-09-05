@@ -1,11 +1,26 @@
 const Project = require("../models/projectModel");
 const asyncHandler = require("express-async-handler");
+
 // Get project
 // Get /api/projects
 // Public
 const getProjects = asyncHandler(async (req, res) => {
   const projects = await Project.find({});
   res.status(200).json(projects);
+});
+
+// Get one article
+// Get /api/articles/:id
+// Public
+const getProject = asyncHandler(async (req, res) => {
+  const projectSlug = req.params.slug;
+  const project = await Project.findOne({ slug: projectSlug });
+  console.log(projectSlug);
+  if (!project) {
+    res.status(400);
+    throw new Error("project not found");
+  }
+  res.status(200).json(project);
 });
 
 // set project
@@ -63,6 +78,7 @@ const deleteProject = asyncHandler(async (req, res) => {
 
 module.exports = {
   getProjects,
+  getProject,
   setProject,
   updateProject,
   deleteProject,

@@ -1,51 +1,44 @@
 import "./Contact.css";
-import Section from "../../components/Section";
-import Input from "../forms/Input";
-import TextArea from "../forms/TextArea";
-import ButtonSubmit from "../Buttons/ButtonSubmit";
 
-const Contact = () => (
-  <Section
-    className="contact"
-    id="contact"
-    icon="uil uil-calling"
-    sectionTitle="contact me"
-    sectionSubtitle="get in touch!"
-  >
-    <div className="contact__container container">
-      <div className="contact__infos">
-        <div className="contact__information">
-          <i className="uil uil-phone contact__icon" />
-          <h3 className="contact__title">+212 6 11 42 31 16</h3>
-        </div>
-        <div className="contact__information">
-          <i className="uil uil-envelope contact__icon" />
-          <h3 className="contact__title">ouakassi.oussama@gmail.com</h3>
-        </div>
-        <div className="contact__information">
-          <i className="uil uil-map-marker-shield contact__icon" />
-          <h3 className="contact__title">Morocco - Rabat/Sale</h3>
+import Section from "../../components/Section";
+import ContactBox from "./ContactBox";
+
+const Contact = () => {
+  const CONTACT_DATA = [
+    {
+      icon: "uil uil-envelope",
+      title: "email",
+      data: "ouakassi.oussama@gmail.com",
+    },
+    { icon: "uil uil-phone", title: "phone", data: "+212 6 11 42 31 16" },
+    {
+      icon: "uil uil-map-marker-shield",
+      title: "location",
+      data: "Morocco / Worldwide",
+    },
+  ];
+
+  return (
+    <Section
+      className="contact"
+      id="contact"
+      icon="uil uil-calling"
+      sectionTitle="contact me"
+      sectionSubtitle="get in touch!"
+    >
+      <div className="contact__container container">
+        <div className="contact__infos">
+          <h6>
+            Want to get in touch? <br /> Write me at hello[at]maximeheckel.com
+            or shoot me a DM on Twitter
+          </h6>
+          {CONTACT_DATA.map(({ icon, title, data }, i) => {
+            return <ContactBox key={i} icon={icon} title={title} data={data} />;
+          })}
         </div>
       </div>
-      <form className="contact__form" action="" method="post">
-        <Input
-          label="email"
-          name="email"
-          type="email"
-          className="emailInput"
-          icon="login__icon uil uil-at"
-        />
-
-        <TextArea label="message" rows={8} cols={10}></TextArea>
-
-        <ButtonSubmit
-          className="button"
-          title="send "
-          icon="uil uil-message "
-        />
-      </form>
-    </div>
-  </Section>
-);
+    </Section>
+  );
+};
 
 export default Contact;

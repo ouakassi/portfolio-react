@@ -4,19 +4,31 @@
   bottom: 0;
   left: 0;
   z-index: var(--z-fixed);
-  background-image: var(--body-color);
+  background-color: transparent;
 }
 
 .headerShadow {
   backdrop-filter: blur(20px);
-  background: var(--background-color-light);
+  background: var(--second-color-light);
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px,
     rgba(0, 0, 0, 0.35) 0px -5px 15px;
 }
 
 .nav__logo {
-  width: 14rem;
-  height: 7rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.nav__logo img {
+  width: 4rem;
+  height: 4rem;
+}
+.nav__logo span {
+  font-size: 2rem;
+  margin-left: 0.5rem;
+  text-transform: uppercase;
+  font-weight: 600;
+  text-shadow: 0px 0px 8px var(--first-color);
 }
 .nav__btns {
   display: flex;
@@ -55,14 +67,13 @@
 .nav__logo,
 .nav__toggle {
   color: var(--title-color);
-  font-weight: var(--font-medium);
 }
 .nav__logo:hover,
 .nav__toggle:hover {
   color: var(--first-color);
 }
 .nav__toggle {
-  font-size: 1.7rem;
+  font-size: 2.5rem;
   cursor: pointer;
 }
 

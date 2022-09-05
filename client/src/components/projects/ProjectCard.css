@@ -1,21 +1,19 @@
-.project__container {
-  display: flex;
-  flex-flow: column nowrap;
-  padding: 1rem;
-  justify-content: center;
-  align-items: center;
-  width: clamp(80vw, 50rem, 90%);
-}
-
 .project__box {
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
   padding: 2rem;
   margin: 4rem 0;
-  background-image: var(--background-color-1);
-  box-shadow: var(--box-shadow-1);
+  box-shadow: var(--box-shadow-2);
   border-radius: 10px;
+  background-position: right;
+  background-color: #010539;
+  color: var(--text-color);
+  background: repeating-linear-gradient(
+    200deg,
+    rgba(0, 0, 50, 0.33),
+    #09094ffb 250px
+  );
 }
 .project__box:hover,
 .project__box:focus {

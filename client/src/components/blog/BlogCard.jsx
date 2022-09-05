@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 
 const BlogCard = ({
-  slug,
+  link,
   id,
   image,
   title,
@@ -16,13 +16,14 @@ const BlogCard = ({
 }) => {
   return (
     <motion.article
+      key={id}
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ delay: 0.2, transition: 0.4 }}
       viewport={{ once: true, amount: 0.4 }}
     >
-      <Link to={`/blog/${slug}`}>
-        <div className="article" key={id}>
+      <Link to={link}>
+        <div className="article">
           <img className="article__image" src={image} alt={title} />
           <div className="article__data">
             <StyledTitle>{title}</StyledTitle>
@@ -30,9 +31,14 @@ const BlogCard = ({
             <div className="article__tags">{tags}</div>
             <div className="article__data-dates">
               <span className="article__data-date">
+                <i className="uil uil-calendar-alt"></i>{" "}
                 {publishedDate && publishedDate.split("T")[0]}
               </span>
-              <span>{readTime}</span>
+              <span>
+                {" "}
+                <i className="uil uil-clock"> </i>
+                {readTime}
+              </span>
             </div>
           </div>
 

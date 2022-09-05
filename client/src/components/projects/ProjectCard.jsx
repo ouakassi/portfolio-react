@@ -2,47 +2,69 @@ import "./ProjectCard.css";
 import StyledParagraph from "./../../components/StyledParagrapgh";
 import StyledLinedTitle from "./../../components/StyledLinedTitle";
 import ButtonPrimary from "../Buttons/ButtonPrimary";
-
+import { Link } from "react-router-dom";
+import { ShowMoreButton } from "../Buttons/ShowMoreButton";
 import { motion } from "framer-motion";
 
-const ProjectCard = ({ image, title, description, tags }) => {
+// const patternBackground = "./images/pattern2.svg";
+
+const ProjectCard = ({ image, title, description, tags, link }) => {
+  const cardAnimation = {
+    initial: {
+      y: 90,
+      opacity: 0,
+      scale: 1,
+      backgroundPositionY: "60%",
+    },
+    whileInView: { y: 0, opacity: 1 },
+    whileHover: { scale: 1.02, backgroundPositionY: "50%" },
+  };
+
   return (
-    <motion.div
-      initial={{ y: 150, opacity: 0 }}
-      whileInView={{ y: 0, opacity: 1 }}
-      transition={{ type: "spring", mass: 0.5 }}
-      whileHover={{ scale: 1.02 }}
-      viewport={{ once: true, amount: 0.4 }}
-      className="project__box"
-    >
+    <Link to={link}>
       <motion.div
-        initial={{ scale: 0.5, opacity: 0 }}
-        whileInView={{ scale: 1, opacity: 1, transition: 1 }}
-        viewport={{ once: true, amount: 1 }}
-        className="project__img"
+        variants={cardAnimation}
+        initial="initial"
+        whileInView="whileInView"
+        whileHover="whileHover"
+        transition={{ type: "spring", mass: 0.5 }}
+        viewport={{ once: true, amount: 0.4 }}
+        className="project__box"
+        // style={{ backgroundImage: `url(${patternBackground})` }}
       >
-        <img src={image} alt={title} />
-      </motion.div>
-      <motion.div className="project__data">
-        <StyledLinedTitle>{title}</StyledLinedTitle>
-        <StyledParagraph className="project__description">
-          {description}...
-        </StyledParagraph>
-        <div className="project__languages">{tags}</div>
-        <div className="project__links">
-          <ButtonPrimary
-            title="Github"
-            icon="uil uil-github"
-            link="https://www.google.com"
-          />
-          <ButtonPrimary
-            title="Website"
-            icon="uil uil-globe"
-            link="https://www.google.com"
-          />
+        <motion.div
+          initial={{ y: 20, opacity: 0 }}
+          transition={{ delay: 0.2, transition: 1 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          viewport={{ once: true, amount: 1 }}
+          className="project__img"
+        >
+          <img src={image} alt={title} />
+        </motion.div>
+        <div className="project__data">
+          <StyledLinedTitle>{title}</StyledLinedTitle>
+          <StyledParagraph className="project__description">
+            {description}...
+          </StyledParagraph>
+          <div className="project__languages">{tags}</div>
+          <div className="project__links">
+            <ButtonPrimary
+              title="Github"
+              icon="uil uil-github"
+              link="https://www.google.com"
+            />
+            <ButtonPrimary
+              title="Website"
+              icon="uil uil-globe"
+              link="https://www.google.com"
+            />
+            <Link to={link}>
+              <ShowMoreButton title="project details" />
+            </Link>
+          </div>
         </div>
       </motion.div>
-    </motion.div>
+    </Link>
   );
 };
 

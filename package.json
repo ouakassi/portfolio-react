@@ -4,6 +4,7 @@
   "description": "",
   "main": "app.js",
   "scripts": {
+    "build-client": "cd client && npm run build",
     "server": "nodemon server/server.js --ignore client",
     "client": "npm start --prefix client",
     "start": "concurrently --kill-others-on-fail \"npm run server \" \"npm run client \""
@@ -25,6 +26,6 @@
   },
   "devDependencies": {
     "concurrently": "^7.2.1",
-    "nodemon": "^2.0.16"
+    "nodemon": "^2.0.19"
   }
 }

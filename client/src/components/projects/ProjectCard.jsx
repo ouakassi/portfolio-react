@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import { ShowMoreButton } from "../Buttons/ShowMoreButton";
 import { motion } from "framer-motion";
 
-// const patternBackground = "./images/pattern2.svg";
+const patternBackground = "./images/pattern2.png";
 
 const ProjectCard = ({ image, title, description, tags, link }) => {
   const cardAnimation = {
@@ -14,10 +14,10 @@ const ProjectCard = ({ image, title, description, tags, link }) => {
       y: 90,
       opacity: 0,
       scale: 1,
-      backgroundPositionY: "60%",
+      backgroundPositionY: "50%",
     },
     whileInView: { y: 0, opacity: 1 },
-    whileHover: { scale: 1.02, backgroundPositionY: "50%" },
+    whileHover: { scale: 1.02, backgroundPositionY: "40%" },
   };
 
   return (
@@ -30,7 +30,7 @@ const ProjectCard = ({ image, title, description, tags, link }) => {
         transition={{ type: "spring", mass: 0.5 }}
         viewport={{ once: true, amount: 0.4 }}
         className="project__box"
-        // style={{ backgroundImage: `url(${patternBackground})` }}
+        style={{ backgroundImage: `url(${patternBackground})` }}
       >
         <motion.div
           initial={{ y: 20, opacity: 0 }}

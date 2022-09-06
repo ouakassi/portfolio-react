@@ -9,6 +9,7 @@ const { errorHandler } = require("./middleware/errorMiddleware");
 const { mongoConnect } = require("./services/db");
 const corsOptions = require("./config/corsOptions");
 const credentials = require("./middleware/credentials");
+const { env } = require("process");
 
 const PORT = process.env.PORT || 8000;
 
@@ -27,9 +28,6 @@ app.use(express.urlencoded({ extended: false }));
 // and fetch cookies credentials requirement
 app.use(credentials);
 app.use(cors(corsOptions));
-
-// for deployment
-app.use(express.static(path.resolve(__dirname + "./client/build")));
 
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
@@ -51,9 +49,20 @@ app.use("/api/articles", require("./routes/articlesRoutes"));
 app.use("/api/projects", require("./routes/projectsRoutes"));
 app.use("/api/auth", require("./routes/authRoutes"));
 
-app.get("*", (req, res) => {
-  res.sendFile(path.resolve(__dirname, "./client/build", "index.html"));
-});
+// for deployment
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static(path.resolve(__dirname + "../client/build")));
+
+  app.get("*", (req, res) => {
+    res.sendFile(
+      path.resolve(__dirname, "../", "client", "build", "index.html")
+    );
+  });
+} else {
+  app.get("/", (req, res) => {
+    res.send("Please set to production");
+  });
+}
 
 app.use(errorHandler);
 

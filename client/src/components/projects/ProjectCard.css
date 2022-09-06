@@ -7,13 +7,8 @@
   box-shadow: var(--box-shadow-2);
   border-radius: 10px;
   background-position: right;
-  background-color: #010539;
+  background-color: #0407368d;
   color: var(--text-color);
-  background: repeating-linear-gradient(
-    200deg,
-    rgba(0, 0, 50, 0.33),
-    #09094ffb 250px
-  );
 }
 .project__box:hover,
 .project__box:focus {

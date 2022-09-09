@@ -1,5 +1,3 @@
-import { BrowserRouter } from "react-router-dom";
-
 import "./styles/Globals.css";
 import "./styles/Layout.css";
 import "./styles/buttons.css";
@@ -17,14 +15,12 @@ import ContactIcon from "./components/contact/ContactIcon";
 const App = () => {
   return (
     <>
-      <BrowserRouter>
-        <Header />
-        <ScrollToTop />
-        <Routes />
-        <Footer />
-        <ContactIcon />
-        <ScrollUpComponent />
-      </BrowserRouter>
+      <Header />
+      <ScrollToTop />
+      <Routes />
+      <Footer />
+      <ContactIcon />
+      <ScrollUpComponent />
     </>
   );
 };

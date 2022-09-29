@@ -2,6 +2,7 @@ import ButtonPrimary from "../Buttons/ButtonPrimary";
 import "./Hero.css";
 import SocialLink from "./../SocialLink";
 import { motion } from "framer-motion";
+import GlowingText from "../GlowingText";
 
 const SOCIAL_LINKS = [
   {
@@ -31,7 +32,6 @@ const Hero = () => {
     <section
       style={{ backgroundImage: `url(${patternBackground})` }}
       className="home section"
-      id="home"
     >
       <div className="home__container container ">
         <div className="home__content ">
@@ -82,7 +82,7 @@ const Hero = () => {
                 })}
               </span>
             </div>
-            <h2 className="home__subtitle">WEB Developer</h2>
+            <GlowingText text="WEB Developer" />
             <p className="home__description">
               An avid MERN stack developer, building websites that you would
               love using. <br /> I develop a Complete Responsive Websites using

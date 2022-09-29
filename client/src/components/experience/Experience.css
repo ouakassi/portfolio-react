@@ -1,0 +1,13 @@
+.exp__selector {
+  display: flex;
+  justify-content: space-between;
+  margin: 2rem;
+}
+
+div.exp__selector > span:nth-child(1) {
+  margin-right: 4rem;
+}
+.exp__container {
+  display: flex;
+  flex-flow: column;
+}

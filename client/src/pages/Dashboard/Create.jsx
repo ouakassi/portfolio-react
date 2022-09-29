@@ -23,7 +23,6 @@ export default function Create() {
     <div className="article-ds">
       <Section
         className="projects"
-        id="projects"
         sectionTitle="sqfsq"
         sectionSubtitle="fdsfsdf"
       >

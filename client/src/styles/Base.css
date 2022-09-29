@@ -26,6 +26,10 @@ h6 {
   color: var(--title-color);
   font-weight: var(--font-semi-bold);
 }
+
+p {
+  font-family: var(--font-1);
+}
 ul {
   list-style-type: none;
 }

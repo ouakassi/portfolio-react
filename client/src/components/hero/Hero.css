@@ -69,15 +69,13 @@
   background-clip: text;
   -webkit-background-clip: text;
 }
-.home__subtitle {
-  font-size: var(--h2-font-size);
-  color: var(--title-color);
-  font-family: var(--font-medium);
-  margin: 1rem 0;
-  text-shadow: 0px 0px 8px var(--first-color);
-}
+
 .home__description {
   margin-bottom: 2rem;
+  background-color: rgb(29 181 236 / 4%);
+  border-radius: 20px;
+  backdrop-filter: blur(30px);
+  padding: 2rem;
 }
 .home__scroll {
   grid-area: home__scroll;

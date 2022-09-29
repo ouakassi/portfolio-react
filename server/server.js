@@ -50,17 +50,17 @@ app.use("/api/projects", require("./routes/projectsRoutes"));
 app.use("/api/auth", require("./routes/authRoutes"));
 
 // for deployment
-// if (process.env.NODE_ENV === "production") {
-//   app.use(express.static(path.join(__dirname + "build")));
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static(path.join(__dirname + "build")));
 
-//   app.get("/*", (req, res) => {
-//     res.sendFile(path.join(__dirname, "../client", "build", "index.html"));
-//   });
-// } else {
-//   app.get("/", (req, res) => {
-//     res.send("Please set to production");
-//   });
-// }
+  app.get("/*", (req, res) => {
+    res.sendFile(path.join(__dirname, "../client", "build", "index.html"));
+  });
+} else {
+  app.get("/", (req, res) => {
+    res.send("Please set to production");
+  });
+}
 
 app.use(errorHandler);
 

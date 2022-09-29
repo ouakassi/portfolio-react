@@ -10,7 +10,6 @@ export default function Unauthorized() {
   return (
     <Section
       className="login"
-      id="login"
       icon="uil uil-shield-question"
       sectionTitle="Unauthorized"
       sectionSubtitle="Not authorized"

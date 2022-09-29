@@ -19,10 +19,6 @@ const NAV_ITEMS = [
     icon: "uil uil-files-landscapes-alt",
   },
   {
-    name: "about",
-    icon: "uil uil-user-square",
-  },
-  {
     name: "login",
     icon: "uil uil-user",
   },
@@ -33,7 +29,7 @@ const LOGO_NAME = Array.from("uakassi");
 const Header = () => {
   const [toggleNav, setToggleNav] = useState(false);
 
-  const windowHeight = useWindowHeight();
+  // const windowHeight = useWindowHeight();
 
   const handleClick = (state) => {
     setToggleNav(state);
@@ -41,11 +37,10 @@ const Header = () => {
 
   return (
     <motion.header
-      initial={{ y: -30, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      transition={{ delay: 0.2, duration: 0.5 }}
-      className={`header ${windowHeight >= 40 ? "headerShadow" : ""}`}
-      id="header"
+      // initial={{ y: -30, opacity: 0 }}
+      // animate={{ y: 0, opacity: 1 }}
+      // transition={{ delay: 0.2, duration: 0.5 }}
+      className="header headerShadow"
     >
       <nav className="nav">
         <Link to="/">

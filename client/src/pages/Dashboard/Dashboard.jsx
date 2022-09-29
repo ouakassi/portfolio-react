@@ -3,7 +3,6 @@ export default function Dashboard() {
   return (
     <Section
       className="login"
-      id="login"
       icon="uil uil-signin"
       sectionTitle="Dashboard"
       sectionSubtitle="welcome to  dashboard"

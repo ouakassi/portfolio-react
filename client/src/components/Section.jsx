@@ -9,14 +9,7 @@ const Section = ({
   sectionSubtitle,
   children,
 }) => (
-  <motion.section
-    initial={{ opacity: 0.2, y: -200 }}
-    animate={{ opacity: 1, y: 0 }}
-    whileInView={true}
-    // transition={{ duration: 0.4 }}
-    id={id}
-    className={`${className} section`}
-  >
+  <section className={`${className} section`} id={id}>
     <motion.h2
       initial={{
         opacity: 0,
@@ -46,7 +39,7 @@ const Section = ({
       {sectionSubtitle}
     </motion.span>
     {children}
-  </motion.section>
+  </section>
 );
 
 export default Section;

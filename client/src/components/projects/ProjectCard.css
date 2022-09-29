@@ -7,7 +7,7 @@
   box-shadow: var(--box-shadow-2);
   border-radius: 10px;
   background-position: right;
-  background-color: #0407368d;
+  background-color: #01042c;
   color: var(--text-color);
 }
 .project__box:hover,
@@ -15,11 +15,6 @@
   box-shadow: inset rgb(68 255 230) 0px 0px 0px 1px,
     inset rgb(0 255 179) 0 0 0px 2px;
 }
-
-/* .project__box:hover .project__img img,
-.project__box:focus .project__img img {
-  transform: scale(1.02);
-} */
 
 .project__data {
   display: flex;

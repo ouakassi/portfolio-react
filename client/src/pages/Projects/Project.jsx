@@ -15,7 +15,10 @@ export default function Article() {
   let navigate = useNavigate();
   let location = useLocation();
 
-  const url = `/projects/${slug}`;
+  const url = process.env.REACT_APP_API_URL + "/projects/" + slug;
+
+  console.log(process.env.REACT_APP_API_URL);
+  console.log(slug);
 
   const { data: project, isPending, error } = useFetch(url);
 
@@ -50,7 +53,6 @@ export default function Article() {
       {project && (
         <Section
           // className="project"
-          id="project"
           sectionTitle={project.title}
           // sectionSubtitle={project.description}
         >

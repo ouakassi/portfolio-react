@@ -4,7 +4,6 @@ import RequireAuth from "../components/RequireAuth";
 import Home from "./Home/Home";
 import Projects from "./Projects/Projects";
 import Project from "./Projects/Project";
-import About from "./About/About";
 import Blog from "./Blog/Blog";
 import Contact from "../components/contact/Contact";
 import Article from "./Blog/Article";
@@ -29,7 +28,6 @@ export default function AnimatedRoutes() {
         <Route path="/blog/:slug" element={<Article />} />
         <Route path="/projects" element={<Projects />} />
         <Route path="/projects/:slug" element={<Project />} />
-        <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="*" element={<NotFound />} />
         <Route path="/unauthorized" element={<Unauthorized />} />

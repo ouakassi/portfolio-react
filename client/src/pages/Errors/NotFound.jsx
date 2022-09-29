@@ -1,17 +1,19 @@
-import { useEffect } from "react";
-import { useNavigate, Link } from "react-router-dom";
+// import { useEffect } from "react";
+// import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
+
 import { ShowMoreButton } from "../../components/Buttons/ShowMoreButton";
 import Section from "../../components/Section";
 import "./NotFound.css";
 
 export default function NotFound() {
-  const navigate = useNavigate();
-  const DELAY = "10000";
-  useEffect(() => {
-    setTimeout(() => {
-      navigate("/");
-    }, DELAY);
-  }, [navigate]);
+  // const navigate = useNavigate();
+  // const DELAY = "1000";
+  // useEffect(() => {
+  //   setTimeout(() => {
+  //     navigate("/");
+  //   }, DELAY);
+  // }, [navigate]);
 
   return (
     <Section

@@ -10,4 +10,5 @@ div.exp__selector > span:nth-child(1) {
 .exp__container {
   display: flex;
   flex-flow: column;
+  align-items: center;
 }

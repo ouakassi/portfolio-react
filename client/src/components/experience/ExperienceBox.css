@@ -43,21 +43,13 @@
   color: var(--first-color-alt);
 }
 
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 1024px) {
+  .exp__data {
+    flex-direction: column;
+  }
 }
 
 @media screen and (max-width: 425px) {
-  .exp__box {
-    padding: 2rem;
-    max-width: 90rem;
-    color: #fff;
-    border-radius: 15px;
-    box-shadow: var(--first-color-alt-light) 0px 6px 0px 2px,
-      var(--first-color-alt) 0px 0px 0px 2px;
-    background: transparent;
-    margin: 3rem 0 1rem;
-    width: clamp(80vw, 50rem, 90%);
-  }
   .exp__data {
     flex-flow: column;
     align-items: center;
@@ -76,14 +68,5 @@
 
   .exp__heading {
     align-items: center;
-  }
-}
-@media screen and (min-width: 769px) {
-}
-@media screen and (min-width: 1024px) {
-}
-@media screen and (max-width: 1200px) {
-  .exp__box {
-    width: clamp(80vw, 50rem, 90%);
   }
 }

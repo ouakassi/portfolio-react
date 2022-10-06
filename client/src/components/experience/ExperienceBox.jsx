@@ -11,7 +11,23 @@ export default function ExperienceBox({
   desc,
 }) {
   return (
-    <div className="exp__box">
+    <motion.div
+      initial={{ y: 100, opacity: 0 }}
+      whileInView={{
+        y: 0,
+        opacity: 1,
+        transition: {
+          duration: 0.5,
+          delay: 0.5,
+          type: "spring",
+          stiffness: 30,
+          mass: 1,
+        },
+      }}
+      exit={{ opacity: 0 }}
+      viewport={{ once: true }}
+      className="exp__box"
+    >
       <div className="exp__data">
         <div className="exp__head">
           <img src={companyImg} alt={company} />
@@ -36,6 +52,6 @@ export default function ExperienceBox({
       >
         {desc}
       </StyledParagraph>
-    </div>
+    </motion.div>
   );
 }

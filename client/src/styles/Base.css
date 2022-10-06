@@ -11,7 +11,7 @@ html {
 body {
   margin: 0;
   font-family: var(--body-font);
-  font-size: var(--normal-font-size);
+  font-size: var(--fs-m);
   background: var(--second-color);
   background-image: var(--body-color);
   color: var(--text-color);

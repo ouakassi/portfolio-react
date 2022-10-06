@@ -4,7 +4,7 @@
   padding: 1rem;
   margin: 3rem 0;
   border-radius: 10px;
-  background-color: var(--container-color);
+  background-color: var(--background-color-2);
   position: relative;
 }
 .input__container label {
@@ -28,7 +28,7 @@
   border: none;
   outline: none;
   color: var(--title-color);
-  font-size: 1.8rem;
+  font-size: var(--fs-l);
 }
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
@@ -44,5 +44,5 @@ input:-webkit-autofill:active {
 }
 .input__container input:focus .button {
   margin-top: 5rem;
-  font-size: 1.8rem;
+  font-size: var(--fs-l);
 }

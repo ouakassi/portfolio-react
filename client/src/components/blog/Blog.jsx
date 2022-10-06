@@ -8,8 +8,12 @@ import { ShowMoreButton } from "../Buttons/ShowMoreButton";
 import { useFetch } from "../../hooks/useFetch";
 import checkColor from "../../components/projects/checkColor";
 
+import URL from "./../../api/URL.jsx";
+
 const Blog = () => {
-  const [url, setUrl] = useState(process.env.REACT_APP_API_URL + "/articles/");
+  const [url, setUrl] = useState(URL + "/articles/");
+
+  console.log(URL + "/articles/");
 
   const { data: articles, isPending, error } = useFetch(url);
 

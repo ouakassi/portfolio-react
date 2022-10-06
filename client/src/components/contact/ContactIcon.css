@@ -2,7 +2,7 @@
   position: fixed;
   right: 5%;
   bottom: 18%;
-  font-size: 4rem;
+  font-size: var(--fs-2xl);
 }
 
 .floated-contact i {
@@ -10,17 +10,4 @@
 }
 .floated-contact i:hover {
   color: var(--first-color-alt);
-}
-
-.floated-contact {
-  position: fixed;
-  right: 5%;
-  bottom: 18%;
-  font-size: 4rem;
-}
-
-@media screen and (max-width: 767px) {
-  .floated-contact {
-    font-size: 3rem;
-  }
 }

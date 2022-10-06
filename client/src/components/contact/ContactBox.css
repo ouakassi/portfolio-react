@@ -1,7 +1,7 @@
 .contact__box {
   display: flex;
   align-items: center;
-  background: var(--container-color);
+  background: var(--background-color);
   padding: 1rem 3rem;
   margin: 4rem 2rem;
   border-radius: 10px;
@@ -20,13 +20,21 @@
 }
 
 .contact__icon {
-  font-size: 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 10rem;
+  width: 10rem;
+  background-color: var(--second-color-light);
+  border-radius: 50%;
+  font-size: var(--fs-2xl);
   color: var(--first-color);
   margin-right: 0.75rem;
+  display: flex;
 }
 
 .contact__title {
-  font-size: var(--h3-font-size);
+  font-size: var(--fs-l);
   font-weight: var(--font-semi-bold);
   color: var(--title-color);
 }

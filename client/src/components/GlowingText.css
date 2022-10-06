@@ -1,5 +1,5 @@
 .glowing__text {
-  font-size: var(--h2-font-size);
+  font-size: var(--fs-xl);
   color: var(--title-color);
   font-family: var(--font-medium);
   margin: 1rem 0;

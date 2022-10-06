@@ -2,6 +2,8 @@ import "./Contact.css";
 
 import Section from "../../components/Section";
 import ContactBox from "./ContactBox";
+import SocialLink from "../SocialLink";
+import { motion } from "framer-motion";
 
 const Contact = () => {
   const CONTACT_DATA = [
@@ -28,10 +30,28 @@ const Contact = () => {
     >
       <div className="contact__container container">
         <div className="contact__infos">
-          <h6>
-            Want to get in touch? <br /> Write me at hello[at]maximeheckel.com
-            or shoot me a DM on Twitter
-          </h6>
+          <motion.p
+            initial={{ x: -50, opacity: 0, transition: { duration: 1 } }}
+            whileInView={{ x: 0, opacity: 1, transition: { duration: 1 } }}
+            className="contact__heading"
+            viewport={{ once: true }}
+          >
+            Want to get in touch? <br />
+            Write me at{" "}
+            <b>
+              <a href="mailto:lmoutchoo@gmail.com ">lmoutchoo@gmail.com</a>
+            </b>{" "}
+            or shoot me a DM on
+            <SocialLink
+              icon="uil uil-linkedin-alt"
+              link="https://www.linkedin.com/in/oussama-ouakassi-28372216a/"
+            />
+            or
+            <SocialLink
+              icon="uil uil-twitter-alt"
+              link="https://www.linkedin.com/in/oussama-ouakassi-28372216a/"
+            />
+          </motion.p>
           {CONTACT_DATA.map(({ icon, title, data }, i) => {
             return <ContactBox key={i} icon={icon} title={title} data={data} />;
           })}

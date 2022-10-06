@@ -5,8 +5,12 @@ import ProjectCard from "../../components/projects/ProjectCard";
 import checkColor from "../../components/projects/checkColor.js";
 import SectionTitle from "../../components/Section";
 
+import URL from "../../api/URL";
+
 const Projects = () => {
-  const [url, setUrl] = useState(process.env.REACT_APP_API_URL + "/projects/");
+  const [url, setUrl] = useState(URL + "/projects/");
+
+  console.log(URL + "/projects/");
 
   const { data: projects, isPending, error } = useFetch(url);
 

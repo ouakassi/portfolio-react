@@ -9,16 +9,14 @@ import { render } from "react-dom";
 import Section from "../../components/Section";
 import { useState } from "react";
 import MarkdownContainer from "../../components/MarkdownContainer";
+import URL from "../../api/URL";
 
 export default function Article() {
   let { slug } = useParams();
   let navigate = useNavigate();
   let location = useLocation();
 
-  const url = process.env.REACT_APP_API_URL + "/projects/" + slug;
-
-  console.log(process.env.REACT_APP_API_URL);
-  console.log(slug);
+  const url = URL + "/projects/" + slug;
 
   const { data: project, isPending, error } = useFetch(url);
 

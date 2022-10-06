@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link, Outlet } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 import "./Projects.css";
 
@@ -9,10 +9,14 @@ import checkColor from "./checkColor";
 import { ShowMoreButton } from "../Buttons/ShowMoreButton";
 import { useFetch } from "../../hooks/useFetch";
 
+import URL from "../../api/URL";
+
 const Projects = () => {
   const [projectTotal, setProjectTotal] = useState(3);
 
-  const [url, setUrl] = useState(process.env.REACT_APP_API_URL + "/projects/");
+  const [url, setUrl] = useState(URL + "/projects/");
+
+  console.log(url);
 
   const { data: projects, isPending, error } = useFetch(url);
 
@@ -64,7 +68,6 @@ const Projects = () => {
       <Link to="/projects">
         <ShowMoreButton icon="uil uil-direction" title="All projects" />
       </Link>
-      <Outlet />
     </Section>
   );
 };

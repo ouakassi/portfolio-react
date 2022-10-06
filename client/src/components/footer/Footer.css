@@ -14,13 +14,13 @@
 }
 
 .footer__social {
-  font-size: 3rem;
+  font-size: var(--fs-xl);
 }
 .footer__social:hover {
   color: var(--first-color-lighter);
 }
 .footer__copyright {
-  font-size: var(--smaller-font-size);
+  font-size: var(--fs-xs);
   text-align: center;
   color: var(--title-color);
   margin-top: 2rem;

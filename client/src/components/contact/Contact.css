@@ -1,12 +1,4 @@
-.contact__container {
-}
-
-.contact__infos {
-  /* display: flex;
-  width: 100%;
-  flex-flow: row wrap; */
-  /* justify-content: center; */
-}
-
-@media only screen and (max-width: 600px) {
+.contact__heading {
+  font-size: var(--fs-l);
+  margin-bottom: 4rem;
 }

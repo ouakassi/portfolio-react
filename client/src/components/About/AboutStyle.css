@@ -17,7 +17,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-size: var(--biggest-font-size);
+  font-size: var(--fs-3xl);
   font-weight: var(--font-medium);
   text-transform: uppercase;
   font-family: "Changa";
@@ -26,7 +26,7 @@
 .about__stack-quote {
   position: absolute;
   color: var(--first-color-alt);
-  font-size: 12rem;
+  font-size: var(--fs-6xl);
 }
 .about__heading span:first-child {
   top: -100px;
@@ -51,10 +51,13 @@
 .about__stack-text {
   position: relative;
   color: #fff;
-  text-shadow: 1px 3px #000;
-  font-size: 6rem;
+  /* text-shadow: 1px 3px #000; */
+  font-size: var(--fs-4xl);
   font-weight: var(--font-bold);
   font-family: var(--body-font);
+  background-image: linear-gradient(to right, rgb(0 255 221), #00f6ff99);
+  color: #b80bf500;
+  -webkit-background-clip: text;
 }
 .about__stack-text::after {
   content: "";
@@ -75,10 +78,6 @@
   width: 40rem;
   height: 40rem;
 }
-
-/* .about__heading path {
-  stroke: var(--first-color-light);
-} */
 
 .about__stack-img {
   border-radius: 10px;
@@ -114,7 +113,7 @@
   height: 6rem;
   margin: 1rem;
   text-transform: uppercase;
-  font-size: 1.5rem;
+  font-size: var(--fs-m);
   border-radius: 10px;
   padding: 0.5rem;
   font-family: var(--font-1);
@@ -135,19 +134,22 @@
   }
 
   .about__heading > div:first-child {
+    width: 30rem;
+    height: 30rem;
     margin: 4rem 0 6rem;
+  }
+
+  .about__heading span:first-child {
+    top: -73px;
+    left: -60px;
+  }
+  .about__heading span:last-child {
+    bottom: -105px;
+    right: -45px;
   }
 }
 
 @media screen and (max-width: 568px) {
-  .about__heading > div:first-child {
-    width: 25rem;
-    height: 25rem;
-    margin: 2rem 0 4rem;
-  }
-}
-
-@media screen and (max-width: 376px) {
   .about__stack-dots {
     position: absolute;
     right: -35px;
@@ -158,18 +160,17 @@
     height: 25rem;
     margin: 2rem 0 4rem;
   }
-
-  .about__heading div {
-    font-size: 4rem;
-  }
-
   .about__heading span:first-child {
-    top: -80px;
-    left: -10px;
+    top: -60px;
+    left: -40px;
   }
   .about__heading span:last-child {
     bottom: -120px;
-    right: -10px;
+    right: -40px;
+  }
+
+  .about__heading div {
+    font-size: var(--fs-2xl);
   }
 }
 

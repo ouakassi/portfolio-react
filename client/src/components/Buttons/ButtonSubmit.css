@@ -5,7 +5,7 @@
   justify-content: center;
   background-color: transparent;
   color: var(--title-color);
-  font-size: 1.8rem;
+  font-size: var(--fs-l);
   font-weight: var(--font-semi-bold);
   padding: 1rem;
   text-transform: uppercase;

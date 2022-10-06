@@ -36,6 +36,7 @@ export default function About() {
   return (
     <Section
       className="about"
+      id="about"
       icon="uil uil-user-square"
       sectionTitle="About me"
       sectionSubtitle="everything about me"
@@ -50,7 +51,7 @@ export default function About() {
             />
             <img
               className="about__stack-img"
-              src="./images/me.jpg"
+              src="./images/me.webp"
               alt="it's me"
             />
           </div>

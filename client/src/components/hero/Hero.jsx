@@ -17,26 +17,42 @@ const SOCIAL_LINKS = [
 ];
 
 const Hero = () => {
-  const name = Array.from("OUSSAMA");
-  const lastName = Array.from("OUAKASSI");
+  const name = "OUSSAMA";
+  const lastName = "OUAKASSI";
+
+  const sentenceAnimation = {
+    hidden: { y: 50, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        duration: 1.5,
+        staggerChildren: 0.1,
+        y: { delay: 1 },
+      },
+    },
+  };
 
   const lettersAnimation = {
-    initial: { top: -20, opacity: 0.9 },
-    animate: { top: 0, opacity: 1 },
-    whileHover: { scale: 1.1 },
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+    },
   };
 
   const patternBackground = "./images/pattern.svg";
 
   return (
     <section
-      style={{ backgroundImage: `url(${patternBackground})` }}
+      style={{
+        background: `url(${patternBackground}) right top no-repeat `,
+      }}
       className="home section"
     >
       <div className="home__container container ">
         <div className="home__content ">
           <motion.div
-            initial={{ y: 200, opacity: 0.3 }}
+            initial={{ y: 50, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.4 }}
@@ -48,40 +64,30 @@ const Hero = () => {
           </motion.div>
 
           <div className="home__data">
-            <div className="home__title">
-              <span className="home__title-first">
-                {name.map((letter, i) => {
-                  return (
-                    <motion.span
-                      key={i}
-                      variants={lettersAnimation}
-                      initial="initial"
-                      animate="animate"
-                      whileHover="whileHover"
-                      transition={{ delay: 0.1 * i }}
-                    >
-                      {letter}
+            <motion.div
+              className="home__title"
+              variants={sentenceAnimation}
+              initial="hidden"
+              whileInView="visible"
+            >
+              {name.split("").map((char, i) => {
+                return (
+                  <>
+                    <motion.span key={i} variants={lettersAnimation}>
+                      {char}
                     </motion.span>
-                  );
-                })}
-              </span>
-              <span className="home__title-last">
-                {lastName.map((letter, i) => {
-                  return (
-                    <motion.span
-                      key={i}
-                      variants={lettersAnimation}
-                      initial="initial"
-                      animate="animate"
-                      whileHover="whileHover"
-                      transition={{ delay: 0.1 * i }}
-                    >
-                      {letter}
-                    </motion.span>
-                  );
-                })}
-              </span>
-            </div>
+                  </>
+                );
+              })}
+              <br />
+              {lastName.split("").map((char, i) => {
+                return (
+                  <motion.span key={i} variants={lettersAnimation}>
+                    {char}
+                  </motion.span>
+                );
+              })}
+            </motion.div>
             <GlowingText text="WEB Developer" />
             <p className="home__description">
               An avid MERN stack developer, building websites that you would
@@ -108,13 +114,18 @@ const Hero = () => {
           <motion.div
             initial={{ y: -100, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.6, bounce: 1 }}
             className="home__img__container"
           >
             <img
-              src="./images/my-image.png"
+              src="./images/my-image.webp"
               alt="me"
               className="home__img__container-img"
+            />
+            <img
+              src="./images/pattern2.svg"
+              alt=""
+              className="home__img-back"
             />
           </motion.div>
           <div className="home__scroll">

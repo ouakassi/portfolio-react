@@ -24,8 +24,6 @@ const NAV_ITEMS = [
   },
 ];
 
-const LOGO_NAME = Array.from("uakassi");
-
 const Header = () => {
   const [toggleNav, setToggleNav] = useState(false);
 
@@ -50,15 +48,13 @@ const Header = () => {
             animate={{ opacity: 1 }}
             className="nav__logo"
           >
-            <img src="./images/logo.svg" alt="" />
+            <img src="./images/logo.svg" alt="logo" />
             <motion.span
               initial={{ opacity: 0, y: 100 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 1 }}
             >
-              {LOGO_NAME.map((letter) => {
-                return letter;
-              })}
+              uakassi
             </motion.span>
           </motion.div>
         </Link>

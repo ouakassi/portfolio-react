@@ -3,8 +3,10 @@ import "./ArticlesTags.css";
 import { ShowMoreButton } from "./Buttons/ShowMoreButton";
 
 export default function ArticlesTags({ tagName, queryArticles }) {
+  const TAGS_NUMBER = 3;
+
   const [activeLink, setActiveLink] = useState();
-  const [tagsNumber, setTagsNumber] = useState(4);
+  const [tagsNumber, setTagsNumber] = useState(TAGS_NUMBER);
   const [toggleButton, setToggleButton] = useState(false);
 
   const ACTIVE_COLOR = {
@@ -57,7 +59,7 @@ export default function ArticlesTags({ tagName, queryArticles }) {
           <i
             className="icon uil uil-arrow-circle-left"
             onClick={() => {
-              setTagsNumber(4);
+              setTagsNumber(TAGS_NUMBER);
               setToggleButton(false);
             }}
           ></i>

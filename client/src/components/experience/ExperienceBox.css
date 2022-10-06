@@ -35,12 +35,13 @@
 }
 .exp__heading-name {
   /* color: var(--first-color-alt); */
-  font-size: 2.2rem;
+  font-size: var(--fs-xl);
   text-transform: uppercase;
 }
 .exp__date {
   font-family: var(--font-1);
   color: var(--first-color-alt);
+  font-weight: 600;
 }
 
 @media screen and (max-width: 1024px) {

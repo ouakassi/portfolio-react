@@ -2,14 +2,15 @@ import { motion } from "framer-motion";
 const LanguageComponent = ({ mainColor, className, image, tag }) => (
   <>
     <motion.span
-      initial={{ opacity: 0, y: 10 }}
+      initial={{ opacity: 0, scale: 0.5 }}
       whileInView={{
         opacity: 1,
-        y: 0,
+        scale: 1,
         transition: {
           type: "spring",
           bounce: 0.4,
-          duration: 0.2,
+          duration: 1,
+          delay: 0.4,
         },
       }}
       whileHover={{ scale: 1.1 }}

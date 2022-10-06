@@ -1,6 +1,6 @@
 .project-body,
 .project-header {
-  background: var(--container-color);
+  background: var(--background-color);
 }
 
 .project__more .project__more-container {

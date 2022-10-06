@@ -1,5 +1,7 @@
 .styled__Lined__title {
-  font-size: 2rem;
+  font-family: var(--font-2);
+  line-height: 1.8;
+  font-size: var(--fs-l);
   margin-bottom: 2rem;
   background: var(--text-gradient-color);
   background-clip: text;

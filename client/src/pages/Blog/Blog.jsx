@@ -9,14 +9,17 @@ import ArticlesTags from "../../components/ArticlesTags";
 import BlogCardSkeleton from "../../components/blog/BlogCardSkeleton";
 import { ShowMoreButton } from "../../components/Buttons/ShowMoreButton";
 
+import URL from "../../api/URL";
+
 const Blog = () => {
-  const [url, setUrl] = useState(process.env.REACT_APP_API_URL + "/articles/");
+  const [url, setUrl] = useState(URL + "/articles/");
+
   const [filterTags, setFilterTags] = useState([]);
 
   const { data: articles, isPending, error } = useFetch(url);
 
   const queryArticles = async (query) => {
-    setUrl(`${process.env.REACT_APP_API_URL}/articles/?${query}`);
+    setUrl(`${URL}/articles/?${query}`);
   };
 
   return (
@@ -28,12 +31,15 @@ const Blog = () => {
     >
       <ArticlesTags tagName={filterTags.sort()} queryArticles={queryArticles} />
       {articles &&
-        articles.forEach((project) => {
-          project &&
-            project.tags.forEach((tag) => {
-              if (!filterTags.includes(tag))
-                setFilterTags([...filterTags, tag]);
-            });
+        articles.map((project) => {
+          return (
+            project &&
+            project.tags.map((tag) => {
+              return (
+                !filterTags.includes(tag) && setFilterTags([...filterTags, tag])
+              );
+            })
+          );
         })}
 
       <article className="articles__container container">
@@ -57,12 +63,22 @@ const Blog = () => {
                   description={description.substring(0, 140) + "..."}
                   publishedDate={publishedDate}
                   tags={tags.map((tag, i) => {
-                    return <ShowMoreButton />;
+                    return (
+                      <ShowMoreButton
+                        style={{
+                          padding: "0.5rem",
+                          margin: "5px",
+                          color: "var(--first-color)",
+                          boxShadow: "none",
+                        }}
+                        title={`#${tag}`}
+                      />
+                    );
                   })}
                   image={imgUrl}
                   id={id}
                   link={"/blog/" + slug}
-                  readTime={`${readTime} min read`}
+                  readTime={`${readTime} min`}
                 />
               );
             }

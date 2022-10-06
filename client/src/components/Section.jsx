@@ -9,7 +9,7 @@ const Section = ({
   sectionSubtitle,
   children,
 }) => (
-  <section className={`${className} section`} id={id}>
+  <section className={` section ${className}`} id={id}>
     <motion.h2
       initial={{
         opacity: 0,

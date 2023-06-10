@@ -6,10 +6,55 @@ import ButtonPrimary from "../Buttons/ButtonPrimary";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import IMAGES from "../../images";
+import { useLayoutEffect, useRef } from "react";
 
 const patternBackground = IMAGES.patternTwo;
 
 const ProjectCard = ({ image, title, description, tags, link }) => {
+  const cardRef = useRef();
+
+  useLayoutEffect(() => {
+    const cardElement = cardRef.current;
+
+    const handleMouseOver = (e) => {
+      // get mouse position
+      const x = e.clientX;
+      const y = e.clientY;
+
+      // find the middle
+      const middleX = window.innerWidth / 2;
+      const middleY = window.innerHeight / 2;
+
+      // get offset from middle as a percentage
+      // and tone it down a little
+      const offsetX = ((x - middleX) / middleX) * 15;
+      const offsetY = ((y - middleY) / middleY) * 15;
+
+      // set rotation
+      cardElement.style.setProperty("--rotateX", -1 * offsetX + "deg");
+      cardElement.style.setProperty("--rotateY", 1 * offsetY + "deg");
+
+      cardElement.style.setProperty("--positionX", 1 * 1.5 * offsetX + "%");
+      cardElement.style.setProperty("--positionY", -1 * 1.5 * offsetX + "%");
+    };
+    const handleMouseLeave = () => {
+      // set rotation to default when not hovering
+      cardElement.style.setProperty("--rotateX", 0 + "deg");
+      cardElement.style.setProperty("--rotateY", 0 + "deg");
+    };
+
+    if (cardElement) {
+      cardElement.addEventListener("mousemove", handleMouseOver);
+      cardElement.addEventListener("mouseleave", handleMouseLeave);
+    }
+
+    return () => {
+      if (cardElement) {
+        cardElement.removeEventListener("mousemove", handleMouseOver);
+      }
+    };
+  }, []);
+
   const cardAnimation = {
     initial: {
       y: 90,
@@ -26,7 +71,8 @@ const ProjectCard = ({ image, title, description, tags, link }) => {
   };
 
   return (
-    <motion.div
+    <div
+      ref={cardRef}
       variants={cardAnimation}
       initial="initial"
       whileInView="whileInView"
@@ -67,7 +113,7 @@ const ProjectCard = ({ image, title, description, tags, link }) => {
           <Link to={link}>Details</Link>
         </div>
       </div>
-    </motion.div>
+    </div>
   );
 };
 

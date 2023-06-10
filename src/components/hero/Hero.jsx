@@ -89,7 +89,23 @@ const Hero = () => {
                 );
               })}
             </motion.div>
-            <GlowingText text="WEB Developer" />
+            <GlowingText
+              text={"WEB Developer".split("").map((char, i) => {
+                return (
+                  <motion.span
+                    key={i}
+                    initial={{ opacity: 0, y: -50 }}
+                    animate={{
+                      opacity: 1,
+                      y: 0,
+                      transition: { delay: i * 0.1 },
+                    }}
+                  >
+                    {char}
+                  </motion.span>
+                );
+              })}
+            />
             <p className="home__description">
               An avid MERN stack developer, building websites that you would
               love using. <br /> I develop a Complete Responsive Websites using

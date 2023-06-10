@@ -8,12 +8,10 @@ import { ShowMoreButton } from "../Buttons/ShowMoreButton";
 import { useFetch } from "../../hooks/useFetch";
 import checkColor from "../../components/projects/checkColor";
 
-import URL from "./../../api/URL.jsx";
-
 const Blog = () => {
-  const [url, setUrl] = useState(URL + "/articles/");
+  const [url, setUrl] = useState("/articles/");
 
-  console.log(URL + "/articles/");
+  console.log("/articles/");
 
   const { data: articles, isPending, error } = useFetch(url);
 

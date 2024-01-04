@@ -13,7 +13,7 @@ export default function FilterTags({ onClickFilterButton }) {
     color: "#fff",
     backgroundColor: "var(--first-color-light)",
     // fontWeight: "700",
-    fontFamily: "var(--font-2) ",
+    fontFamily: "var(--font-2)",
     width: "18rem",
 
     transform: "scale(1.1)",

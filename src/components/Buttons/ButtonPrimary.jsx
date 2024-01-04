@@ -11,10 +11,10 @@ export default function ButtonPrimary({ link, title, icon }) {
       }}
       whileInView={{ scale: 1, opacity: 1 }}
       viewport={{ once: true }}
-      transition={{ duration: 0.4 }}
+      transition={{ duration: 0.2 }}
       whileHover={{
-        backgroundSize: "100% 10px",
-        scale: 1.1,
+        backgroundSize: "100% 100%",
+        color: "black",
       }}
       className="button-primary"
       href={link}

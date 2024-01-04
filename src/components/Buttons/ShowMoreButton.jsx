@@ -1,7 +1,14 @@
 import "./ShowMoreButton.css";
 import { motion } from "framer-motion";
 
-export const ShowMoreButton = ({ style, method, title, icon, iconStyle }) => {
+export const ShowMoreButton = ({
+  style,
+  onClick,
+  title,
+  icon,
+  iconStyle,
+  img,
+}) => {
   const animationVariants = {
     hidden: { opacity: 0, y: 20 },
     visible: {
@@ -15,6 +22,7 @@ export const ShowMoreButton = ({ style, method, title, icon, iconStyle }) => {
 
   return (
     <motion.span
+      layout
       variants={animationVariants}
       initial="hidden"
       whileInView="visible"
@@ -23,8 +31,9 @@ export const ShowMoreButton = ({ style, method, title, icon, iconStyle }) => {
       whileTap="whileTap"
       style={style}
       className="show-more__button"
-      onClick={method}
+      onClick={onClick}
     >
+      {img && img}
       {title ? title : "Show More"}
       {icon && <i style={iconStyle} className={`${icon} button__icon`}></i>}
     </motion.span>

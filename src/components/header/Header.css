@@ -114,10 +114,11 @@
 /* show menu */
 .show-menu {
   bottom: 0;
+  background-color: rgb(15 27 52);
 }
 /* Active link */
 
-/* Change background header */
+/* Change header background */
 .scroll-header {
   box-shadow: 0 -1px 4px rgba(0, 0, 0, 0.15);
 }

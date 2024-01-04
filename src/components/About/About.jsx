@@ -1,5 +1,3 @@
-import { useState } from "react";
-
 import "./AboutStyle.css";
 
 import Section from "../Section";

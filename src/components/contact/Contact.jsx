@@ -26,7 +26,7 @@ const Contact = () => {
       id="contact"
       icon="uil uil-calling"
       sectionTitle="contact me"
-      sectionSubtitle="get in touch!"
+      sectionSubtitle="get in touch with me!"
     >
       <div className="contact__container container">
         <div className="contact__infos">
@@ -36,7 +36,7 @@ const Contact = () => {
             className="contact__heading"
             viewport={{ once: true }}
           >
-            Want to get in touch? <br />
+            Let's Build Something Amazing Together? <br />
             Write me at{" "}
             <b>
               <a href="mailto:lmoutchoo@gmail.com ">lmoutchoo@gmail.com</a>

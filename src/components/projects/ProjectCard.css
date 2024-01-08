@@ -14,7 +14,9 @@
   transform: perspective(5000px) rotateY(var(--rotateX)) rotateX(var(--rotateY))
     scale3d(1, 1, 1);
   transition: all 400ms cubic-bezier(0.03, 0.98, 0.52, 0.99) 0s;
-  background-position: var(--positionX) var(--positionY);
+  background-position-x: var(--positionX);
+  background-position-y: var(--positionY);
+  background-repeat: no-repeat;
 }
 .project__box:hover,
 .project__box:focus {

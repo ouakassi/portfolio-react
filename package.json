@@ -9,8 +9,8 @@
     "axios": "^0.27.2",
     "framer-motion": "^6.3.10",
     "markdown-to-jsx": "^7.1.7",
-    "react": "^18.1.0",
-    "react-dom": "^18.1.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "react-loading-skeleton": "^3.1.0",
     "react-router-dom": "^6.3.0",
     "react-scripts": "5.0.0",
@@ -39,5 +39,10 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "description": "showing my latest projects , having an introduction about me .. who am i ? what i do ? working to add some other features like blogs , helpful resources for other developers .",
+  "main": "index.js",
+  "devDependencies": {},
+  "author": "",
+  "license": "ISC"
 }

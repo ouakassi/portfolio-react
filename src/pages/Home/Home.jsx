@@ -1,6 +1,6 @@
 import Hero from "../../components/hero/Hero";
-import Projects from "../../components/projects/Projects";
-import Blog from "../../components/blog/Blog";
+import LatestProjects from "../../components/projects/LatestProjects";
+// import Blog from "../../components/blog/Blog";
 import Contact from "../../components/contact/Contact";
 import Experience from "../../components/experience/Experience";
 import About from "../../components/About/About";
@@ -9,10 +9,10 @@ const Home = () => {
   return (
     <div>
       <Hero />
-      <Projects />
+      <LatestProjects />
       <Experience />
       <About />
-      <Blog />
+      {/* <Blog /> */}
       <Contact />
     </div>
   );

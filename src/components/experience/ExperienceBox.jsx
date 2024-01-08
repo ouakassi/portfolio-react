@@ -2,6 +2,12 @@ import "./ExperienceBox.css";
 import StyledParagraph from "./../StyledParagrapgh";
 import GlowingText from "../GlowingText";
 import { motion } from "framer-motion";
+import AnimatedText from "../animations/AnimatedText";
+
+const boxAnimation = {
+  hidden: { y: 50, opacity: 0 },
+  show: { y: 0, opacity: 1 },
+};
 
 export default function ExperienceBox({
   company,
@@ -11,30 +17,14 @@ export default function ExperienceBox({
   desc,
 }) {
   return (
-    <motion.div
-      initial={{ y: 100, opacity: 0 }}
-      whileInView={{
-        y: 0,
-        opacity: 1,
-        transition: {
-          duration: 0.5,
-          delay: 0.5,
-          type: "spring",
-          stiffness: 30,
-          mass: 1,
-        },
-      }}
-      exit={{ opacity: 0 }}
-      viewport={{ once: true }}
-      className="exp__box"
-    >
+    <motion.div variants={boxAnimation} className="exp__box">
       <div className="exp__data">
         <div className="exp__head">
           <img src={companyImg} alt={company} />
           <div className="exp__heading">
             <h3 className="exp__heading-name">{company}</h3>
             <GlowingText
-              text={position}
+              text={<AnimatedText text={position} />}
               textTransform="capitalize"
               fs="1.6rem"
               color="var(--first-color-alt)"

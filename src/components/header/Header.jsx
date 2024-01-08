@@ -16,13 +16,13 @@ const NAV_ITEMS = [
     name: "projects",
     icon: "uil uil-folder-open",
   },
+  // {
+  //   name: "blog",
+  //   icon: "uil uil-files-landscapes-alt",
+  // },
   {
-    name: "blog",
-    icon: "uil uil-files-landscapes-alt",
-  },
-  {
-    name: "login",
-    icon: "uil uil-user",
+    name: "contact",
+    icon: "uil uil-calling",
   },
 ];
 

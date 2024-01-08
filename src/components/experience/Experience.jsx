@@ -1,68 +1,46 @@
 import Section from "../Section";
 import "./Experience.css";
-import ExperienceBox from "./ExperienceBox";
+
 import { ShowMoreButton } from "../Buttons/ShowMoreButton";
 import { useState } from "react";
-import IMAGES from "../../images";
+import ExperienceJobsTab from "./ExperienceJobsTab";
+import ExperienceEducationTab from "./ExperienceEducationTab";
+import { motion } from "framer-motion";
+import IMAGES from "../../images/index.js";
 
 const selectors = [
-  { title: "school", icon: "uil uil-briefcase" },
-  { title: "work", icon: "uil uil-building" },
+  { title: "education", icon: IMAGES.educationIcon },
+  { title: "jobs", icon: IMAGES.jobsIcon },
 ];
 
-const data = {
-  workData: [
-    {
-      id: 1,
-      company: "Freelancing",
-      companyImg: IMAGES.freelanceLogo,
-      position: "Web Developer",
-      date: "2022 - Now",
-      desc: "Working with a fantastic team of UI folks to develop and maintain purpose-built UI for the Traceable platform and Hypertrace UI library.",
+const activeSelectorStyle = {
+  backgroundColor: "var(--first-color-light)",
+  borderRadius: "10px 10px 0 0",
+  color: "#fff",
+
+  // fontSize: "2rem",
+};
+
+const iconStyle = {
+  color: "var(--first-color-alt)",
+  transform: "scale(1.3)",
+};
+
+const boxAnimation = {
+  hidden: { x: 100, opacity: 0 },
+  visible: {
+    x: 0,
+    opacity: 1,
+    transition: {
+      duration: 1.5,
+      staggerChildren: 0.1,
     },
-    {
-      id: 2,
-      company: "vfs global (mawared house)",
-      companyImg: IMAGES.vfsLogo,
-      position: "web developer",
-      date: "sep 2019 - nov 2021",
-      desc: "Working with a fantastic team of UI folks to develop and maintain purpose-built UI for the Traceable platform and Hypertrace UI library.",
-    },
-  ],
-  schoolData: [
-    {
-      id: 1,
-      company: "The Specialized Institute of Applied Technology",
-      companyImg: IMAGES.ofpptLogo,
-      position: "Diploma Technician Specialized in Computer Development",
-      date: "2016 - 2018",
-      desc: "Working with a fantastic team of UI folks to develop and maintain purpose-built UI for the Traceable platform and Hypertrace UI library.",
-    },
-    {
-      id: 2,
-      company: "high school",
-      companyImg: IMAGES.highSchoolLogo,
-      position: "bachelor's degree",
-      date: "2015 - 2016",
-      desc: "Working with a fantastic team of UI folks to develop and maintain purpose-built UI for the Traceable platform and Hypertrace UI library.",
-    },
-  ],
+  },
 };
 
 export default function Experience() {
-  const [activeSection, setActiveSection] = useState("work");
+  const [activeSelectedTab, setActiveSelectedTab] = useState("jobs");
 
-  const selectorStyle = {
-    backgroundColor: "var(--first-color-light)",
-    fontSize: "2rem",
-    fontWeight: "600",
-    fontFamily: "var(--font-1)",
-  };
-
-  const iconStyle = {
-    color: "var(--first-color-alt)",
-    transform: "scale(1.3)",
-  };
   return (
     <Section
       className="experience"
@@ -71,54 +49,66 @@ export default function Experience() {
       sectionTitle="professional experience"
       sectionSubtitle="my all experience in the field"
     >
-      <div className="exp__selector">
+      {/* <div className="exp__selector">
         {selectors.map(({ title, icon }, i) => {
           return (
             <ShowMoreButton
               key={i}
               title={title}
               icon={icon}
-              style={activeSection === title ? selectorStyle : null}
-              iconStyle={activeSection === title ? iconStyle : null}
-              method={() => {
-                setActiveSection(title);
+              style={activeSelectedTab === title ? selectorStyle : null}
+              iconStyle={activeSelectedTab === title ? iconStyle : null}
+              onClick={() => {
+                setActiveSelectedTab(title);
               }}
             />
           );
         })}
-      </div>
+      </div> */}
 
-      <div className="exp__container">
-        {activeSection === "work"
-          ? data.workData.map(
-              ({ id, company, companyImg, position, date, desc }) => {
-                return (
-                  <ExperienceBox
-                    key={id}
-                    company={company}
-                    companyImg={companyImg}
-                    position={position}
-                    date={date}
-                    desc={desc}
-                  />
-                );
-              }
-            )
-          : data.schoolData.map(
-              ({ id, company, companyImg, position, date, desc }) => {
-                return (
-                  <ExperienceBox
-                    key={id}
-                    company={company}
-                    companyImg={companyImg}
-                    position={position}
-                    date={date}
-                    desc={desc}
-                  />
-                );
-              }
-            )}
-      </div>
+      <div className="exp__selectors-container"></div>
+
+      <motion.div layout className="slider__container">
+        <div className="tab__buttons-container">
+          {selectors.map(({ title, icon }) => (
+            <motion.span
+              whileTap={{ scale: 0.9 }}
+              className="tab__button"
+              style={activeSelectedTab === title ? activeSelectorStyle : null}
+              onClick={() => {
+                setActiveSelectedTab(title);
+              }}
+            >
+              <motion.img
+                transition={{ duration: 0.4, ease: "linear" }}
+                layout
+                src={icon}
+                alt={title}
+                style={
+                  activeSelectedTab === title
+                    ? { filter: "contrast(1.5)" }
+                    : { filter: "none" }
+                }
+              />
+              <span>{title}</span>
+            </motion.span>
+          ))}
+        </div>
+        <motion.span
+          layout
+          transition={{ duration: 0.4, ease: "linear", delay: 0.2 }}
+          className="tab__slider"
+          style={
+            activeSelectedTab === "education"
+              ? { justifySelf: "start" }
+              : { justifySelf: "end" }
+          }
+        ></motion.span>
+      </motion.div>
+
+      {activeSelectedTab === "jobs" && <ExperienceJobsTab />}
+
+      {activeSelectedTab === "education" && <ExperienceEducationTab />}
     </Section>
   );
 }

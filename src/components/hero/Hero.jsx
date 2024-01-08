@@ -4,6 +4,7 @@ import SocialLink from "./../SocialLink";
 import { motion } from "framer-motion";
 import GlowingText from "../GlowingText";
 import IMAGES from "../../images";
+import AnimatedText from "../animations/AnimatedText";
 
 const SOCIAL_LINKS = [
   {
@@ -89,30 +90,17 @@ const Hero = () => {
                 );
               })}
             </motion.div>
-            <GlowingText
-              text={"WEB Developer".split("").map((char, i) => {
-                return (
-                  <motion.span
-                    key={i}
-                    initial={{ opacity: 0, y: -50 }}
-                    animate={{
-                      opacity: 1,
-                      y: 0,
-                      transition: { delay: i * 0.1 },
-                    }}
-                  >
-                    {char}
-                  </motion.span>
-                );
-              })}
-            />
+            <GlowingText text={<AnimatedText text={"Web Developer"} />} />
             <p className="home__description">
-              An avid MERN stack developer, building websites that you would
-              love using. <br /> I develop a Complete Responsive Websites using
+              An avid Web developer, building websites that you would love
+              using. <br /> I develop a Complete Responsive Websites using
               <b> MERN technologies </b>: MongoDB, React, NodeJS , Express.
               <br /> I've helped companies to launch production web applications
               to their customers. <br /> I love programming , creating,
               launching, learning, and Gaming.
+              <br />I believe in the power of technology to transform ideas into
+              reality. <br /> Let's collaborate to bring your vision to life and
+              create an online presence that leaves a lasting impact.
             </p>
             <div className="home__buttons">
               <ButtonPrimary
